@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padrões de Segurança Infantil contra CSAE/CSAM — Agenda Libras</title>
+  <meta name="description" content="Padrões oficiais de segurança infantil e combate ao abuso e exploração sexual de crianças (CSAE) e material de abuso sexual infantil (CSAM) no aplicativo Agenda Libras.">
+  <meta name="keywords" content="Agenda Libras, Segurança Infantil, CSAE, CSAM, Google Play, Proteção à Infância, ECA, LGPD, Denúncia">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Meta Compartilhamento -->
+  <meta property="og:title" content="Padrões de Segurança Infantil — Agenda Libras">
+  <meta property="og:description" content="Compromisso de tolerância zero contra abuso e exploração sexual infantil (CSAE/CSAM) no aplicativo Agenda Libras. Diretrizes, contato designado e canais de denúncia.">
+  <meta property="og:type" content="website">
+
+  <!-- Tipografia Moderna Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Paleta Modo Claro */
+      --bg-page: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #ffffff;
+      --bg-card-subtle: #f1f5f9;
+      --bg-accent-soft: #e0f2fe;
+      
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --primary-gradient: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+      
+      --border: #e2e8f0;
+      --border-focus: #38bdf8;
+      
+      --badge-offline-bg: #dcfce7;
+      --badge-offline-text: #166534;
+      --badge-offline-border: #86efac;
+
+      --badge-danger-bg: #fee2e2;
+      --badge-danger-text: #991b1b;
+      --badge-danger-border: #fca5a5;
+      
+      --alert-warn-bg: #fffbeb;
+      --alert-warn-border: #fde68a;
+      --alert-warn-text: #92400e;
+      --alert-warn-icon: #d97706;
+
+      --alert-shield-bg: #eff6ff;
+      --alert-shield-border: #bfdbfe;
+      --alert-shield-text: #1e40af;
+
+      --alert-danger-bg: #fef2f2;
+      --alert-danger-border: #fecaca;
+      --alert-danger-text: #991b1b;
+
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #0b0f19;
+      --bg-surface: #111827;
+      --bg-surface-elevated: #1f2937;
+      --bg-card-subtle: #192231;
+      --bg-accent-soft: #0c2847;
+
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+
+      --primary: #38bdf8;
+      --primary-hover: #7dd3fc;
+      --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+
+      --border: #1e293b;
+      --border-focus: #38bdf8;
+
+      --badge-offline-bg: #064e3b;
+      --badge-offline-text: #a7f3d0;
+      --badge-offline-border: #059669;
+
+      --badge-danger-bg: #450a0a;
+      --badge-danger-text: #fecaca;
+      --badge-danger-border: #991b1b;
+
+      --alert-warn-bg: #291d03;
+      --alert-warn-border: #78350f;
+      --alert-warn-text: #fef3c7;
+      --alert-warn-icon: #f59e0b;
+
+      --alert-shield-bg: #0f1d38;
+      --alert-shield-border: #1e3a8a;
+      --alert-shield-text: #bfdbfe;
+
+      --alert-danger-bg: #301114;
+      --alert-danger-border: #7f1d1d;
+      --alert-danger-text: #fecaca;
+
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.7;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Barra Superior Fixa / Header */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      display: block;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: var(--font-main);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-card-subtle);
+      color: var(--text-primary);
+      border-color: var(--text-muted);
+    }
+
+    .btn-action-primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .btn-action-primary:hover {
+      background: var(--primary-hover);
+      color: #fff;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 1.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(225, 29, 72, 0.12) 0%, rgba(225, 29, 72, 0) 70%);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-danger {
+      background: var(--badge-danger-bg);
+      color: var(--badge-danger-text);
+      border: 1px solid var(--badge-danger-border);
+    }
+
+    .badge-offline {
+      background: var(--badge-offline-bg);
+      color: var(--badge-offline-text);
+      border: 1px solid var(--badge-offline-border);
+    }
+
+    .badge-compliance {
+      background: var(--bg-accent-soft);
+      color: var(--primary);
+      border: 1px solid var(--border-focus);
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 740px;
+      margin: 0 auto 1.5rem;
+      font-weight: 400;
+    }
+
+    .meta-pills {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .meta-pill-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Layout Wrapper (Sidebar + Artigo) */
+    .layout-wrapper {
+      max-width: 1200px;
+      margin: 2.5rem auto 4rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* Sidebar com Índice */
+    .sidebar {
+      position: sticky;
+      top: 5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      max-height: calc(100vh - 6.5rem);
+      overflow-y: auto;
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .toc-link {
+      display: block;
+      padding: 0.4rem 0.65rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+      line-height: 1.4;
+    }
+
+    .toc-link:hover {
+      background: var(--bg-card-subtle);
+      color: var(--primary);
+    }
+
+    .toc-link.active {
+      background: var(--bg-accent-soft);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Conteúdo Principal */
+    .content-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 5.5rem;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 1.38rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.6rem;
+    }
+
+    .section-title-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-accent-soft);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      flex-shrink: 0;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+    }
+
+    .section ul, .section ol {
+      margin-left: 1.25rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.98rem;
+    }
+
+    .section li strong {
+      color: var(--text-primary);
+    }
+
+    /* Callout & Caixas de Alerta */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      border: 1px solid;
+    }
+
+    .callout-icon {
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .callout-body {
+      flex-grow: 1;
+    }
+
+    .callout-body h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .callout-body p {
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .callout-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .callout-danger {
+      background: var(--alert-danger-bg);
+      border-color: var(--alert-danger-border);
+      color: var(--alert-danger-text);
+    }
+
+    .callout-danger h4 {
+      color: var(--alert-danger-text);
+    }
+
+    .callout-warn {
+      background: var(--alert-warn-bg);
+      border-color: var(--alert-warn-border);
+      color: var(--alert-warn-text);
+    }
+
+    .callout-warn h4 {
+      color: var(--alert-warn-text);
+    }
+
+    .callout-shield {
+      background: var(--alert-shield-bg);
+      border-color: var(--alert-shield-border);
+      color: var(--alert-shield-text);
+    }
+
+    .callout-shield h4 {
+      color: var(--alert-shield-text);
+    }
+
+    /* Cards e Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+
+    .card-item {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-focus);
+    }
+
+    .card-item-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .contact-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .contact-card p {
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .badge-email {
+      display: inline-block;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsividade */
+    @media (max-width: 900px) {
+      .layout-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: none;
+      }
+      .hero-title {
+        font-size: 1.75rem;
+      }
+      .content-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Nav / Cabeçalho Fixo -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand" aria-label="Agenda Libras Início">
+        <div class="brand-icon">
+          <!-- Ícone de Escudo / Proteção -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Agenda Libras</h1>
+          <span>Padrões de Segurança Infantil (CSAE/CSAM)</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn-action" title="Ir para a Política de Privacidade Geral">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          <span>Política de Privacidade</span>
+        </a>
+
+        <button id="themeToggle" class="btn-action" aria-label="Alternar tema visual" title="Alternar tema claro/escuro">
+          <svg id="themeIconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="themeIconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span id="themeToggleText">Tema</span>
+        </button>
+
+        <button onclick="window.print()" class="btn-action" aria-label="Imprimir Documento" title="Imprimir ou Salvar em PDF">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Imprimir</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge-group">
+        <span class="badge badge-danger">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          Tolerância Zero contra CSAE / CSAM
+        </span>
+        <span class="badge badge-compliance">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Google Play Child Safety Standards
+        </span>
+        <span class="badge badge-offline">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          ECA (Lei 8.069/1990) & LGPD
+        </span>
+      </div>
+
+      <h2 class="hero-title">Padrões de Segurança Infantil</h2>
+      <p class="hero-subtitle">
+        Diretrizes públicas e permanentes de prevenção, proibição estrita e combate ao <strong>Abuso e Exploração Sexual Infantil (CSAE)</strong> e a <strong>Materiais de Abuso Sexual Infantil (CSAM)</strong> no ecossistema do aplicativo <strong>Agenda Libras</strong>.
+      </p>
+
+      <div class="meta-pills">
+        <div class="meta-pill-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>Data de Publicação: 23 de Outubro de 2026</span>
+        </div>
+        <div class="meta-pill-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Versão da Política: 1.0 (Google Play Compliant)</span>
+        </div>
+        <div class="meta-pill-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>Contato Designado: thyagoneves.sa@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corpo Principal -->
+  <main class="layout-wrapper">
+    
+    <!-- Sidebar com Índice -->
+    <aside class="sidebar" aria-label="Navegação dos Padrões de Segurança Infantil">
+      <div class="sidebar-header">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        <span>Tópicos de Segurança</span>
+      </div>
+      <nav>
+        <ul class="toc-list" id="tocList">
+          <li><a href="#tolerancia-zero" class="toc-link">1. Tolerância Zero contra CSAE/CSAM</a></li>
+          <li><a href="#condutas-proibidas" class="toc-link">2. Condutas e Conteúdos Proibidos</a></li>
+          <li><a href="#arquitetura-offline" class="toc-link">3. Arquitetura do App & Uso Seguro</a></li>
+          <li><a href="#denuncia-no-app" class="toc-link">4. Como Denunciar (No App e E-mail)</a></li>
+          <li><a href="#cooperacao-autoridades" class="toc-link">5. Encaminhamento às Autoridades</a></li>
+          <li><a href="#ponto-contato" class="toc-link">6. Ponto de Contato Designado</a></li>
+          <li><a href="#sancoes" class="toc-link">7. Medidas e Sanções Imediatas</a></li>
+          <li><a href="#legislacao" class="toc-link">8. Legislação & Direitos da Infância</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Artigo Principal -->
+    <article class="content-card">
+
+      <!-- Alerta de Tolerância Zero -->
+      <div class="callout callout-danger">
+        <div class="callout-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <div class="callout-body">
+          <h4>Compromisso Inegociável de Proteção à Infância</h4>
+          <p>
+            O <strong>Agenda Libras</strong> repudia veementemente qualquer forma de violência, abuso ou exploração de menores de idade. Mantemos uma política categórica de <strong>TOLERÂNCIA ZERO</strong> em relação a Material de Abuso Sexual Infantil (<strong>CSAM</strong>) e Abuso e Exploração Sexual Infantil (<strong>CSAE</strong>).
+          </p>
+        </div>
+      </div>
+
+      <!-- 1. Tolerância Zero -->
+      <section id="tolerancia-zero" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">1</span>
+          Declaração de Princípio e Tolerância Zero
+        </h3>
+        <p>
+          Este documento estabelece publicamente os <strong>Padrões de Segurança Infantil</strong> adotados pelo desenvolvedor do aplicativo <strong>Agenda Libras</strong>, em estrita observância à <a href="https://support.google.com/googleplay/android-developer/answer/14747720" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">Política de Padrões de Segurança Infantil do Google Play</a>, ao <strong>Estatuto da Criança e do Adolescente (Lei Federal nº 8.069/1990 — ECA)</strong> e aos tratados internacionais de defesa da criança e do adolescente.
+        </p>
+        <p>
+          O aplicativo foi concebido com fins de <strong>acessibilidade, inclusão social e organização de contatos na Língua Brasileira de Sinais (Libras)</strong>. É terminantemente proibido o emprego de qualquer recurso do aplicativo para a criação, armazenamento, facilitação, promoção, solicitação ou disseminação de qualquer conteúdo que envolva exploração, pornografia ou abuso de crianças ou adolescentes.
+        </p>
+      </section>
+
+      <!-- 2. Condutas e Conteúdos Proibidos -->
+      <section id="condutas-proibidas" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">2</span>
+          Definições de Condutas e Conteúdos Estritamente Proibidos
+        </h3>
+        <p>
+          Para fins desta política e em conformidade com as diretrizes globais de proteção infantil, são considerados infrações gravíssimas e expressamente proibidos em conexão direta ou indireta com o Agenda Libras:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card-item">
+            <div class="card-item-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #e11d48;"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+              <span>CSAM (Child Sexual Abuse Material)</span>
+            </div>
+            <p>
+              Qualquer imagem, fotografia, vídeo, representação digital, animação ou geração por IA que retrate menor de 18 anos envolvido em comportamento sexual explícito, nudez imprópria ou atos eróticos.
+            </p>
+          </div>
+
+          <div class="card-item">
+            <div class="card-item-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #e11d48;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>Aliciamento Infantil (Child Grooming)</span>
+            </div>
+            <p>
+              Qualquer tentativa de estabelecer contato, aproximação premeditada ou relação de confiança com menores ou seus responsáveis visando facilitação de abuso, solicitação de material íntimo ou exploração sexual física ou digital.
+            </p>
+          </div>
+
+          <div class="card-item">
+            <div class="card-item-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #e11d48;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>Sextorsão & Coerção</span>
+            </div>
+            <p>
+              Ameaças, coerção, chantagem ou extorsão envolvendo fotos, vídeos ou dados pessoais de crianças ou adolescentes, exigindo pagamentos, concessões ou novas imagens em troca de não divulgação.
+            </p>
+          </div>
+
+          <div class="card-item">
+            <div class="card-item-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #e11d48;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Tráfico e Promoção de Exploração</span>
+            </div>
+            <p>
+              Facilitação, divulgação ou comércio de contatos, links ou instruções destinados a intermediar atos ilegais de abuso infantil no mundo físico ou digital.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Arquitetura do App & Uso Seguro -->
+      <section id="arquitetura-offline" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">3</span>
+          Natureza Técnica do Aplicativo e Uso Seguro
+        </h3>
+        <p>
+          O <strong>Agenda Libras</strong> é um aplicativo com funcionamento <strong>100% offline</strong>:
+        </p>
+        <ul>
+          <li><strong>Banco de Dados Local Isolado:</strong> Todas as informações de contatos, fotos e vídeos demonstrativos de sinais em Libras permanecem armazenadas no banco de dados local Room (SQLite) dentro do espaço de armazenamento privativo (sandbox) do dispositivo do usuário.</li>
+          <li><strong>Inexistência de Servidores Centrais de Mídia:</strong> O desenvolvedor do Agenda Libras <strong>não possui nem opera servidores em nuvem</strong> para hospedar, processar ou sincronizar o acervo de contatos dos usuários.</li>
+          <li><strong>Compartilhamento Voluntário de Arquivos <code>.lsbcontact</code>:</strong> O aplicativo disponibiliza uma funcionalidade utilitária de exportação de contatos através de arquivos com extensão <code>.lsbcontact</code>. A transmissão desses arquivos é feita exclusivamente por vontade e ação deliberada do próprio usuário através de canais externos de sua escolha (como aplicativos de mensagens ou e-mail de terceiros).</li>
+        </ul>
+
+        <div class="callout callout-warn">
+          <div class="callout-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="callout-body">
+            <h4>Alerta sobre Arquivos Externos</h4>
+            <p>
+              Qualquer tentativa de empacotar, transmitir ou compartilhar arquivos <code>.lsbcontact</code> contendo material ilícito de abuso infantil constitui crime inafiançável e violação frontal destes Padrões, sujeitando o infrator às medidas judiciais cabíveis nos termos do Estatuto da Criança e do Adolescente e do Código Penal Brasileiro.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Mecanismo de Denúncia no App e Canais Diretos -->
+      <section id="denuncia-no-app" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">4</span>
+          Mecanismo de Denúncia no Aplicativo e Canais Diretos
+        </h3>
+        <p>
+          Em atendimento aos requisitos de transparência e denúncia exigidos pelo Google Play, qualquer usuário, pai, responsável legal ou autoridade que suspeite, identifique ou presencie tentativa de abuso, aliciamento ou compartilhamento de material que viole a segurança de crianças e adolescentes tem à disposição canais claros e prioritários para reporte:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card-item">
+            <div class="card-item-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              <span>Denúncia Dentro do Aplicativo (In-App)</span>
+            </div>
+            <p>
+              O aplicativo oferece uma opção de contato e denúncia acessível no menu de configurações/informações (<em>"Denunciar Problema de Segurança Infantil"</em> ou <em>"Fale com o Desenvolvedor"</em>), acionando imediatamente o canal de comunicação para reporte de incidentes.
+            </p>
+          </div>
+
+          <div class="card-item">
+            <div class="card-item-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>Canal Exclusivo de Segurança Infantil</span>
+            </div>
+            <p>
+              Envio direto de relato para o e-mail oficial designado: <a href="mailto:thyagoneves.sa@gmail.com?subject=Denúncia%20Segurança%20Infantil%20-%20Agenda%20Libras" style="color: var(--primary); font-weight: 700;">thyagoneves.sa@gmail.com</a>. As denúncias envolvendo menores recebem <strong>tratamento prioritário e resposta emergencial em até 24 horas</strong>.
+            </p>
+          </div>
+        </div>
+
+        <p><strong>Recomendações ao formular uma denúncia:</strong></p>
+        <ol>
+          <li>Informe o contexto do fato ou o arquivo associado à denúncia.</li>
+          <li>Indique detalhes que auxiliem na verificação dos fatos.</li>
+          <li>Não retransmita material ilícito (CSAM); informe apenas a descrição textual do ocorrido.</li>
+        </ol>
+      </section>
+
+      <!-- 5. Encaminhamento às Autoridades -->
+      <section id="cooperacao-autoridades" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">5</span>
+          Compromisso de Encaminhamento Obrigatório às Autoridades
+        </h3>
+        <p>
+          O responsável pelo <strong>Agenda Libras</strong> assume o dever inegociável de cumprir rigorosamente as obrigações legais de notificação a órgãos competentes no Brasil e no exterior:
+        </p>
+
+        <ul>
+          <li><strong>Notificação a Autoridades Brasileiras:</strong> Havendo qualquer indício de crimes sexuais contra menores, o desenvolvedor prestará imediata comunicação às autoridades policiais competentes (como a <strong>Polícia Federal do Brasil</strong> e o <strong>Ministério Público</strong>), bem como à central de denúncias da <strong>SaferNet Brasil</strong> e aos Conselhos Tutelares regionais.</li>
+          <li><strong>Reporte Internacional (NCMEC):</strong> Em alinhamento com os padrões da indústria de tecnologia e com as políticas do Google Play, incidentes confirmados ou suspeitas fundamentadas de material de exploração sexual infantil (CSAM) serão reportados ao <strong>NCMEC (National Center for Missing &amp; Exploited Children)</strong> através do sistema internacional de denúncias (CyberTipline).</li>
+          <li><strong>Cooperação com Ordens Judiciais:</strong> Cooperamos integralmente com requisições formais e ordens judiciais emitidas por autoridades legais competentes para investigação de infrações penais contra a infância.</li>
+        </ul>
+
+        <div class="callout callout-shield">
+          <div class="callout-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="callout-body">
+            <h4>Canais Públicos de Ajuda e Proteção à Criança no Brasil</h4>
+            <p>Se você tem conhecimento de qualquer crime em andamento contra crianças ou adolescentes, você também pode denunciar diretamente às autoridades:</p>
+            <p style="margin-top: 0.5rem;">
+              • <strong>Disque 100 (Disque Direitos Humanos):</strong> Ligação gratuita e anônima em âmbito nacional.<br>
+              • <strong>SaferNet Brasil:</strong> Denúncias anônimas de crimes online em <a href="https://new.safernet.org.br/denuncie" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">safernet.org.br/denuncie</a>.<br>
+              • <strong>Polícia Federal:</strong> Em caso de flagrante ou ameaça iminente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Ponto de Contato Designado -->
+      <section id="ponto-contato" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">6</span>
+          Ponto de Contato Designado para Segurança Infantil
+        </h3>
+        <p>
+          Em consonância com as exigências da Google Play Store, o desenvolvedor designa formalmente um ponto de contato apto a esclarecer prontamente práticas de prevenção contra material de abuso sexual infantil (CSAM), conformidade regulatória e atendimento a solicitações:
+        </p>
+
+        <div class="contact-card">
+          <h4>Ponto de Contato Oficial (Google Play Developer Child Safety Representative)</h4>
+          <p><strong>Nome do Responsável:</strong> Thyago Neves da Silva Silvestre</p>
+          <p><strong>Aplicativo:</strong> Agenda Libras</p>
+          <p><strong>Endereço de E-mail Designado:</strong> <span class="badge-email">thyagoneves.sa@gmail.com</span></p>
+          <p><strong>Finalidade Específica:</strong> Canal dedicado ao esclarecimento de dúvidas sobre práticas de segurança infantil, prevenção a CSAM/CSAE e recepção prioritária de denúncias.</p>
+          <p><strong>Tempo Estimado de Retorno:</strong> Até 24 horas para assuntos de segurança infantil.</p>
+          <p><strong>País:</strong> Brasil</p>
+        </div>
+      </section>
+
+      <!-- 7. Medidas e Sanções Imediatas -->
+      <section id="sancoes" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">7</span>
+          Medidas de Moderação e Sanções Imediatas
+        </h3>
+        <p>
+          Caso qualquer usuário utilize indevidamente o nome, formato de arquivo ou marca do aplicativo Agenda Libras para fins associados a abuso infantil:
+        </p>
+        <ol>
+          <li><strong>Preservação de Evidências:</strong> Quaisquer evidências enviadas serão imediatamente registradas e preservadas estritamente para envio às autoridades investigativas competentes.</li>
+          <li><strong>Bloqueio e Revogação:</strong> Caso qualquer serviço complementar venha a ser disponibilizado no futuro com funcionalidades de conta ou sincronização, o usuário envolvido terá sua conta banida em caráter irrevogável e imediato.</li>
+          <li><strong>Encaminhamento Penal:</strong> O autor será objeto de representação perante o Ministério Público e as forças policiais para instauração de inquérito criminal.</li>
+        </ol>
+      </section>
+
+      <!-- 8. Legislação e Direitos da Infância -->
+      <section id="legislacao" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">8</span>
+          Legislação Aplicável e Validade Jurídica
+        </h3>
+        <p>
+          Estes padrões de segurança são regidos e interpretados em perfeita harmonia com:
+        </p>
+        <ul>
+          <li><strong>Estatuto da Criança e do Adolescente (Lei Federal nº 8.069/1990 — ECA):</strong> Especialmente seus artigos 240, 241, 241-A, 241-B, 241-C e 241-D, que tipificam severamente condutas ligadas a pornografia e aliciamento infanto-juvenil.</li>
+          <li><strong>Marco Civil da Internet (Lei Federal nº 12.965/2014):</strong> Que impõe deveres de proteção e combate a conteúdos ilícitos.</li>
+          <li><strong>Lei Geral de Proteção de Dados (Lei Federal nº 13.709/2018 — LGPD):</strong> Especialmente o Art. 14, que determina o tratamento de dados de menores em seu melhor interesse.</li>
+          <li><strong>Google Play Developer Program Policies:</strong> Política de Padrões de Segurança Infantil (Child Safety Standards Policy).</li>
+        </ul>
+        <p>
+          Este documento é mantido publicamente ativo, de livre acesso global, e será revisado sempre que houver modificações tecnológicas ou atualizações normativas aplicáveis.
+        </p>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p><strong>Agenda Libras</strong> — Promovendo a comunicação acessível e a cultura surda com respeito integral à segurança de todos.</p>
+      <p style="margin-top: 0.5rem;">
+        <a href="index.html">Política de Privacidade Geral</a> &nbsp;•&nbsp; 
+        <a href="seguranca-infantil.html">Padrões de Segurança Infantil</a> &nbsp;•&nbsp; 
+        <a href="mailto:thyagoneves.sa@gmail.com">Contato do Ponto Designado</a>
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
+        © 2026 Agenda Libras. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Script Interativo: Alternância de Tema e Destaque do Menu Lateral -->
+  <script>
+    (function() {
+      // 1. Gerenciamento de Tema (Claro / Escuro)
+      const themeToggleBtn = document.getElementById('themeToggle');
+      const iconSun = document.getElementById('themeIconSun');
+      const iconMoon = document.getElementById('themeIconMoon');
+      const themeText = document.getElementById('themeToggleText');
+
+      function getPreferredTheme() {
+        const storedTheme = localStorage.getItem('agenda_libras_theme');
+        if (storedTheme) return storedTheme;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
+      function setTheme(theme) {
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          iconSun.style.display = 'block';
+          iconMoon.style.display = 'none';
+          themeText.textContent = 'Claro';
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          iconSun.style.display = 'none';
+          iconMoon.style.display = 'block';
+          themeText.textContent = 'Escuro';
+        }
+        localStorage.setItem('agenda_libras_theme', theme);
+      }
+
+      // Inicializa tema
+      setTheme(getPreferredTheme());
+
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      });
+
+      // 2. Destaque Automático dos Links do Sumário (IntersectionObserver)
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('.toc-link');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(sec => observer.observe(sec));
+    })();
+  </script>
+</body>
+</html>
