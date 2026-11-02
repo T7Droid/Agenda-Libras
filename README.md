@@ -1,71 +1,74 @@
-# Política de Privacidade & Padrões de Segurança Infantil — Agenda Libras
+# Agenda Libras — Documentação Oficial & Conformidade Google
 
-Este repositório contém as páginas web oficiais de conformidade do aplicativo **Agenda Libras**, prontas para homologação na **Google Play Store**, em estrita conformidade com a **LGPD (Lei 13.709/2018)**, o **ECA (Lei 8.069/1990)** e a nova **Política de Padrões de Segurança Infantil da Google Play (CSAE/CSAM)**.
+Repositório oficial das páginas web institucionais e de conformidade legal do aplicativo **Agenda Libras**, hospedado no **GitHub Pages**:
 
----
+🌐 **Endereço Oficial:** [https://t7droid.github.io/Agenda-Libras/](https://t7droid.github.io/Agenda-Libras/)
 
-## 📄 Arquivos do Projeto
-
-- **[`index.html`](./index.html)**: Página web oficial da **Política de Privacidade**:
-  - Declaração da arquitetura **100% Offline (Android Jetpack Room / SQLite local)**.
-  - Declaração detalhada das permissões do Android (`READ_CONTACTS`, `CAMERA`, `RECORD_AUDIO`, `READ_MEDIA_*`).
-  - Cláusula jurídica robusta de **isenção total de responsabilidade do desenvolvedor** no compartilhamento voluntário de arquivos `.lsbcontact`.
-  - Mecanismos de exclusão e retenção de dados locais.
-  - Conexão e link direto para a página de segurança infantil.
-
-- **[`seguranca-infantil.html`](./seguranca-infantil.html)**: Página web oficial dos **Padrões de Segurança Infantil (Child Safety Standards)**:
-  - Declaração expressa de **Tolerância Zero contra CSAE (Abuso e Exploração Sexual Infantil)** e **CSAM (Material de Abuso Sexual Infantil)**.
-  - Definições detalhadas de condutas proibidas (grooming/aliciamento, sextorsão, compartilhamento ilícito).
-  - Mecanismos de denúncia dentro do aplicativo e canal direto prioritário.
-  - Compromisso formal de notificação e cooperação com as autoridades (Polícia Federal, SaferNet Brasil, Ministério Público e NCMEC).
-  - Ponto de contato designado para conformidade (`thyagoneves.sa@gmail.com`).
+Projetado em rigorosa consonância com os requisitos de:
+- **Verificação de Marca e Verificação OAuth do Google (Google Cloud Platform / OAuth 2.0)**;
+- **Política de Dados do Usuário dos Serviços de API do Google (Google API Services User Data Policy / Limited Use Requirements)**;
+- **Diretrizes de Conteúdo e Segurança de Dados da Google Play Store (Data Safety Section)**;
+- **Política de Padrões de Segurança Infantil da Google Play (CSAE/CSAM)**;
+- **LGPD — Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018)** e **ECA (Lei nº 8.069/1990)**.
 
 ---
 
-## 🚀 Como publicar gratuitamente via GitHub Pages
+## 📄 Estrutura das Páginas Web
 
-A Google Play exige URLs públicas, ativas, mundiais e não editáveis (HTTPS). O **GitHub Pages** é a forma recomendada e gratuita:
-
-### Passo a passo:
-
-1. Crie um repositório no seu GitHub (exemplo: `agenda-libras-privacidade`).
-2. Suba os arquivos deste diretório:
-   ```bash
-   git add .
-   git commit -m "docs: adiciona politica de privacidade e padroes de seguranca infantil"
-   git branch -M main
-   git remote add origin https://github.com/SEU_USUARIO/agenda-libras-privacidade.git
-   git push -u origin main
-   ```
-3. No GitHub:
-   - Acesse **Settings** (Configurações) > **Pages** (no menu lateral).
-   - Em **Branch**, selecione `main` e a pasta `/ (root)`.
-   - Clique em **Save**.
-4. Em instantes, o GitHub ativará suas duas páginas:
-   - **Política de Privacidade:**
-     `https://SEU_USUARIO.github.io/agenda-libras-privacidade/`
-   - **Padrões de Segurança Infantil (CSAE/CSAM):**
-     `https://SEU_USUARIO.github.io/agenda-libras-privacidade/seguranca-infantil.html`
+| Página | Arquivo | URL no GitHub Pages | Descrição |
+| :--- | :--- | :--- | :--- |
+| **Página Inicial** | [`index.html`](./index.html) | `https://t7droid.github.io/Agenda-Libras/` | Landing page institucional do aplicativo. Apresenta funcionalidades, identidade visual, acessibilidade em Libras, princípios de privacidade e links visíveis para todos os documentos legais. |
+| **Política de Privacidade** | [`privacy.html`](./privacy.html)<br>[`privacy/index.html`](./privacy/index.html) | `https://t7droid.github.io/Agenda-Libras/privacy` | Documento jurídico exaustivo com detalhamento de permissões, armazenamento local (Room SQLite), integração segura com Google Drive (`drive.appdata`), conformidade com LGPD e exclusão de dados. |
+| **Termos de Serviço** | [`terms.html`](./terms.html)<br>[`terms/index.html`](./terms/index.html) | `https://t7droid.github.io/Agenda-Libras/terms` | Condições gerais de uso do aplicativo, regras de direito de imagem e consentimento para vídeos em Libras, isenção de responsabilidade e propriedade intelectual. |
+| **Segurança Infantil** | [`seguranca-infantil.html`](./seguranca-infantil.html) | `https://t7droid.github.io/Agenda-Libras/seguranca-infantil.html` | Declaração oficial de Tolerância Zero contra abuso e exploração sexual infantil (CSAE/CSAM), mecanismos de denúncia in-app e compromisso de reporte às autoridades competentes. |
 
 ---
 
-## 🛡️ Como preencher a página "Padrões de segurança infantil" no Google Play Console
+## 🔑 Informações para a Verificação OAuth do Google (Google Cloud Console)
 
-Quando o Google Play Console solicitar a seção **Padrões de segurança infantil**:
+Ao submeter a tela de consentimento OAuth do aplicativo para aprovação na Google Cloud Platform:
+
+### 1. Campos da Tela de Consentimento (OAuth Consent Screen)
+
+- **Nome do aplicativo:** `Agenda Libras`
+- **E-mail de suporte ao usuário:** `contato.agendalibras@gmail.com`
+- **Logotipo do aplicativo:** Ícone oficial do Agenda Libras (mão em Libras).
+- **Página inicial do aplicativo (Application Home Page):**  
+  `https://t7droid.github.io/Agenda-Libras/`
+- **Link da Política de Privacidade (Application Privacy Policy Link):**  
+  `https://t7droid.github.io/Agenda-Libras/privacy.html` (ou `https://t7droid.github.io/Agenda-Libras/privacy`)
+- **Link dos Termos de Serviço (Application Terms of Service Link):**  
+  `https://t7droid.github.io/Agenda-Libras/terms.html` (ou `https://t7droid.github.io/Agenda-Libras/terms`)
+- **Domínio autorizado:** `t7droid.github.io`
+
+### 2. Escopo Solicitado e Justificativa
+
+- **Escopo OAuth:** `https://www.googleapis.com/auth/drive.appdata` (*See, create, and delete its own configuration data in your Google Drive*)
+- **Por que este escopo é necessário?**  
+  O Agenda Libras permite que usuários criem glossários temáticos de sinais em Libras com gravações em vídeo. O aplicativo utiliza a pasta exclusiva de dados de aplicativo no Google Drive (`drive.appdata` / `AppDataFolder`) do próprio usuário para realizar o backup, restauração e sincronização desses vídeos e termos entre dispositivos.
+- **Por que o escopo restrito `drive.appdata` é o mais seguro?**  
+  Diferente de escopos amplos como `drive` ou `drive.file`, o escopo `drive.appdata` restringe estritamente o acesso do app a uma pasta oculta privativa criada para ele. O aplicativo **não possui permissão** para visualizar, ler, listar, modificar ou apagar nenhum outro arquivo pessoal, fotos ou pastas do usuário no Google Drive.
+- **Conformidade com Uso Limitado:**  
+  A Política de Privacidade contém a declaração formal de conformidade com a *Google API Services User Data Policy*, garantindo que os dados não são comercializados, não são repassados a terceiros e não são usados para treinar modelos de inteligência artificial.
+
+---
+
+## 🛡️ Preenchimento na Google Play Console (Padrões de Segurança Infantil)
 
 | Campo no Play Console | O que preencher / selecionar |
 | :--- | :--- |
-| **URL dos padrões de segurança** | Insira a URL direta: `https://SEU_USUARIO.github.io/agenda-libras-privacidade/seguranca-infantil.html` |
-| **Contato** | Selecione `thyagoneves.sa@gmail.com` (o endereço associado à conta de desenvolvedor). |
-| **Checkbox 1:** *"O app Agenda Libras permite que os usuários denunciem dentro dele os problemas de segurança infantil"* | **Marque a caixa.** (No app, garanta um botão/opção simples em "Sobre/Configurações" que abra um e-mail de denúncia para `thyagoneves.sa@gmail.com`). |
-| **Checkbox 2:** *"Meu app obedece a todas as leis relevantes de segurança infantil e encaminha denúncias para as autoridades regionais e nacionais"* | **Marque a caixa.** (A página `seguranca-infantil.html` já formaliza esse compromisso com a Polícia Federal, SaferNet e NCMEC). |
+| **URL dos padrões de segurança** | `https://t7droid.github.io/Agenda-Libras/seguranca-infantil.html` |
+| **Contato designado** | `contato.agendalibras@gmail.com` |
+| **Checkbox 1:** *"O app Agenda Libras permite que os usuários denunciem dentro dele os problemas de segurança infantil"* | **Marcar Sim.** (Implemente uma opção em Configurações/Ajuda que abra um e-mail direto para `contato.agendalibras@gmail.com`). |
+| **Checkbox 2:** *"Meu app obedece a todas as leis relevantes de segurança infantil e encaminha denúncias para as autoridades regionais e nacionais"* | **Marcar Sim.** (Formalizado na página `seguranca-infantil.html` com a Polícia Federal, SaferNet e NCMEC). |
 
 ---
 
-## 🔒 Resumo das Declarações para a Google Play Console (Data Safety)
+## 🔒 Declarações de Segurança de Dados na Google Play (Data Safety)
 
-| Pergunta no Console | Resposta Correta |
+| Pergunta no Play Console | Resposta |
 | :--- | :--- |
-| **O app coleta ou compartilha dados de usuários?** | **Não**, selecione "Não" para coleta em nuvem, pois o app é 100% offline. |
-| **Todos os dados coletados são transferidos por conexão segura?** | O app não transfere dados para servidores remotos (funciona offline). |
-| **O usuário pode solicitar a exclusão dos dados?** | **Sim**, o usuário pode apagar diretamente no app ou limpando os dados / desinstalando o app. |
+| **O app coleta dados de contatos em servidores do desenvolvedor?** | **Não.** Os contatos permanecem armazenados unicamente no banco local SQLite (Jetpack Room) no aparelho do usuário. |
+| **O app utiliza armazenamento em nuvem?** | **Sim, sob demanda e controlado pelo usuário.** Quando o usuário conecta sua Conta Google, os vídeos de glossários são salvos diretamente em sua própria conta Google Drive (pasta `drive.appdata`). O desenvolvedor não retém dados em servidores próprios. |
+| **Os dados são transferidos por conexão segura?** | **Sim.** Todo o tráfego com a API oficial do Google Drive é feito via HTTPS/TLS 1.3 criptografado. |
+| **O usuário pode solicitar a exclusão dos dados?** | **Sim.** O usuário pode apagar contatos e glossários diretamente no app, apagar os arquivos na pasta do Google Drive, revogar o acesso via `myaccount.google.com/permissions` ou desinstalar o app. |

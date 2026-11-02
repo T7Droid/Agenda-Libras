@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidade — Agenda Libras</title>
-  <meta name="description" content="Política de Privacidade oficial do aplicativo Agenda Libras. Funcionamento 100% offline, armazenamento local via Room e proteção de dados em conformidade com a LGPD e Google Play Store.">
-  <meta name="keywords" content="Agenda Libras, Política de Privacidade, LGPD, Google Play, Libras, LSB Contact, Armazenamento Local, Room">
+  <title>Agenda Libras — Comunicação Visual, Contatos e Glossários em Libras</title>
+  <meta name="description" content="Agenda Libras é o aplicativo inovador para a comunidade surda, intérpretes e estudantes de Libras. Contatos com sinais em vídeo, glossários temáticos, funcionamento offline e backup seguro via Google Drive.">
+  <meta name="keywords" content="Agenda Libras, Libras, Língua Brasileira de Sinais, Comunidade Surda, Acessibilidade, Contatos em Libras, Glossário Libras, Google Drive, Android">
   <meta name="robots" content="index, follow">
   
   <!-- Open Graph / Meta Compartilhamento -->
-  <meta property="og:title" content="Política de Privacidade — Agenda Libras">
-  <meta property="og:description" content="Entenda como o Agenda Libras protege sua privacidade com processamento e armazenamento 100% offline no seu dispositivo.">
+  <meta property="og:title" content="Agenda Libras — Catálogo Visual de Contatos e Glossários em Libras">
+  <meta property="og:description" content="Organize seus contatos com seus respectivos sinais em Libras e crie glossários temáticos em vídeo. Privacidade com armazenamento local e sincronização segura com Google Drive.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://t7droid.github.io/Agenda-Libras/">
 
   <!-- Tipografia Moderna Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,11 +45,10 @@
       --badge-offline-bg: #dcfce7;
       --badge-offline-text: #166534;
       --badge-offline-border: #86efac;
-      
-      --alert-warn-bg: #fffbeb;
-      --alert-warn-border: #fde68a;
-      --alert-warn-text: #92400e;
-      --alert-warn-icon: #d97706;
+
+      --badge-drive-bg: #fef3c7;
+      --badge-drive-text: #92400e;
+      --badge-drive-border: #fde68a;
 
       --alert-shield-bg: #eff6ff;
       --alert-shield-border: #bfdbfe;
@@ -61,6 +61,7 @@
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 18px;
+      --radius-xl: 24px;
       --radius-full: 9999px;
     }
 
@@ -86,10 +87,9 @@
       --badge-offline-text: #a7f3d0;
       --badge-offline-border: #059669;
 
-      --alert-warn-bg: #291d03;
-      --alert-warn-border: #78350f;
-      --alert-warn-text: #fef3c7;
-      --alert-warn-icon: #f59e0b;
+      --badge-drive-bg: #291d03;
+      --badge-drive-text: #fef3c7;
+      --badge-drive-border: #78350f;
 
       --alert-shield-bg: #0f1d38;
       --alert-shield-border: #1e3a8a;
@@ -120,7 +120,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Barra Superior Fixa / Header */
+    /* Header e Navegação */
     .top-nav {
       position: sticky;
       top: 0;
@@ -151,8 +151,8 @@
     }
 
     .brand-icon {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: var(--radius-md);
       background: var(--primary-gradient);
       display: flex;
@@ -163,7 +163,7 @@
     }
 
     .brand-text h1 {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.2;
@@ -179,7 +179,8 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.65rem;
+      flex-wrap: wrap;
     }
 
     .btn-action {
@@ -194,6 +195,7 @@
       border: 1px solid var(--border);
       background: var(--bg-surface);
       color: var(--text-secondary);
+      text-decoration: none;
       cursor: pointer;
       transition: all 0.2s ease;
     }
@@ -204,23 +206,48 @@
       border-color: var(--text-muted);
     }
 
-    /* Hero Banner */
+    .btn-primary {
+      background: var(--primary-gradient);
+      color: #ffffff;
+      border: 1px solid transparent;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+      color: #ffffff;
+    }
+
+    /* Hero Principal */
     .hero {
       background: var(--bg-surface);
       border-bottom: 1px solid var(--border);
-      padding: 3.5rem 1.5rem 3rem;
+      padding: 5rem 1.5rem 4.5rem;
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      top: -120px;
-      right: -80px;
-      width: 380px;
-      height: 380px;
-      background: radial-gradient(circle, rgba(2, 132, 199, 0.15) 0%, rgba(2, 132, 199, 0) 70%);
+      top: -150px;
+      right: -100px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.18) 0%, rgba(2, 132, 199, 0) 70%);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -150px;
+      left: -100px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(37, 99, 235, 0) 70%);
       pointer-events: none;
       border-radius: 50%;
     }
@@ -228,7 +255,8 @@
     .hero-content {
       max-width: 900px;
       margin: 0 auto;
-      text-align: center;
+      position: relative;
+      z-index: 2;
     }
 
     .badge-group {
@@ -236,14 +264,14 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 0.5rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      padding: 0.3rem 0.75rem;
+      padding: 0.35rem 0.85rem;
       font-size: 0.78rem;
       font-weight: 700;
       border-radius: var(--radius-full);
@@ -257,429 +285,421 @@
       border: 1px solid var(--badge-offline-border);
     }
 
-    .badge-compliance {
+    .badge-drive {
+      background: var(--badge-drive-bg);
+      color: var(--badge-drive-text);
+      border: 1px solid var(--badge-drive-border);
+    }
+
+    .badge-accessibility {
       background: var(--bg-accent-soft);
       color: var(--primary);
       border: 1px solid var(--border-focus);
     }
 
     .hero-title {
-      font-size: 2.6rem;
+      font-size: 3.2rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--text-primary) 30%, var(--primary) 100%);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, var(--text-primary) 20%, var(--primary) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       color: var(--text-secondary);
-      max-width: 720px;
-      margin: 0 auto 1.75rem;
+      max-width: 760px;
+      margin: 0 auto 2.25rem;
       font-weight: 400;
+      line-height: 1.6;
     }
 
-    .meta-pills {
+    .hero-cta {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 1.25rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
 
-    .meta-pill-item {
-      display: flex;
+    .hero-cta .btn-cta {
+      display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-    }
-
-    /* Layout Principal: Conteúdo + Sidebar */
-    .layout-wrapper {
-      max-width: 1200px;
-      margin: 2.5rem auto;
-      padding: 0 1.5rem 4rem;
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    /* Sumário Lateral Fixo */
-    .sidebar {
-      position: sticky;
-      top: 5rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .sidebar-header {
-      font-size: 0.82rem;
+      gap: 0.65rem;
+      padding: 0.85rem 1.75rem;
+      font-size: 1rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      margin-bottom: 0.85rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .toc-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      max-height: calc(100vh - 12rem);
-      overflow-y: auto;
-      padding-right: 0.25rem;
-    }
-
-    .toc-list::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    .toc-list::-webkit-scrollbar-thumb {
-      background: var(--border);
-      border-radius: 4px;
-    }
-
-    .toc-link {
-      display: block;
-      padding: 0.45rem 0.65rem;
-      font-size: 0.86rem;
-      color: var(--text-secondary);
+      border-radius: var(--radius-md);
       text-decoration: none;
-      border-radius: var(--radius-sm);
-      line-height: 1.35;
       transition: all 0.2s ease;
     }
 
-    .toc-link:hover {
-      background: var(--bg-card-subtle);
-      color: var(--primary);
+    .btn-cta-primary {
+      background: var(--primary-gradient);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
     }
 
-    .toc-link.active {
-      background: var(--bg-accent-soft);
-      color: var(--primary);
-      font-weight: 700;
+    .btn-cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
     }
 
-    /* Área de Conteúdo */
-    .content {
+    .btn-cta-secondary {
       background: var(--bg-surface);
+      color: var(--text-primary);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem 3rem;
-      box-shadow: var(--shadow-sm);
     }
 
-    /* Seções */
-    .section {
-      margin-bottom: 3rem;
-      scroll-margin-top: 5.5rem;
+    .btn-cta-secondary:hover {
+      background: var(--bg-card-subtle);
+      border-color: var(--text-muted);
+      transform: translateY(-2px);
     }
 
-    .section:last-of-type {
-      margin-bottom: 1.5rem;
+    /* Container Principal */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
     }
 
-    .section-title {
-      font-size: 1.45rem;
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header-badge {
+      font-size: 0.8rem;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
       color: var(--text-primary);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.75rem;
     }
 
-    .section-title-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: var(--radius-sm);
-      background: var(--bg-card-subtle);
-      color: var(--primary);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      color: var(--text-secondary);
-      font-size: 0.98rem;
-    }
-
-    ul, ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1.25rem;
+    .section-header p {
+      font-size: 1.05rem;
       color: var(--text-secondary);
     }
 
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 0.97rem;
-    }
-
-    li strong {
-      color: var(--text-primary);
-    }
-
-    /* Callout & Caixas de Alerta */
-    .callout {
-      border-radius: var(--radius-md);
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .callout-icon {
-      flex-shrink: 0;
-      margin-top: 0.15rem;
-    }
-
-    .callout-body {
-      flex: 1;
-    }
-
-    .callout-body h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-    }
-
-    .callout-body p {
-      margin-bottom: 0;
-      font-size: 0.92rem;
-      line-height: 1.55;
-    }
-
-    .callout-warn {
-      background: var(--alert-warn-bg);
-      border: 1px solid var(--alert-warn-border);
-      color: var(--alert-warn-text);
-    }
-    .callout-warn .callout-icon {
-      color: var(--alert-warn-icon);
-    }
-    .callout-warn h4 {
-      color: var(--alert-warn-text);
-    }
-    .callout-warn p {
-      color: var(--alert-warn-text);
-    }
-
-    .callout-shield {
-      background: var(--alert-shield-bg);
-      border: 1px solid var(--alert-shield-border);
-      color: var(--alert-shield-text);
-    }
-    .callout-shield .callout-icon {
-      color: var(--primary);
-    }
-    .callout-shield h4 {
-      color: var(--alert-shield-text);
-    }
-    .callout-shield p {
-      color: var(--alert-shield-text);
-    }
-
-    /* Tabela de Permissões */
-    .table-container {
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: var(--bg-surface);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 0.92rem;
-    }
-
-    th {
-      background: var(--bg-card-subtle);
-      color: var(--text-primary);
-      font-weight: 700;
-      padding: 0.85rem 1rem;
-      border-bottom: 1px solid var(--border);
-      white-space: nowrap;
-    }
-
-    td {
-      padding: 0.85rem 1rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
-      vertical-align: top;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .code-badge {
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      background: var(--bg-card-subtle);
-      color: var(--primary);
-      padding: 0.2rem 0.45rem;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-      white-space: nowrap;
-    }
-
-    /* Cards de Destaque */
+    /* Grid de Recursos */
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
     }
 
     .feature-card {
-      background: var(--bg-card-subtle);
+      background: var(--bg-surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.25rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .feature-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-focus);
     }
 
     .feature-card-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: var(--radius-sm);
-      background: var(--bg-surface);
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--bg-accent-soft);
       color: var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0.85rem;
-      border: 1px solid var(--border);
+      margin-bottom: 1.25rem;
     }
 
-    .feature-card h4 {
-      font-size: 1rem;
+    .feature-card h3 {
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.01em;
     }
 
     .feature-card p {
-      font-size: 0.88rem;
-      margin-bottom: 0;
-      color: var(--text-muted);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 1rem;
     }
 
-    /* Caixa de Contato / Footer */
-    .contact-card {
+    .feature-card-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: var(--bg-card-subtle);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      align-self: flex-start;
+      border: 1px solid var(--border);
+    }
+
+    /* Seção Especial: Google Drive & Transparência */
+    .drive-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem;
+      margin: 4rem auto;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .drive-section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--badge-drive-bg);
+      color: var(--badge-drive-text);
+      border: 1px solid var(--badge-drive-border);
+      padding: 0.35rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .drive-section h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .drive-section p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.65;
+    }
+
+    .drive-details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .drive-item {
       background: var(--bg-card-subtle);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       padding: 1.5rem;
-      margin-top: 1.5rem;
     }
 
-    .contact-card h4 {
-      color: var(--text-primary);
+    .drive-item h4 {
       font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
       margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
+    .drive-item p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+      line-height: 1.55;
+    }
+
+    /* Seção de Documentos & Compliance */
+    .docs-section {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 2rem;
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .docs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 2.5rem auto 0;
+      text-align: left;
+    }
+
+    .doc-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .doc-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+
+    .doc-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-accent-soft);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .doc-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .doc-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .doc-card-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Rodapé */
     .footer {
       border-top: 1px solid var(--border);
       background: var(--bg-surface);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
+      padding: 3.5rem 1.5rem 2.5rem;
       color: var(--text-muted);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
     }
 
-    .footer p {
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
       margin-bottom: 0.5rem;
-      color: var(--text-muted);
+    }
+
+    .footer-brand p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      max-width: 450px;
+    }
+
+    .footer-col h5 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
     }
 
     /* Responsividade */
     @media (max-width: 900px) {
-      .layout-wrapper {
-        grid-template-columns: 1fr;
+      .hero-title {
+        font-size: 2.3rem;
       }
-
-      .sidebar {
-        display: none; /* Em telas menores priorizamos o texto */
-      }
-
-      .content {
+      .drive-section {
         padding: 2rem 1.5rem;
       }
-
-      .hero-title {
-        font-size: 2rem;
-      }
-    }
-
-    /* Estilos de Impressão */
-    @media print {
-      body {
-        background: #fff !important;
-        color: #000 !important;
-      }
-      .top-nav, .sidebar, .btn-action, .footer {
-        display: none !important;
-      }
-      .layout-wrapper {
-        display: block !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      .content {
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-      }
-      .section {
-        page-break-inside: avoid;
-      }
-      .callout {
-        border: 1px solid #ccc !important;
-        background: #f9f9f9 !important;
-        color: #000 !important;
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Barra de Navegação Superior -->
+  <!-- Top Nav -->
   <header class="top-nav">
     <div class="nav-container">
-      <a href="#" class="brand" aria-label="Agenda Libras Início">
+      <a href="index.html" class="brand" aria-label="Agenda Libras Início">
         <div class="brand-icon">
-          <!-- Ícone de Mãos / Sinal Libras -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
             <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
@@ -689,20 +709,35 @@
         </div>
         <div class="brand-text">
           <h1>Agenda Libras</h1>
-          <span>Política de Privacidade & Termos de Uso</span>
+          <span>Acessibilidade e Inclusão</span>
         </div>
       </a>
 
       <div class="nav-actions">
-        <a href="seguranca-infantil.html" class="btn-action" title="Padrões de Segurança Infantil (CSAE/CSAM) - Google Play">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <a href="privacy.html" class="btn-action" title="Política de Privacidade Oficial">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>Privacidade</span>
+        </a>
+
+        <a href="terms.html" class="btn-action" title="Termos de Serviço">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          <span>Termos</span>
+        </a>
+
+        <a href="seguranca-infantil.html" class="btn-action" title="Padrões de Segurança Infantil (CSAE/CSAM)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
           <span>Segurança Infantil</span>
         </a>
 
         <button id="themeToggle" class="btn-action" aria-label="Alternar tema visual" title="Alternar tema claro/escuro">
-          <svg id="themeIconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <svg id="themeIconSun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -713,432 +748,270 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg id="themeIconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg id="themeIconMoon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
           <span id="themeToggleText">Tema</span>
-        </button>
-
-        <button onclick="window.print()" class="btn-action" aria-label="Imprimir Política" title="Imprimir ou Salvar em PDF">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-            <rect x="6" y="14" width="12" height="8"></rect>
-          </svg>
-          <span>Imprimir</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Header -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <div class="badge-group">
+        <span class="badge badge-accessibility">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg>
+          Acessibilidade em Libras
+        </span>
         <span class="badge badge-offline">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          100% Offline (Room Database)
+          100% Offline para Contatos
         </span>
-        <span class="badge badge-compliance">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          Em Conformidade com LGPD & Google Play
+        <span class="badge badge-drive">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          Backup Seguro via Google Drive
         </span>
       </div>
 
-      <h2 class="hero-title">Política de Privacidade</h2>
+      <h2 class="hero-title">O Catálogo de Contatos e Glossários em Libras</h2>
       <p class="hero-subtitle">
-        Sua privacidade é inviolável. Conheça as diretrizes de funcionamento offline, o uso de permissões e as normas de responsabilidade do aplicativo <strong>Agenda Libras</strong>.
+        Projetado para a comunidade surda, intérpretes, professores e estudantes. Associe o "sinal de batismo" em vídeo a cada contato e organize glossários temáticos completos na palma da sua mão.
       </p>
 
-      <div class="meta-pills">
-        <div class="meta-pill-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          <span>Última atualização: 21 de Outubro de 2026</span>
-        </div>
-        <div class="meta-pill-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <span>Versão do Documento: 1.0</span>
-        </div>
+      <div class="hero-cta">
+        <a href="#recursos" class="btn-cta btn-cta-primary">
+          <span>Explorar Funcionalidades</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="privacy.html" class="btn-cta btn-cta-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Política de Privacidade</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Corpo Principal -->
-  <main class="layout-wrapper">
-    
-    <!-- Sidebar com Índice -->
-    <aside class="sidebar" aria-label="Navegação da Política">
-      <div class="sidebar-header">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-        <span>Tópicos do Documento</span>
+  <!-- Container de Recursos -->
+  <main class="container" id="recursos">
+
+    <!-- Seção de Funcionalidades -->
+    <div class="section-header">
+      <span class="section-header-badge">Tecnologia & Acessibilidade</span>
+      <h2>Projetado para a Cultura Surda</h2>
+      <p>Uma experiência pensada desde a arquitetura de dados até a interface visual para enriquecer a comunicação em Língua Brasileira de Sinais.</p>
+    </div>
+
+    <div class="feature-grid">
+      <!-- Card 1 -->
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3>Catálogo Visual com Sinais</h3>
+        <p>Cadastre contatos com nome, telefones, e-mail, redes sociais e vincule o vídeo ou foto do "sinal de batismo" de cada pessoa em Libras para identificação visual instantânea.</p>
+        <span class="feature-card-tag">Contatos & Sinais</span>
       </div>
-      <nav>
-        <ul class="toc-list" id="tocList">
-          <li><a href="#introducao" class="toc-link">1. Visão Geral e Princípio</a></li>
-          <li><a href="#dados-coletados" class="toc-link">2. Dados Manipulados</a></li>
-          <li><a href="#permissoes" class="toc-link">3. Permissões do Android</a></li>
-          <li><a href="#armazenamento-offline" class="toc-link">4. Armazenamento Local (Room)</a></li>
-          <li><a href="#compartilhamento-lsbcontact" class="toc-link">5. O Formato .lsbcontact</a></li>
-          <li><a href="#isencao-responsabilidade" class="toc-link">6. Isenção de Responsabilidade</a></li>
-          <li><a href="#sem-nuvem" class="toc-link">7. Ausência de Nuvem & Telemetria</a></li>
-          <li><a href="#exclusao-retencao" class="toc-link">8. Retenção e Exclusão</a></li>
-          <li><a href="#menores" class="toc-link">9. Crianças e Adolescentes</a></li>
-          <li><a href="#lgpd" class="toc-link">10. Seus Direitos (LGPD)</a></li>
-          <li><a href="#seguranca" class="toc-link">11. Segurança da Informação</a></li>
-          <li><a href="#alteracoes" class="toc-link">12. Alterações nesta Política</a></li>
-          <li><a href="#contato" class="toc-link">13. Contato e Suporte</a></li>
-        </ul>
-      </nav>
-    </aside>
 
-    <!-- Área de Leitura das Cláusulas -->
-    <article class="content">
-
-      <!-- 1. Introdução -->
-      <section id="introducao" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">1</span>
-          Visão Geral e Princípio Fundamental
-        </h3>
-        <p>
-          Esta Política de Privacidade estabelece com transparência absoluta o compromisso do aplicativo <strong>Agenda Libras</strong> com a segurança, soberania e confidencialidade dos dados de seus usuários.
-        </p>
-        <p>
-          O <strong>Agenda Libras</strong> é um catálogo interativo de contatos projetado para permitir que membros da comunidade surda, intérpretes, estudantes e simpatizantes da Língua Brasileira de Sinais (Libras) registrem o "sinal de batismo" (em vídeo e imagem) associado a cada contato, promovendo a inclusão e a comunicação acessível.
-        </p>
-
-        <div class="callout callout-shield">
-          <div class="callout-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <div class="callout-body">
-            <h4>Princípio de Privacidade por Design (Privacy by Design)</h4>
-            <p>
-              O aplicativo foi integralmente concebido sob a premissa de <strong>processamento e armazenamento exclusivamente local (Offline-First)</strong>. O desenvolvedor não possui servidores, não efetua coleta remota de dados, não realiza sincronização em nuvem e não rastreia nenhuma informação pessoal dos contatos que você cadastra.
-            </p>
-          </div>
+      <!-- Card 2 -->
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            <line x1="9" y1="7" x2="15" y2="7"></line>
+            <line x1="9" y1="11" x2="15" y2="11"></line>
+          </svg>
         </div>
-      </section>
+        <h3>Glossários e Vocabulários em Vídeo</h3>
+        <p>Crie dicionários e glossários especializados por tópicos (saúde, direito, tecnologia, família). Cada termo conta com definição e gravação em vídeo da execução do sinal.</p>
+        <span class="feature-card-tag">Aprendizado & Termos</span>
+      </div>
 
-      <!-- 2. Dados Manipulados -->
-      <section id="dados-coletados" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">2</span>
-          Dados Pessoais Manipulados pelo Aplicativo
-        </h3>
-        <p>
-          O Agenda Libras possibilita que você registre e gerencie em seu próprio dispositivo as seguintes categorias de informações sobre você e seus contatos:
-        </p>
-        <ul>
-          <li><strong>Dados de Identificação Cadastral:</strong> Nome, apelido ou identificador do contato.</li>
-          <li><strong>Canais de Comunicação:</strong> Números de telefone, endereços de e-mail e endereços postais físicos.</li>
-          <li><strong>Perfis Sociais:</strong> Nomes de usuário ou links diretos para perfis de redes sociais informados pelo usuário.</li>
-          <li><strong>Mídias do Sinal em Libras:</strong> Fotografias (fotos de perfil ou gestos estáticos) e vídeos curtos demonstrando a execução do sinal do contato em Língua Brasileira de Sinais.</li>
-        </ul>
-        <p>
-          <em>Todos esses dados pertencem exclusivamente a você e permanecem confinados na memória do seu próprio smartphone/tablet.</em>
-        </p>
-      </section>
-
-      <!-- 3. Permissões do Android -->
-      <section id="permissoes" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">3</span>
-          Permissões do Android e Finalidades Específicas
-        </h3>
-        <p>
-          Em rigoroso atendimento às diretrizes para desenvolvedores da <strong>Google Play Store</strong>, declaramos a seguir todas as permissões que podem ser solicitadas em tempo de execução (<em>runtime permissions</em>), com suas respectivas e exclusivas finalidades operacionais:
-        </p>
-
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Permissão</th>
-                <th>Finalidade Específica</th>
-                <th>Natureza do Acesso</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="code-badge">READ_CONTACTS</span></td>
-                <td>
-                  Permite ao usuário, caso assim decida, <strong>importar contatos já existentes</strong> na agenda padrão do aparelho telefônico para dentro do Agenda Libras, evitando a digitação manual de nomes e telefones.
-                </td>
-                <td>
-                  <strong>Opcional.</strong> O usuário pode negar a permissão e continuar cadastrando contatos manualmente. Os dados lidos <strong>jamais</strong> são transmitidos para o desenvolvedor ou para terceiros.
-                </td>
-              </tr>
-              <tr>
-                <td><span class="code-badge">CAMERA</span></td>
-                <td>
-                  Permite ao usuário acionar a câmera do dispositivo para <strong>gravar o vídeo do sinal em Libras</strong> ou tirar a foto de perfil do contato em tempo real.
-                </td>
-                <td>
-                  <strong>Opcional.</strong> O usuário tem a liberdade de não gravar vídeos ou de carregar mídias pré-gravadas da galeria.
-                </td>
-              </tr>
-              <tr>
-                <td><span class="code-badge">RECORD_AUDIO</span></td>
-                <td>
-                  Pode ser acionada em conjunto com o gravador de vídeo do sistema operacional durante a captura do vídeo do sinal em Libras.
-                </td>
-                <td>
-                  <strong>Opcional.</strong> Utilizada estritamente pelo encoder de vídeo local do dispositivo.
-                </td>
-              </tr>
-              <tr>
-                <td><span class="code-badge">READ_MEDIA_IMAGES</span> / <span class="code-badge">READ_MEDIA_VIDEO</span> / <span class="code-badge">READ_EXTERNAL_STORAGE</span></td>
-                <td>
-                  Permite ao usuário selecionar fotos ou vídeos do sinal em Libras previamente salvos na galeria do dispositivo para associá-los ao contato.
-                </td>
-                <td>
-                  <strong>Opcional.</strong> O app acessa unicamente os arquivos que o usuário escolhe expressamente no seletor de mídia do sistema.
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- Card 3 -->
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+          </svg>
         </div>
-      </section>
+        <h3>Arquitetura 100% Offline (Room)</h3>
+        <p>Sua lista de contatos e mídias reside na base SQLite local privativa do dispositivo. O aplicativo não requer internet para registrar, buscar ou reproduzir contatos.</p>
+        <span class="feature-card-tag">Privacidade por Padrão</span>
+      </div>
 
-      <!-- 4. Armazenamento Offline -->
-      <section id="armazenamento-offline" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">4</span>
-          Armazenamento Local e Arquitetura Offline (Room)
-        </h3>
-        <p>
-          O aplicativo utiliza a biblioteca de persistência oficial do ecossistema Android, o <strong>Jetpack Room (banco de dados SQLite local)</strong>:
-        </p>
-        
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-            </div>
-            <h4>Banco de Dados Local (Room)</h4>
-            <p>Os registros textuais (nomes, números, observações) residem dentro do sandbox privativo do aplicativo no armazenamento interno do seu aparelho.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            </div>
-            <h4>Mídias Privativas</h4>
-            <p>Os arquivos de fotos e vídeos associados aos sinais são mantidos no diretório de dados do próprio app ou referenciados localmente na memória do dispositivo.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
-            </div>
-            <h4>Independência de Conexão</h4>
-            <p>O aplicativo não necessita de internet para ler, criar, editar ou apagar contatos. Funciona integralmente em modo avião ou desconectado.</p>
-          </div>
+      <!-- Card 4 -->
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+          </svg>
         </div>
-      </section>
+        <h3>Backup no Google Drive do Usuário</h3>
+        <p>Conecte sua conta Google de forma opcional para salvar e sincronizar cópias de segurança dos seus vídeos de glossários na sua pasta reservada e protegida no Drive.</p>
+        <span class="feature-card-tag">OAuth 2.0 drive.appdata</span>
+      </div>
 
-      <!-- 5. O Formato .lsbcontact -->
-      <section id="compartilhamento-lsbcontact" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">5</span>
-          Exportação e Compartilhamento via Arquivo .lsbcontact
-        </h3>
-        <p>
-          Para facilitar o intercâmbio de contatos e a disseminação de sinais entre a comunidade, o Agenda Libras oferece a funcionalidade voluntária de exportação de contatos:
-        </p>
-        <ul>
-          <li><strong>O que é o arquivo <code>.lsbcontact</code>:</strong> Trata-se de um pacote de dados binário/estruturado gerado exclusivamente por solicitação do usuário, que reúne as informações do contato selecionado (nome, telefones, e-mail, redes sociais), a imagem e o arquivo de vídeo do sinal em Libras correspondente.</li>
-          <li><strong>Como ocorre o envio:</strong> O compartilhamento se dá por meio do seletor nativo do sistema operacional (<em>Android Sharesheet</em>). O usuário escolhe o canal externo de sua preferência (como WhatsApp, Telegram, E-mail, Bluetooth, Google Drive ou outro aplicativo instalado).</li>
-          <li><strong>Comunicação Ponto a Ponto (P2P):</strong> O tráfego do arquivo é feito diretamente entre o usuário remetente e o destinatário ou serviço terceiro escolhido, sem qualquer intermediação do desenvolvedor do Agenda Libras.</li>
-        </ul>
-      </section>
+      <!-- Card 5 -->
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </div>
+        <h3>Compartilhamento .lsbcontact</h3>
+        <p>Exporte e transfira cartões de contato individuais diretamente ponto a ponto com amigos ou colegas via WhatsApp, Bluetooth ou e-mail, sem intermediários.</p>
+        <span class="feature-card-tag">P2P Sharesheet</span>
+      </div>
 
-      <!-- 6. Isenção e Limitação de Responsabilidade -->
-      <section id="isencao-responsabilidade" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">6</span>
-          Cláusula Crucial: Isenção e Limitação de Responsabilidade do Desenvolvedor
-        </h3>
+      <!-- Card 6 -->
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h3>Segurança e Conformidade Legal</h3>
+        <p>Em conformidade estrita com a LGPD brasileira, políticas de segurança infantil da Google Play (CSAE/CSAM) e Política de Dados de Usuários da Google.</p>
+        <span class="feature-card-tag">LGPD & CSAE/CSAM</span>
+      </div>
+    </div>
 
-        <div class="callout callout-warn">
-          <div class="callout-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-          </div>
-          <div class="callout-body">
-            <h4>AVISO JURÍDICO RELEVANTE: RESPONSABILIDADE EXCLUSIVA DO USUÁRIO</h4>
-            <p>
-              O desenvolvedor e proprietário do <strong>Agenda Libras</strong> atua única e exclusivamente como fornecedor do software de utilidade local, <strong>NÃO SE RESPONSABILIZANDO PELOS COMPARTILHAMENTOS DE DADOS EFETUADOS PELOS USUÁRIOS</strong>.
-            </p>
-          </div>
+    <!-- Seção de Destaque: Google Drive & Transparência OAuth -->
+    <section class="drive-section">
+      <span class="drive-section-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        Transparência & Dados Google
+      </span>
+      <h2>Como o Agenda Libras integra com o Google Drive</h2>
+      <p>
+        Nenhum servidor intermediário ou proprietário é utilizado. Para possibilitar que você não perca os vídeos dos seus glossários ao trocar de smartphone, o aplicativo conecta-se diretamente à <strong>sua própria conta Google</strong> utilizando as ferramentas oficiais de autorização do Google.
+      </p>
+
+      <div class="drive-details-grid">
+        <div class="drive-item">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Escopo Restrito drive.appdata
+          </h4>
+          <p>O aplicativo solicita unicamente o escopo <code>drive.appdata</code>. Ele tem acesso restrito e exclusivo a uma pasta oculta reservada para o aplicativo no seu Google Drive, sem acesso a fotos, pastas pessoais ou documentos da sua conta.</p>
         </div>
 
-        <p>Ao utilizar os recursos de compartilhamento e exportação de arquivos <code>.lsbcontact</code>, você concorda e declara expressamente que:</p>
-        <ol>
-          <li>
-            <strong>Ausência de Custódia ou Monitoramento:</strong> O desenvolvedor NÃO tem acesso, não inspeciona, não intercepta, não modera, não recebe e não arquiva quaisquer arquivos <code>.lsbcontact</code> ou dados neles contidos.
-          </li>
-          <li>
-            <strong>Consentimento de Terceiros e Direito de Imagem:</strong> Ao cadastrar e compartilhar o sinal em Libras, fotos, vídeos, números telefônicos ou dados pessoais de qualquer indivíduo, <strong>é responsabilidade única e exclusiva do usuário</strong> certificar-se de que possui autorização, consentimento e legitimidade prévia do respectivo titular dos dados para a gravação de sua imagem/sinal e subsequente envio a terceiros.
-          </li>
-          <li>
-            <strong>Isenção por Ilícitos ou Danos:</strong> O desenvolvedor do Agenda Libras está totalmente isento de qualquer responsabilidade civil, administrativa ou criminal decorrente de:
-            <ul>
-              <li>Vazamentos de dados ocorridos durante transmissões feitas por aplicativos de terceiros;</li>
-              <li>Envio indevido, não autorizado ou errôneo de arquivos para destinatários não pretendidos;</li>
-              <li>Uso indevido da imagem, voz ou sinal em Libras praticado pelo destinatário do arquivo;</li>
-              <li>Violações a direitos autorais, segredos de negócio, difamação, calúnia, assédio ou qualquer conduta delitiva perpetrada por meio do conteúdo inserido nos arquivos compartilhados.</li>
-            </ul>
-          </li>
-        </ol>
-      </section>
-
-      <!-- 7. Sem Nuvem & Telemetria -->
-      <section id="sem-nuvem" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">7</span>
-          Ausência de Coleta em Nuvem, Rastreadores e Telemetria
-        </h3>
-        <p>
-          Para assegurar conformidade integral com a política de integridade da Google Play e a legislação de dados:
-        </p>
-        <ul>
-          <li><strong>Sem Servidores Centrais:</strong> O desenvolvedor não hospeda qualquer servidor de backend, API de coleta de contatos ou serviço de cloud computing vinculado a este aplicativo.</li>
-          <li><strong>Sem Venda ou Monetização de Dados:</strong> O Agenda Libras não comercializa, não aluga, não transfere e não compartilha dados de usuários com corretores de dados (<em>data brokers</em>), parceiros publicitários ou agências de marketing.</li>
-          <li><strong>Sem Rastreamento Comportamental:</strong> O aplicativo não integra SDKs de analytics invasivos, cookies de rastreamento entre apps ou identificadores publicitários destinados a compilar perfis de comportamento.</li>
-        </ul>
-      </section>
-
-      <!-- 8. Exclusão e Retenção -->
-      <section id="exclusao-retencao" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">8</span>
-          Retenção, Controle e Exclusão Definitiva dos Dados
-        </h3>
-        <p>
-          Em observância aos requisitos da Google Play Store sobre <strong>Exclusão de Dados do Usuário (Data Deletion Policy)</strong>:
-        </p>
-        <ul>
-          <li><strong>Controle Total do Usuário:</strong> Você tem a faculdade de editar, atualizar ou excluir qualquer contato, foto ou vídeo diretamente na interface do Agenda Libras a qualquer instante. Ao excluir um registro no app, ele é removido imediatamente do banco de dados Room local.</li>
-          <li><strong>Exclusão Completa via Desinstalação:</strong> Por estarem confinados ao sandbox do aparelho, a simples <strong>desinstalação do aplicativo</strong> ou a limpeza de seus dados através do menu <em>Configurações do Android &gt; Aplicativos &gt; Agenda Libras &gt; Armazenamento &gt; Limpar Dados</em> resulta na exclusão permanente, irreversível e total de todas as informações, fotos, vídeos e contatos cadastrados.</li>
-          <li><strong>Sem necessidade de Requisição de Exclusão em Nuvem:</strong> Dado que nenhum dado jamais é transmitido para servidores remotos do desenvolvedor, não há necessidade de preenchimento de formulários de solicitação de deleção em nuvem, pois nenhum resíduo de dados permanece fora do controle do usuário.</li>
-        </ul>
-      </section>
-
-      <!-- 9. Crianças e Adolescentes -->
-      <section id="menores" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">9</span>
-          Privacidade de Crianças e Adolescentes (COPPA / LGPD Art. 14)
-        </h3>
-        <p>
-          O Agenda Libras é uma ferramenta inclusiva voltada a todas as idades, com fins educacionais e de organização pessoal. Como não operamos servidores remotos nem mantemos cadastros online, não coletamos ativamente informações identificáveis de crianças ou adolescentes em ambiente de rede.
-        </p>
-        <p>
-          Recomendamos que a utilização do aplicativo por menores de idade seja acompanhada por seus pais ou responsáveis legais, aos quais cabe a orientação sobre o uso adequado de fotos, vídeos e sobre a cautela no compartilhamento externo de arquivos <code>.lsbcontact</code>.
-        </p>
-
-        <div class="callout callout-shield" style="margin-top: 1.25rem;">
-          <div class="callout-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <div class="callout-body">
-            <h4>Padrões Oficiais de Segurança Infantil (CSAE / CSAM)</h4>
-            <p>
-              Em estrita conformidade com a <strong>Política de Padrões de Segurança Infantil da Google Play Store</strong> e o <strong>Estatuto da Criança e do Adolescente (ECA)</strong>, mantemos uma política formal de <strong>Tolerância Zero contra Abuso e Exploração Sexual Infantil (CSAE)</strong> e <strong>Material de Abuso Sexual Infantil (CSAM)</strong>, com mecanismos de denúncia in-app e canais diretos, compromisso de encaminhamento obrigatório às autoridades policiais/judiciais e contato designado.
-            </p>
-            <p style="margin-top: 0.5rem;">
-              👉 <a href="seguranca-infantil.html" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Acesse a página oficial dos Padrões de Segurança Infantil do Agenda Libras &rarr;</a>
-            </p>
-          </div>
+        <div class="drive-item">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            Seus Dados no Seu Controle
+          </h4>
+          <p>Os arquivos enviados são apenas os vídeos e definições de glossários criados por você. Seus contatos pessoais não são enviados para a nuvem sem o seu comando explícito de exportação.</p>
         </div>
-      </section>
 
-      <!-- 10. Seus Direitos (LGPD) -->
-      <section id="lgpd" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">10</span>
-          Conformidade com a LGPD (Lei Geral de Proteção de Dados - Lei nº 13.709/2018)
-        </h3>
-        <p>
-          Nos termos da legislação brasileira de proteção de dados (LGPD):
-        </p>
-        <ul>
-          <li><strong>Tratamento Sob Controle Exclusivo do Titular:</strong> O titular dos dados mantém o controle material de suas informações, exercendo ele próprio o tratamento através de ferramenta instalada em dispositivo próprio para fins estritamente pessoais (art. 4º, I da LGPD).</li>
-          <li><strong>Exercício dos Direitos do Titular (Art. 18):</strong> Os direitos de confirmação de tratamento, acesso aos dados, correção de dados incompletos ou inexatos, anonimização, portabilidade (via arquivo <code>.lsbcontact</code>) e eliminação são exercidos diretamente por você pelo próprio aplicativo, sem necessidade de intermediários.</li>
-        </ul>
-      </section>
-
-      <!-- 11. Segurança da Informação -->
-      <section id="seguranca" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">11</span>
-          Segurança da Informação e Recomendações
-        </h3>
-        <p>
-          O Agenda Libras se beneficia das salvaguardas nativas de segurança do sistema operacional Android:
-        </p>
-        <ul>
-          <li><strong>Isolamento de Processos (Application Sandboxing):</strong> O sistema impede que outros aplicativos instalados acessem os dados internos e o banco de dados Room do Agenda Libras sem autorização explícita do sistema.</li>
-          <li><strong>Recomendação de Boas Práticas ao Usuário:</strong> Como a segurança física e lógica dos dados reside no aparelho, recomendamos que você mantenha seu dispositivo protegido com bloqueio de tela (senha, PIN ou biometria), utilize criptografia nativa do aparelho e evite enviar arquivos <code>.lsbcontact</code> por conexões públicas desprotegidas ou a desconhecidos.</li>
-        </ul>
-      </section>
-
-      <!-- 12. Alterações nesta Política -->
-      <section id="alteracoes" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">12</span>
-          Alterações nesta Política de Privacidade
-        </h3>
-        <p>
-          Esta Política de Privacidade poderá ser revisada periodicamente para refletir evoluções do aplicativo, melhorias de recursos técnicos ou atualizações nos requisitos regulatórios da Google Play Store e legislações aplicáveis.
-        </p>
-        <p>
-          A versão vigente e atualizada estará permanentemente acessível através da página oficial do aplicativo e, quando aplicável, informada nas notas de atualização das novas versões distribuídas na loja de aplicativos.
-        </p>
-      </section>
-
-      <!-- 13. Contato e Suporte -->
-      <section id="contato" class="section">
-        <h3 class="section-title">
-          <span class="section-title-icon">13</span>
-          Informações de Contato e Suporte ao Desenvolvedor
-        </h3>
-        <p>
-          Caso você tenha qualquer dúvida sobre esta Política de Privacidade, necessite de esclarecimentos adicionais sobre o funcionamento do aplicativo ou deseje encaminhar sugestões para aprimoramento da acessibilidade em Libras, sinta-se à vontade para entrar em contato:
-        </p>
-
-        <div class="contact-card">
-          <h4>Canal de Atendimento ao Usuário</h4>
-          <p><strong>Aplicativo:</strong> Agenda Libras</p>
-          <p><strong>Desenvolvedor / Encarregado:</strong> Thyago Silvestre</p>
-          <p><strong>E-mail de Contato:</strong> <a href="mailto:contato.agendalibras@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">contato.agendalibras@gmail.com</a></p>
-          <p><strong>Localidade:</strong> Brasil</p>
-          <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
-            <em>* Para fins de conformidade com a Google Play Store, este endereço de e-mail é monitorado para atendimento a dúvidas de usuários e agentes regulatórios.</em>
-          </p>
+        <div class="drive-item">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+            Desconexão e Revogação Fácil
+          </h4>
+          <p>Você pode desconectar sua conta a qualquer momento no menu de configurações do app ou revogar o acesso instantaneamente nas configurações de segurança da sua conta Google.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-    </article>
+    <!-- Seção de Documentos Oficiais -->
+    <section class="docs-section">
+      <span class="section-header-badge">Transparência e Conformidade</span>
+      <h2>Documentos Legais e Políticas Oficiais</h2>
+      <p>Acesse as informações detalhadas sobre a proteção de seus dados, termos de uso e nossos padrões de proteção à infância.</p>
+
+      <div class="docs-grid">
+        <!-- Card Política -->
+        <a href="privacy.html" class="doc-card">
+          <div class="doc-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>
+            <span>Política de Privacidade</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </h3>
+          <p>Detalhamento completo de permissões, dados manipulados, integração Google Drive, exclusão de dados e direitos conforme a LGPD.</p>
+          <span class="doc-card-link">Ler Política de Privacidade &rarr;</span>
+        </a>
+
+        <!-- Card Termos -->
+        <a href="terms.html" class="doc-card">
+          <div class="doc-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          </div>
+          <h3>
+            <span>Termos de Serviço</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </h3>
+          <p>Condições gerais de uso do aplicativo, responsabilidade sobre direitos de imagem de terceiros e regras de propriedade intelectual.</p>
+          <span class="doc-card-link">Ler Termos de Serviço &rarr;</span>
+        </a>
+
+        <!-- Card Segurança Infantil -->
+        <a href="seguranca-infantil.html" class="doc-card">
+          <div class="doc-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>
+            <span>Segurança Infantil</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </h3>
+          <p>Compromisso de Tolerância Zero contra CSAE/CSAM, canais de denúncia in-app e cooperação formal com as autoridades (ECA/Google Play).</p>
+          <span class="doc-card-link">Ler Padrões de Segurança &rarr;</span>
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Rodapé -->
+  <!-- Rodapé Institucional -->
   <footer class="footer">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <p><strong>Agenda Libras</strong> — Promovendo a comunicação acessível e a cultura surda com respeito integral à sua privacidade.</p>
-      <p style="margin-top: 0.5rem;">
-        <a href="index.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Política de Privacidade</a> &nbsp;•&nbsp; 
-        <a href="seguranca-infantil.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Padrões de Segurança Infantil (CSAE/CSAM)</a>
-      </p>
-      <p style="margin-top: 0.5rem;">© 2026 Agenda Libras. Todos os direitos reservados. Armazenamento 100% offline no dispositivo.</p>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>Agenda Libras</h4>
+        <p>Um aplicativo inclusivo criado para fortalecer a cultura surda, a difusão da Língua Brasileira de Sinais e a comunicação acessível, sempre com respeito intransigente à privacidade e segurança do usuário.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Documentação Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Política de Privacidade</a></li>
+          <li><a href="terms.html">Termos de Serviço</a></li>
+          <li><a href="seguranca-infantil.html">Padrões de Segurança Infantil</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Suporte & Desenvolvedor</h5>
+        <ul>
+          <li><strong>Desenvolvedor:</strong> Thyago Silvestre</li>
+          <li><strong>E-mail:</strong> <a href="mailto:contato.agendalibras@gmail.com">contato.agendalibras@gmail.com</a></li>
+          <li><strong>Localidade:</strong> Brasil</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Agenda Libras. Todos os direitos reservados. Em conformidade com a LGPD e as Políticas de Dados de Usuários do Google.</p>
     </div>
   </footer>
 
-  <!-- Script Interativo: Alternância de Tema e Destaque do Menu Lateral -->
+  <!-- Script Tema -->
   <script>
     (function() {
-      // 1. Gerenciamento de Tema (Claro / Escuro)
       const themeToggleBtn = document.getElementById('themeToggle');
       const iconSun = document.getElementById('themeIconSun');
       const iconMoon = document.getElementById('themeIconMoon');
@@ -1165,40 +1038,12 @@
         localStorage.setItem('agenda_libras_theme', theme);
       }
 
-      // Inicializa tema
       setTheme(getPreferredTheme());
 
       themeToggleBtn.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
         setTheme(currentTheme === 'dark' ? 'light' : 'dark');
       });
-
-      // 2. Destaque Automático dos Links do Sumário (IntersectionObserver)
-      const sections = document.querySelectorAll('.section');
-      const navLinks = document.querySelectorAll('.toc-link');
-
-      const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -70% 0px',
-        threshold: 0
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            navLinks.forEach(link => {
-              if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active');
-              } else {
-                link.classList.remove('active');
-              }
-            });
-          }
-        });
-      }, observerOptions);
-
-      sections.forEach(sec => observer.observe(sec));
     })();
   </script>
 </body>
