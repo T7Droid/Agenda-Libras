@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de Privacidade — Agenda Libras</title>
-  <meta name="description" content="Política de Privacidade oficial do aplicativo Agenda Libras. Armazenamento local Room, integração opcional com Google Drive (drive.appdata) e conformidade LGPD e Google API User Data Policy.">
-  <meta name="keywords" content="Agenda Libras, Política de Privacidade, LGPD, Google Drive, drive.appdata, Google Play, Libras, LSB Contact, Armazenamento Local, Room">
+  <meta name="description" content="Política de Privacidade oficial do aplicativo Agenda Libras. Armazenamento local Room, ML Kit Selfie Segmentation on-device, pacotes criptografados AES-256-GCM, Transferência por Proximidade Bluetooth, Google Play Billing e integração opcional com Google Drive (drive.appdata).">
+  <meta name="keywords" content="Agenda Libras, Política de Privacidade, LGPD, Google Drive, drive.appdata, Google Play Billing, ML Kit, Bluetooth, AES-256-GCM, Libras, Room">
   <meta name="robots" content="index, follow">
   
   <!-- Favicon / Ícone Oficial -->
@@ -14,7 +14,7 @@
 
   <!-- Open Graph / Meta Compartilhamento -->
   <meta property="og:title" content="Política de Privacidade — Agenda Libras">
-  <meta property="og:description" content="Entenda como o Agenda Libras protege sua privacidade com processamento local e integração transparente e segura com o Google Drive.">
+  <meta property="og:description" content="Entenda como o Agenda Libras protege sua privacidade com processamento local (Room e ML Kit), pacotes AES-256-GCM, Bluetooth por proximidade, Google Play Billing e integração transparente com o Google Drive.">
   <meta property="og:image" content="https://t7droid.github.io/Agenda-Libras/assets/app-icon.jpg">
   <meta property="og:type" content="website">
 
@@ -311,7 +311,7 @@
     .hero-subtitle {
       font-size: 1.15rem;
       color: var(--text-secondary);
-      max-width: 740px;
+      max-width: 760px;
       margin: 0 auto 1.75rem;
       font-weight: 400;
     }
@@ -781,7 +781,7 @@
       <div class="badge-group">
         <span class="badge badge-offline">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Armazenamento Local (Room SQLite)
+          Offline-First (Room & ML Kit Local)
         </span>
         <span class="badge badge-drive">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
@@ -789,23 +789,23 @@
         </span>
         <span class="badge badge-compliance">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          LGPD & Google User Data Policy
+          LGPD, Google Play Billing & User Data Policy
         </span>
       </div>
 
       <h2 class="hero-title">Política de Privacidade</h2>
       <p class="hero-subtitle">
-        Sua privacidade é nossa prioridade absoluta. Conheça detalhadamente como o <strong>Agenda Libras</strong> trata dados locais, gerencia permissões e realiza integração segura e transparente com o <strong>Google Drive</strong> para backup de glossários.
+        Sua privacidade é nossa prioridade absoluta. Conheça detalhadamente como o <strong>Agenda Libras</strong> trata dados locais, processa mídias sem envio a servidores externos, gerencia permissões, realiza backups opcionais no <strong>Google Drive</strong> (<code>drive.appdata</code>), processa assinaturas via <strong>Google Play Billing</strong> e protege pacotes <code>.lsb*</code> com criptografia <code>AES-256-GCM</code>.
       </p>
 
       <div class="meta-pills">
         <div class="meta-pill-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          <span>Última atualização: 02 de Novembro de 2026</span>
+          <span>Última atualização: 10 de Novembro de 2026</span>
         </div>
         <div class="meta-pill-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <span>Versão do Documento: 2.0 (Integração Google Drive)</span>
+          <span>Versão do Documento: 3.0 (Glossários, Assinatura & Proximidade Bluetooth)</span>
         </div>
       </div>
     </div>
@@ -823,19 +823,20 @@
       <nav>
         <ul class="toc-list" id="tocList">
           <li><a href="#introducao" class="toc-link">1. Visão Geral e Princípios</a></li>
-          <li><a href="#dados-manipulados" class="toc-link">2. Dados Pessoais Manipulados</a></li>
+          <li><a href="#dados-manipulados" class="toc-link">2. Dados Manipulados</a></li>
           <li><a href="#permissoes" class="toc-link">3. Permissões do Android</a></li>
-          <li><a href="#armazenamento-offline" class="toc-link">4. Armazenamento Local (Room)</a></li>
+          <li><a href="#armazenamento-local" class="toc-link">4. Modos de Armazenamento e ML Kit</a></li>
           <li><a href="#google-drive" class="toc-link">5. Integração com Google Drive</a></li>
-          <li><a href="#compartilhamento-lsbcontact" class="toc-link">6. Compartilhamento .lsbcontact</a></li>
-          <li><a href="#isencao-responsabilidade" class="toc-link">7. Responsabilidade do Usuário</a></li>
-          <li><a href="#servidores-telemetria" class="toc-link">8. Servidores & Telemetria</a></li>
-          <li><a href="#exclusao-retencao" class="toc-link">9. Retenção e Exclusão</a></li>
-          <li><a href="#menores" class="toc-link">10. Proteção de Menores</a></li>
-          <li><a href="#lgpd" class="toc-link">11. Seus Direitos (LGPD)</a></li>
-          <li><a href="#seguranca" class="toc-link">12. Segurança da Informação</a></li>
-          <li><a href="#alteracoes" class="toc-link">13. Alterações nesta Política</a></li>
-          <li><a href="#contato" class="toc-link">14. Contato do Desenvolvedor</a></li>
+          <li><a href="#assinatura-privacidade" class="toc-link">6. Assinatura Glossários Premium</a></li>
+          <li><a href="#compartilhamento-lsb" class="toc-link">7. Pacotes .lsb* & Bluetooth</a></li>
+          <li><a href="#isencao-responsabilidade" class="toc-link">8. Responsabilidade do Usuário</a></li>
+          <li><a href="#servidores-telemetria" class="toc-link">9. Servidores & Telemetria</a></li>
+          <li><a href="#exclusao-retencao" class="toc-link">10. Retenção e Exclusão</a></li>
+          <li><a href="#menores" class="toc-link">11. Proteção de Menores</a></li>
+          <li><a href="#lgpd" class="toc-link">12. Seus Direitos (LGPD)</a></li>
+          <li><a href="#seguranca" class="toc-link">13. Segurança e Criptografia</a></li>
+          <li><a href="#alteracoes" class="toc-link">14. Alterações nesta Política</a></li>
+          <li><a href="#contato" class="toc-link">15. Contato e Encarregado</a></li>
         </ul>
       </nav>
     </aside>
@@ -850,10 +851,10 @@
           Visão Geral e Princípio Fundamental
         </h3>
         <p>
-          Esta Política de Privacidade estabelece com total transparência o compromisso do aplicativo <strong>Agenda Libras</strong> com a segurança, soberania e confidencialidade dos dados de seus usuários.
+          Esta Política de Privacidade estabelece com transparência técnica e jurídica o compromisso do aplicativo <strong>Agenda Libras</strong> com a segurança, autonomia e confidencialidade dos dados dos seus usuários.
         </p>
         <p>
-          O <strong>Agenda Libras</strong> é um aplicativo projetado para membros da comunidade surda, intérpretes, educadores, estudantes e simpatizantes da Língua Brasileira de Sinais (Libras). O app permite catalogar contatos associando a cada um o seu respectivo sinal em Libras (vídeo e fotografia), além de organizar <strong>Glossários Temáticos em Libras</strong> com termos e vídeos de demonstração de sinais.
+          O <strong>Agenda Libras</strong> é uma solução inclusiva criada para membros da comunidade surda, intérpretes, professores, estudantes e simpatizantes da Língua Brasileira de Sinais (Libras). O aplicativo reúne uma <strong>agenda visual de contatos</strong> (com perfil próprio e "sinal de batismo" em vídeo e imagem) e um módulo avançado de <strong>Glossários Temáticos em Libras</strong> (com múltiplas categorias, variações de vídeo e etiquetagem por parâmetros da Libras), além de compartilhamento criptografado de pacotes (<code>.lsb*</code>), Transferência Direta por Proximidade (Bluetooth), assinatura opcional <em>Glossários Premium</em> e backup opcional em nuvem pessoal.
         </p>
 
         <div class="callout callout-shield">
@@ -863,7 +864,7 @@
           <div class="callout-body">
             <h4>Princípio de Privacidade por Design (Privacy by Design)</h4>
             <p>
-              A agenda de contatos funciona sob a premissa de <strong>processamento e armazenamento exclusivamente local no dispositivo (Offline-First)</strong>. O desenvolvedor não possui servidores próprios para coletar ou armazenar seus contatos. Para o recurso opcional de sincronização e backup de vídeos dos <strong>Glossários</strong>, o aplicativo conecta-se diretamente à <strong>própria conta Google Drive do usuário</strong>, utilizando uma pasta oculta e protegida exclusiva do aplicativo (<span class="code-badge">drive.appdata</span>), sem acesso a quaisquer outros arquivos do usuário.
+              O aplicativo é concebido sob arquitetura <strong>Offline-First</strong> com persistência local via <strong>Jetpack Room (SQLite)</strong> e processamento de mídia e segmentação de imagem (<em>ML Kit Selfie Segmentation</em>) executados <strong>100% no dispositivo</strong>. O desenvolvedor <strong>não hospeda qualquer servidor proprietário intermediário</strong>. Quando o usuário conecta voluntariamente sua Conta Google, o aplicativo comunica-se diretamente com a pasta oculta e isolada <span class="code-badge">appDataFolder</span> (<span class="code-badge">drive.appdata</span>) do próprio Google Drive do usuário, onde podem ser salvos os <strong>Glossários e seus vídeos</strong> bem como, conforme opção expressa do usuário no app, o <strong>backup da agenda de contatos, perfil próprio, fotos e vídeos de sinais de contatos</strong> nos modos Nuvem, Híbrido ou Backup em Nuvem.
             </p>
           </div>
         </div>
@@ -873,18 +874,18 @@
       <section id="dados-manipulados" class="section">
         <h3 class="section-title">
           <span class="section-title-icon">2</span>
-          Dados Pessoais Manipulados pelo Aplicativo
+          Dados Pessoais e Conteúdos Manipulados pelo Aplicativo
         </h3>
         <p>
-          O Agenda Libras permite registrar, editar e organizar diretamente no aparelho:
+          Conforme as funcionalidades utilizadas pelo usuário, o Agenda Libras manipula exclusivamente no aparelho (e, se habilitado pelo usuário, na sua conta Google Drive pessoal ou via pacotes exportados) as seguintes categorias de informações:
         </p>
         <ul>
-          <li><strong>Dados de Identificação de Contatos:</strong> Nome, apelido ou identificador do contato na comunidade.</li>
-          <li><strong>Canais de Comunicação:</strong> Números de telefone, endereços de e-mail e endereços postais informados voluntariamente.</li>
-          <li><strong>Perfis em Redes Sociais:</strong> Nomes de usuário ou links diretos para perfis de redes sociais adicionados pelo usuário.</li>
-          <li><strong>Mídias de Sinais em Libras (Contatos):</strong> Fotografias e vídeos curtos gravados ou importados que representam o "sinal de batismo" do contato em Libras.</li>
-          <li><strong>Glossários e Vocabulários em Libras:</strong> Título do termo/conceito em português, descrição contextual e arquivo de vídeo em Libras demonstrando a execução do sinal correspondente ao termo.</li>
-          <li><strong>Dados de Autenticação Google (Opcional):</strong> Caso o usuário decida conectar sua conta Google para backup de glossários, o aplicativo recebe da Google Identity Services um token de acesso OAuth 2.0 seguro e o endereço de e-mail da conta conectada para exibir a identificação da sessão ativa no aplicativo. Nenhuma senha de conta Google é acessada ou retida pelo app.</li>
+          <li><strong>Dados de Contatos e Perfil Próprio:</strong> Nome, apelido, números de telefone, endereços de e-mail, endereços postais, perfis de redes sociais e notas informadas pelo usuário.</li>
+          <li><strong>Mídias de Contatos e Processamento de Imagem Local:</strong> Fotografias e vídeos curtos do "sinal de batismo" em Libras. A ferramenta opcional de remoção ou substituição de fundo de fotos utiliza o <strong>ML Kit Selfie Segmentation executado 100% localmente no dispositivo</strong> — nenhuma fotografia é enviada a servidores externos para processamento.</li>
+          <li><strong>Glossários em Libras e Parâmetros Linguísticos:</strong> Múltiplos glossários temáticos, múltiplas categorias, termos em português, notas/descrições contextuais, filtros de busca, múltiplos vídeos por sinal (variações regionais ou de contexto) e etiquetagem pelos <strong>parâmetros da Libras</strong>: <em>Configuração de Mão</em> (79 configurações), <em>Ponto de Articulação/Locação</em>, <em>Tipo de Movimento</em> e <em>Orientação da Palma</em>.</li>
+          <li><strong>Vídeos Processados Localmente:</strong> Os vídeos gravados pela câmera ou importados da galeria passam por recorte de tempo (máximo de <strong>5 segundos</strong>), rotação, compressão e transcodificação local para MP4 (H.264), sendo os vídeos do módulo de Glossários gravados e processados <strong>sem faixa de áudio</strong>.</li>
+          <li><strong>Dados de Autenticação Google (Opcional):</strong> Quando o usuário decide conectar sua conta Google para backup ou sincronização via <code>drive.appdata</code>, o app recebe da Google Identity Services um token OAuth 2.0 seguro e o endereço de e-mail da conta conectada apenas para identificar a sessão ativa na interface. Nenhuma senha de conta Google é acessada ou retida.</li>
+          <li><strong>Dados da Assinatura "Glossários Premium" (Opcional):</strong> Caso o usuário contrate a assinatura via Google Play Store, o aplicativo recebe exclusivamente recibos digitais assinados da Google Play (<code>orderId</code>, <code>purchaseToken</code>, <code>basePlanId</code>, data da compra e status de renovação automática) e, caso o usuário conecte sua conta Google no app, pode enviar à Google Play um hash criptográfico irreversível (<code>SHA-256</code>) como identificador ofuscado de vínculo.</li>
         </ul>
       </section>
 
@@ -895,77 +896,98 @@
           Permissões do Android e Finalidades Específicas
         </h3>
         <p>
-          Em estrito atendimento às diretrizes para desenvolvedores da <strong>Google Play Store</strong>, informamos detalhadamente as permissões que podem ser solicitadas em tempo de execução:
+          Em rigorosa observância às políticas para desenvolvedores da <strong>Google Play Store</strong> e ao princípio da necessidade da LGPD, declaramos com precisão técnica todas as permissões do sistema Android que podem ser solicitadas e suas exclusivas finalidades operacionais:
         </p>
 
         <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th>Permissão</th>
+                <th>Permissão(ões)</th>
                 <th>Finalidade Específica</th>
-                <th>Natureza do Acesso</th>
+                <th>Natureza do Acesso e Retenção</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><span class="code-badge">READ_CONTACTS</span></td>
                 <td>
-                  Permite ao usuário <strong>importar contatos pré-existentes</strong> da agenda telefônica padrão para dentro do Agenda Libras, agilizando o cadastro sem digitação manual.
+                  Permite ao usuário <strong>importar contatos pré-existentes</strong> da agenda padrão do telefone para dentro do Agenda Libras, evitando digitação manual.
                 </td>
                 <td>
-                  <strong>Opcional.</strong> O usuário pode recusar e cadastrar contatos manualmente. Os dados lidos são gravados apenas no banco Room local do dispositivo e <strong>jamais</strong> enviados a terceiros.
+                  <strong>Opcional.</strong> O usuário pode recusar e cadastrar contatos manualmente. Os dados lidos permanecem no banco Room local (ou no backup criptografado/nuvem pessoal apenas se o usuário optar). Jamais são enviados ao desenvolvedor ou terceiros.
                 </td>
               </tr>
               <tr>
                 <td><span class="code-badge">CAMERA</span></td>
                 <td>
-                  Permite ao usuário registrar em tempo real o vídeo do sinal em Libras ou tirar a foto de identificação de um contato ou termo de glossário.
+                  Permite gravar em tempo real os vídeos de sinais em Libras (para contatos ou variações de glossários) e capturar fotos de perfil/identificação.
                 </td>
                 <td>
-                  <strong>Opcional.</strong> O usuário pode optar por carregar vídeos e fotos pré-existentes da galeria de seu aparelho.
-                </td>
-              </tr>
-              <tr>
-                <td><span class="code-badge">RECORD_AUDIO</span></td>
-                <td>
-                  Acionada pelo gravador de vídeo do sistema operacional durante a gravação de vídeos de sinais com a câmera.
-                </td>
-                <td>
-                  <strong>Opcional.</strong> Utilizada exclusivamente pelo encoder nativo de mídia local do Android.
+                  <strong>Opcional.</strong> O usuário pode optar por importar vídeos e imagens previamente armazenados na galeria. Os vídeos de glossários são gravados e transcodificados localmente <strong>sem faixa de áudio</strong>.
                 </td>
               </tr>
               <tr>
-                <td><span class="code-badge">READ_MEDIA_IMAGES</span> / <span class="code-badge">READ_MEDIA_VIDEO</span> / <span class="code-badge">READ_EXTERNAL_STORAGE</span></td>
+                <td><span class="code-badge">READ_MEDIA_IMAGES</span><br><span class="code-badge">READ_MEDIA_VIDEO</span><br><span class="code-badge">READ_EXTERNAL_STORAGE</span></td>
                 <td>
-                  Permite ao usuário selecionar imagens e vídeos salvos na galeria para vincular ao contato ou ao glossário.
+                  Permite ao usuário selecionar fotografias ou vídeos existentes na galeria do aparelho para associar a contatos ou termos de glossários.
                 </td>
                 <td>
-                  <strong>Opcional.</strong> O app acessa unicamente os arquivos expressamente selecionados pelo usuário via seletor nativo de arquivos do Android.
+                  <strong>Opcional.</strong> O app acessa estritamente os arquivos selecionados expressamente pelo usuário por meio do seletor nativo do sistema Android.
                 </td>
               </tr>
               <tr>
-                <td><span class="code-badge">INTERNET</span></td>
+                <td><span class="code-badge">BLUETOOTH</span><br><span class="code-badge">BLUETOOTH_ADMIN</span><br><span class="code-badge">BLUETOOTH_SCAN</span><br><span class="code-badge">BLUETOOTH_CONNECT</span><br><span class="code-badge">BLUETOOTH_ADVERTISE</span></td>
                 <td>
-                  Necessária exclusivamente para estabelecer comunicação direta e segura (HTTPS/TLS) entre o aplicativo e a <strong>API oficial do Google Drive</strong>, quando o usuário opta por conectar sua conta Google para backup dos glossários.
+                  Utilizadas <strong>exclusivamente</strong> para descoberta, conexão e transmissão direta ponto a ponto na funcionalidade opcional de <strong>Transferência Direta por Proximidade (Bluetooth)</strong> entre dois dispositivos próximos que tenham o Agenda Libras instalado (ex.: troca de pacotes <code>.lsb*</code>).
                 </td>
                 <td>
-                  <strong>Opcional / Sob Demanda.</strong> Se o usuário não conectar a conta Google, o app funciona 100% offline para todas as funcionalidades de contatos e criação local de termos.
+                  <strong>Opcional / Sob Demanda.</strong> Acionadas apenas quando o usuário inicia o envio ou recebimento por proximidade. Não há rastreamento de dispositivos nem coleta em segundo plano.
+                </td>
+              </tr>
+              <tr>
+                <td><span class="code-badge">ACCESS_FINE_LOCATION</span><br><span class="code-badge">ACCESS_COARSE_LOCATION</span></td>
+                <td>
+                  <strong>Exigência técnica do sistema operacional Android</strong> (em versões onde o escaneamento Bluetooth requer permissão de localização) exclusivamente para permitir a descoberta de aparelhos próximos na funcionalidade opcional de <strong>Transferência Direta por Proximidade (Bluetooth)</strong>.
+                </td>
+                <td>
+                  <strong>Opcional / Sem Coleta de GPS.</strong> O aplicativo <strong>NÃO coleta, NÃO armazena histórico e NÃO envia coordenadas de localização (GPS)</strong> para servidores do desenvolvedor ou quaisquer terceiros.
+                </td>
+              </tr>
+              <tr>
+                <td><span class="code-badge">INTERNET</span><br><span class="code-badge">ACCESS_NETWORK_STATE</span></td>
+                <td>
+                  Utilizadas estritamente para verificar a conectividade e estabelecer comunicação criptografada (HTTPS/TLS) para duas finalidades específicas: (1) comunicação direta com a <strong>API oficial do Google Drive (<code>drive.appdata</code>)</strong> quando o usuário conecta voluntariamente sua conta Google; e (2) comunicação com a <strong>Google Play Store (Google Play Billing)</strong> para exibir planos, processar compras, restaurar e revalidar assinaturas <code>glossarios_premium</code>.
+                </td>
+                <td>
+                  <strong>Sob Demanda.</strong> Sem conta Google conectada e sem fluxo de assinatura ativo, todas as funcionalidades principais de contatos, glossários locais, ML Kit e Bluetooth operam normalmente sem acesso à internet.
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
+
+        <div class="callout callout-shield">
+          <div class="callout-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+          </div>
+          <div class="callout-body">
+            <h4>Esclarecimento Técnico sobre Áudio (<code>RECORD_AUDIO</code>)</h4>
+            <p>
+              O aplicativo <strong>não declara e não solicita a permissão <span class="code-badge">RECORD_AUDIO</span></strong> no seu <code>AndroidManifest.xml</code>. Como a Libras é uma língua de modalidade visual-espacial, os vídeos do módulo de Glossários são gravados e transcodificados localmente para MP4 (H.264) <strong>sem faixa de áudio</strong>, protegendo a privacidade sonora do ambiente do usuário.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <!-- 4. Armazenamento Offline -->
-      <section id="armazenamento-offline" class="section">
+      <!-- 4. Armazenamento Local, Modos de Mídia e ML Kit -->
+      <section id="armazenamento-local" class="section">
         <h3 class="section-title">
           <span class="section-title-icon">4</span>
-          Armazenamento Local e Arquitetura Offline (Room SQLite)
+          Armazenamento Local, Modos de Mídia e Processamento On-Device
         </h3>
         <p>
-          A base cadastral de contatos do Agenda Libras opera sob a biblioteca oficial <strong>Android Jetpack Room (banco de dados SQLite local)</strong>:
+          O núcleo de persistência do Agenda Libras opera sobre o <strong>Android Jetpack Room (SQLite local)</strong> dentro do diretório privativo (<em>sandbox</em>) do aplicativo, oferecendo ao usuário total autonomia sobre onde residem suas mídias:
         </p>
         
         <div class="feature-grid">
@@ -973,36 +995,36 @@
             <div class="feature-card-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
             </div>
-            <h4>Banco Local Sandbox (Room)</h4>
-            <p>Todos os dados textuais de contatos residem no diretório restrito do aplicativo no armazenamento interno do dispositivo Android.</p>
+            <h4>Modo Local (Dispositivo)</h4>
+            <p>Contatos, glossários, metadados e arquivos de mídia residem exclusivamente no armazenamento interno privativo do aparelho, sem qualquer envio à nuvem.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            </div>
+            <h4>Modos Nuvem & Híbrido</h4>
+            <p>No modo <strong>Nuvem</strong>, os vídeos residem na pasta <code>appDataFolder</code> do Google Drive do usuário com download sob demanda (ou marcação offline). No modo <strong>Híbrido</strong>, o app mantém cópia local e backup simultâneo no Drive pessoal.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-card-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             </div>
-            <h4>Mídias Privativas</h4>
-            <p>Os arquivos de foto e vídeo dos sinais de contatos são gravados no armazenamento privativo do app, inacessíveis a outros aplicativos sem autorização.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
-            </div>
-            <h4>Modo Offline Permanente</h4>
-            <p>O catálogo de contatos, a reprodução de sinais e a navegação local não requerem nenhuma conexão de internet para funcionar plenamente.</p>
+            <h4>ML Kit & Transcodificação Local</h4>
+            <p>Remoção/substituição de fundo de fotos (<em>ML Kit Selfie Segmentation</em>) e recorte/rotação/transcodificação de vídeos (MP4 H.264 até 5s, sem áudio nos glossários) acontecem 100% no aparelho.</p>
           </div>
         </div>
       </section>
 
-      <!-- 5. Integração com Google Drive (Seção Chave OAuth) -->
+      <!-- 5. Integração com Google Drive -->
       <section id="google-drive" class="section">
         <h3 class="section-title">
           <span class="section-title-icon">5</span>
-          Integração com o Google Drive e Tratamento de Dados de Usuários Google
+          Integração com o Google Drive (<code>drive.appdata</code>) e Dados Google
         </h3>
         <p>
-          O Agenda Libras disponibiliza uma funcionalidade voluntária de <strong>backup, sincronização e armazenamento em nuvem dos vídeos e termos dos Glossários em Libras</strong>, viabilizada através da integração direta com o <strong>Google Drive</strong>.
+          O Agenda Libras disponibiliza ao usuário a integração facultativa e transparente com a sua <strong>própria conta Google Drive</strong> para armazenamento, sincronização e backup de seus conteúdos em Libras.
         </p>
 
         <div class="callout callout-shield">
@@ -1010,48 +1032,41 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           </div>
           <div class="callout-body">
-            <h4>Escopo Específico Utilizado: drive.appdata (Pasta Exclusiva do Aplicativo)</h4>
+            <h4>Escopo Específico Utilizado: <code>drive.appdata</code> (Pasta Exclusiva do Aplicativo)</h4>
             <p>
-              O Agenda Libras solicita <strong>exclusivamente</strong> o escopo restrito de autorização OAuth do Google:
+              O Agenda Libras solicita <strong>exclusivamente</strong> o escopo restrito OAuth 2.0 do Google:
               <br>
               <strong style="color: var(--primary); font-family: var(--font-mono); font-size: 0.88rem;">https://www.googleapis.com/auth/drive.appdata</strong> (<em>Google Drive Application Data Folder</em>).
             </p>
           </div>
         </div>
 
-        <p>Abaixo, detalhamos exatamente como essa integração opera, assegurando total conformidade com as Políticas de Dados do Usuário do Google:</p>
-
         <ol>
           <li>
             <strong>Conexão Voluntária da Conta Google:</strong>
-            O usuário pode, a seu critério exclusivo, conectar sua conta Google através do fluxo oficial Google Identity / OAuth 2.0. Essa conexão é facultativa: o aplicativo continua perfeitamente utilizável em modo local caso o usuário decida não autenticar.
+            A conexão via Google Identity / OAuth 2.0 é inteiramente opcional. Sem ela, o aplicativo continua plenamente funcional para uso local e compartilhamentos ponto a ponto.
           </li>
           <li>
-            <strong>O que é o espaço Application Data (drive.appdata):</strong>
-            O escopo <span class="code-badge">drive.appdata</span> concede permissão para ler, gravar, atualizar e excluir arquivos <strong>apenas e tão somente em uma pasta oculta e protegida</strong> vinculada exclusivamente ao Agenda Libras dentro do Google Drive do próprio usuário.
-            <br>
-            <strong>Garantia de Isolamento:</strong> O Agenda Libras <strong>NÃO TEM ACESSO</strong> a quaisquer outros arquivos, fotos, documentos, planilhas, pastas pessoais ou dados que você já possui no seu Google Drive. O app não consegue visualizar, listar, ler nem modificar nenhum arquivo fora da sua pasta exclusiva de dados de aplicativo.
+            <strong>Isolamento Total na Pasta <code>appDataFolder</code>:</strong>
+            O escopo <span class="code-badge">drive.appdata</span> autoriza o aplicativo a acessar <strong>exclusivamente uma pasta oculta e isolada</strong> pertencente ao Agenda Libras no Google Drive do usuário. O app <strong>NÃO TEM ACESSO</strong> para ver, listar, ler, modificar ou apagar nenhum outro arquivo pessoal, foto, planilha, documento ou pasta do Google Drive do usuário.
           </li>
           <li>
-            <strong>Quais arquivos são enviados ao Google Drive:</strong>
-            São enviados estritamente os arquivos que compõem os <strong>Glossários de Libras</strong> criados pelo usuário:
+            <strong>Quais arquivos podem ser enviados para o Google Drive (conforme escolha do usuário):</strong>
+            Quando o usuário conecta sua conta Google e seleciona os modos <strong>Nuvem</strong>, <strong>Híbrido</strong> ou aciona o recurso de <strong>Backup em Nuvem</strong>, podem ser salvos exclusivamente na pasta <code>appDataFolder</code>:
             <ul>
-              <li>Arquivos de vídeo dos sinais em Libras correspondentes aos termos do glossário;</li>
-              <li>Arquivos de metadados em formato estruturado (JSON) com nomes dos termos, descrições contextuais e identificadores de vinculação.</li>
+              <li><strong>Módulo de Glossários:</strong> arquivos de vídeo das variações de sinais (MP4/H.264 sem áudio, máx. 5 segundos) e metadados estruturados (glossários, categorias, termos, notas contextuais e parâmetros da Libras);</li>
+              <li><strong>Agenda de Contatos e Perfil Próprio (conforme opção do usuário):</strong> arquivos de backup da agenda de contatos cadastrados, dados do perfil próprio do usuário, fotografias e vídeos de sinais vinculados aos contatos.</li>
             </ul>
-            <em>Os contatos pessoais cadastrados na agenda padrão permanecem salvos localmente e não são sincronizados nessa pasta a menos que o usuário utilize a exportação voluntária.</em>
           </li>
           <li>
             <strong>Onde os arquivos ficam armazenados:</strong>
-            Os arquivos são transmitidos via conexão criptografada (TLS/HTTPS) diretamente do dispositivo do usuário para os servidores do Google Drive <strong>pertencentes à própria conta Google do usuário</strong>. O desenvolvedor do Agenda Libras <strong>não hospeda servidores intermediários</strong> e não armazena cópias dos seus vídeos ou dados de glossários em nenhuma infraestrutura externa.
+            Todos os dados trafegam diretamente do dispositivo para a conta Google Drive pertencente ao próprio usuário via protocolo criptografado HTTPS/TLS. O desenvolvedor <strong>não possui servidores intermediários</strong> e não mantém cópias dos vídeos ou contatos dos usuários.
           </li>
           <li>
-            <strong>Operações realizadas pelo Aplicativo no Google Drive:</strong>
+            <strong>Operações Realizadas e Limites Operacionais da API do Google Drive:</strong>
             <ul>
-              <li><strong>Upload / Envio:</strong> Armazena novos vídeos de sinais e arquivos de glossário criados pelo usuário.</li>
-              <li><strong>Download / Sincronização:</strong> Recupera os termos e vídeos dos glossários para exibição offline no dispositivo ou restauração em caso de troca de aparelho.</li>
-              <li><strong>Atualização:</strong> Sobrescreve arquivos de termos ou vídeos caso o usuário os edite no app.</li>
-              <li><strong>Exclusão:</strong> Quando o usuário exclui um termo ou glossário dentro do aplicativo e solicita sua remoção da nuvem, o aplicativo comanda a exclusão do arquivo correspondente na pasta de dados do Google Drive.</li>
+              <li><strong>Operações:</strong> O app realiza upload/criação de vídeos e backups, listagem e download sob demanda (ou sincronização para marcação offline), atualização de registros modificados e exclusão de arquivos na pasta <code>appDataFolder</code> quando comandado pelo usuário.</li>
+              <li><strong>Limites Técnicos Operacionais e de Cota:</strong> Tanto para usuários gratuitos quanto para assinantes <em>Glossários Premium</em>, o uso da nuvem permanece sujeito ao espaço da conta Google Drive do usuário e aos limites técnicos operacionais e de cota aplicados pelo aplicativo sobre a API do Google Cloud Drive para prevenção de abuso e estabilidade do serviço (vídeos de até <strong>5 segundos</strong>, tamanho máximo de <strong>15 MB por arquivo</strong>, formato <strong>MP4/H.264</strong>, além de limites horários e diários de uploads, downloads, banda diária de backup e sincronizações completas diárias).</li>
             </ul>
           </li>
           <li>
@@ -1064,44 +1079,98 @@
               </div>
             </div>
             <ul>
-              <li><strong>Não comercialização:</strong> Dados recebidos das APIs do Google jamais são vendidos a corretores de dados (data brokers) ou empresas de publicidade.</li>
-              <li><strong>Não utilização para publicidade:</strong> Dados do Google Drive não são utilizados para direcionamento de anúncios publicitários.</li>
-              <li><strong>Não utilização para IA generativa ou treinamento de modelos:</strong> Os vídeos e termos do usuário não são transferidos a terceiros nem empregados para treinar modelos fundacionais de inteligência artificial ou machine learning genéricos.</li>
+              <li>Os dados acessados via APIs do Google jamais são vendidos ou transferidos a corretores de dados (<em>data brokers</em>), não são usados para publicidade direcionada e não são empregados para treinamento de modelos generalistas de inteligência artificial.</li>
             </ul>
           </li>
           <li>
-            <strong>Como desconectar a conta e revogar o acesso:</strong>
-            O usuário detém controle integral sobre a conexão a qualquer tempo:
+            <strong>Como Desconectar a Conta e Revogar o Acesso:</strong>
             <ul>
-              <li><strong>Desconexão pelo Aplicativo:</strong> No menu de Configurações do Agenda Libras, toque em <em>"Desconectar Conta Google"</em>. O token de autenticação local será apagado imediatamente do dispositivo.</li>
-              <li><strong>Revogação Global pela Conta Google:</strong> O usuário pode gerenciar e revogar as permissões concedidas ao Agenda Libras a qualquer momento acessando a página oficial de segurança da Conta Google: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">https://myaccount.google.com/permissions</a>. Ao revogar o acesso, o aplicativo deixará imediatamente de ter qualquer permissão para interagir com o seu Google Drive.</li>
-              <li><strong>Destino dos arquivos após desconexão:</strong> Os arquivos armazenados na pasta de dados do aplicativo no Google Drive permanecerão na conta do usuário até que ele faça a exclusão pelo aplicativo antes de desconectar ou realize a limpeza de dados de aplicativos nas configurações de armazenamento do Google Drive.</li>
+              <li><strong>Pelo Aplicativo:</strong> Nas Configurações do Agenda Libras, utilize a opção <em>"Desconectar Conta Google"</em> para encerrar imediatamente a sessão e apagar o token local.</li>
+              <li><strong>Pela Conta Google:</strong> Revogue a permissão do aplicativo a qualquer instante em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">https://myaccount.google.com/permissions</a>.</li>
             </ul>
           </li>
         </ol>
       </section>
 
-      <!-- 6. Compartilhamento .lsbcontact -->
-      <section id="compartilhamento-lsbcontact" class="section">
+      <!-- 6. Assinatura Glossários Premium -->
+      <section id="assinatura-privacidade" class="section">
         <h3 class="section-title">
           <span class="section-title-icon">6</span>
-          Exportação e Compartilhamento via Arquivo .lsbcontact
+          Assinatura "Glossários Premium", Faturamento e Cofre Local
         </h3>
         <p>
-          Para facilitar o intercâmbio de contatos e sinais na comunidade surda, o Agenda Libras oferece a exportação voluntária através do arquivo <code>.lsbcontact</code>:
+          O Agenda Libras disponibiliza acesso gratuito à agenda de contatos em Libras, criação ilimitada de glossários, categorias e sinais sem vídeo, compartilhamentos <code>.lsb*</code> e até <strong>30 vídeos de sinais no módulo de Glossários</strong> (somando locais e na nuvem, em 480p SD e 720p HD). A assinatura opcional <span class="code-badge">glossarios_premium</span> (Plano Mensal ou Plano Anual) libera gravação em <strong>Full HD (1080p)</strong> e remoção do limite de 30 vídeos de sinais nos glossários.
         </p>
         <ul>
-          <li><strong>O que é o arquivo <code>.lsbcontact</code>:</strong> Trata-se de um pacote autônomo e estruturado gerado sob demanda pelo usuário, reunindo informações do contato (nome, telefone, e-mail, redes sociais), foto e o vídeo com o sinal correspondente em Libras.</li>
-          <li><strong>Mecanismo de Envio Nativo (Android Sharesheet):</strong> O compartilhamento ocorre exclusivamente via seletor nativo do Android. O usuário escolhe livremente para quem enviar e por qual canal (WhatsApp, Telegram, E-mail, Bluetooth, Google Drive ou outro app de sua preferência).</li>
-          <li><strong>Comunicação Direta Ponta a Ponta:</strong> O envio do arquivo se dá de forma direta entre o remetente e o destinatário ou aplicativo de destino, sem passar por qualquer servidor do desenvolvedor do Agenda Libras.</li>
+          <li><strong>Processamento Exclusivo pela Google Play Billing:</strong> Todas as transações de assinatura, pagamentos (cartão, PIX, boleto ou saldo), renovações automáticas e reembolsos ocorrem integralmente na infraestrutura segura da <strong>Google Play Store</strong>. O desenvolvedor <strong>não coleta, não acessa e não armazena dados bancários, números de cartão, chaves PIX ou dados de faturamento financeiro</strong>.</li>
+          <li><strong>Metadados de Recibo Recebidos pelo App:</strong> Para verificar o direito de acesso Premium, o aplicativo recebe apenas os recibos digitais assinados emitidos pela Google Play (<span class="code-badge">orderId</span>, <span class="code-badge">purchaseToken</span>, <span class="code-badge">basePlanId</span>, data da compra e status de renovação automática).</li>
+          <li><strong>Identificador Ofuscado por Hash (SHA-256):</strong> Caso o usuário conecte sua conta Google no aplicativo, este poderá enviar à Google Play um <strong>hash criptográfico irreversível (SHA-256)</strong> como identificador ofuscado de vínculo de conta, sem expor o endereço de e-mail em texto claro no protocolo de faturamento.</li>
+          <li><strong>Cofre Criptografado Local e Cache Offline de 72 Horas:</strong> O estado da assinatura é armazenado localmente em cofre criptografado protegido pelo hardware/sistema Android (<span class="code-badge">AndroidKeyStore</span> com <span class="code-badge">AES-256-GCM</span>), permitindo utilização offline contínua por até <strong>72 horas</strong>. Após 72 horas sem conectividade com os servidores da Google Play — ou caso seja detectada adulteração do relógio do aparelho ou da integridade do app — o acesso aos recursos Premium poderá exigir reconexão à internet para revalidação da assinatura ativa.</li>
+          <li><strong>Ausência de Venda de Armazenamento Proprietário:</strong> A assinatura não comercializa espaço em servidor do desenvolvedor; o armazenamento em nuvem continua utilizando a conta Google Drive pessoal do usuário.</li>
         </ul>
       </section>
 
-      <!-- 7. Isenção e Responsabilidade -->
-      <section id="isencao-responsabilidade" class="section">
+      <!-- 7. Pacotes Criptografados e Proximidade Bluetooth -->
+      <section id="compartilhamento-lsb" class="section">
         <h3 class="section-title">
           <span class="section-title-icon">7</span>
-          Responsabilidade do Usuário, Direito de Imagem e Isenção do Desenvolvedor
+          Pacotes Criptografados (<code>AES-256-GCM</code>) e Proximidade Bluetooth
+        </h3>
+        <p>
+          Para garantir portabilidade, backup local e compartilhamento seguro sem necessidade de servidores intermediários, o Agenda Libras gera e importa arquivos protegidos por criptografia <strong>AES-256-GCM</strong> nos cinco formatos abaixo:
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Extensão do Pacote</th>
+                <th>Conteúdo Incluído</th>
+                <th>Finalidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code-badge">.lsbcontact</span></td>
+                <td>Dados do contato, foto e vídeo do sinal em Libras.</td>
+                <td>Compartilhamento individual de contato entre usuários.</td>
+              </tr>
+              <tr>
+                <td><span class="code-badge">.lsbsign</span></td>
+                <td>Sinal individual do glossário, variações de vídeo, categorias e glossário de origem.</td>
+                <td>Compartilhamento de um sinal específico em Libras.</td>
+              </tr>
+              <tr>
+                <td><span class="code-badge">.lsbglossary</span></td>
+                <td>Glossário temático completo com todas as suas categorias, sinais e vídeos.</td>
+                <td>Exportação e compartilhamento de glossário completo.</td>
+              </tr>
+              <tr>
+                <td><span class="code-badge">.lsbglossarybackup</span></td>
+                <td>Acervo completo de todos os glossários, categorias, sinais e vídeos.</td>
+                <td>Backup local e portabilidade integral dos glossários.</td>
+              </tr>
+              <tr>
+                <td><span class="code-badge">.lsbbackup</span></td>
+                <td>Backup completo da agenda de contatos, perfil, fotografias e vídeos.</td>
+                <td>Backup local e restauração integral da agenda de contatos.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ul>
+          <li><strong>Transferência Direta por Proximidade (Bluetooth):</strong> Permite transmitir e receber pacotes diretamente ponto a ponto entre dois aparelhos próximos que possuam o Agenda Libras instalado, utilizando Bluetooth sem intermediação de rede ou servidor externo.</li>
+          <li><strong>Envio via Android Sharesheet:</strong> O usuário também pode optar por enviar os arquivos pelo seletor nativo do sistema Android através de aplicativos externos de sua escolha (WhatsApp, Telegram, e-mail, etc.).</li>
+          <li><strong>Esclarecimento sobre Bloqueio de Tela, Expiração e Recompartilhamento:</strong> Eventuais travas de proteção contra captura de tela, bloqueio de recompartilhamento ou expiração de acesso atuam <strong>exclusivamente dentro do aplicativo Agenda Libras</strong>. Por limitações físicas e técnicas fora do alcance de qualquer software, tais mecanismos não impedem fotografias/gravações feitas por câmera externa nem repasses realizados em aplicativos terceiros antes da expiração.</li>
+        </ul>
+      </section>
+
+      <!-- 8. Responsabilidade do Usuário -->
+      <section id="isencao-responsabilidade" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">8</span>
+          Responsabilidade do Usuário, Direito de Imagem e Isenções
         </h3>
 
         <div class="callout callout-warn">
@@ -1111,73 +1180,61 @@
           <div class="callout-body">
             <h4>AVISO JURÍDICO RELEVANTE: RESPONSABILIDADE EXCLUSIVA DO USUÁRIO</h4>
             <p>
-              O desenvolvedor fornece a ferramenta de software, cabendo integralmente ao usuário zelar pela licitude dos conteúdos, respeito ao direito de imagem e autorizações prévias de terceiros.
+              O desenvolvedor fornece estritamente a ferramenta de software local, cabendo integralmente ao usuário zelar pela licitude dos conteúdos, obtenção de consentimento prévio de terceiros, respeito ao direito de imagem/voz e observância de direitos autorais.
             </p>
           </div>
         </div>
 
-        <p>Ao gravar, armazenar, sincronizar ou compartilhar fotos, vídeos de sinais em Libras e dados de contatos, você declara e concorda expressamente que:</p>
         <ol>
           <li>
-            <strong>Consentimento Prévio de Terceiros e Direito de Imagem:</strong> É de sua exclusiva responsabilidade certificar-se de que possui autorização, consentimento e legitimidade prévia da pessoa cujo sinal, foto ou vídeo foi gravado para incluí-lo em seus contatos, sincronizá-lo em sua nuvem pessoal ou compartilhá-lo com terceiros.
+            <strong>Consentimento Prévio de Terceiros e Direito de Imagem:</strong> É responsabilidade única e exclusiva do usuário certificar-se de que possui autorização, consentimento e legitimidade prévia da pessoa filmada/fotografada para cadastrar seu sinal, aplicar edição local de fundo (ML Kit), armazenar em sua nuvem pessoal (<code>drive.appdata</code>) ou enviar a terceiros.
           </li>
           <li>
-            <strong>Ausência de Moderação pelo Desenvolvedor:</strong> O desenvolvedor não tem custódia nem acesso prévio ao conteúdo dos contatos cadastrados localmente ou dos arquivos transitados via <code>.lsbcontact</code>.
+            <strong>Ausência de Moderação Prévia:</strong> O desenvolvedor não tem acesso, custódia nem moderação prévia sobre contatos, glossários, backups na nuvem pessoal ou arquivos nos formatos <code>.lsbcontact</code>, <code>.lsbsign</code>, <code>.lsbglossary</code>, <code>.lsbglossarybackup</code> e <code>.lsbbackup</code> transferidos via Bluetooth ou Android Sharesheet.
           </li>
           <li>
-            <strong>Isenção de Responsabilidade por Danos ou Ilicitudes:</strong> O desenvolvedor do Agenda Libras não responde civil, penal ou administrativamente por:
-            <ul>
-              <li>Uso não autorizado de imagem ou voz praticado pelo usuário ou por quem receber os arquivos;</li>
-              <li>Envios acidentais ou realizados a destinatários incorretos através de aplicativos terceiros;</li>
-              <li>Violações a direitos autorais, segredos industriais ou normas de privacidade praticadas por usuários ao gerar seus conteúdos.</li>
-            </ul>
+            <strong>Isenção Linguística e Pedagógica:</strong> Os termos, definições, parâmetros da Libras e vídeos dos glossários são criados/importados pelos usuários; o desenvolvedor não valida nem garante a correção linguística, gramatical, pedagógica ou regional dos sinais.
           </li>
         </ol>
       </section>
 
-      <!-- 8. Servidores e Telemetria -->
+      <!-- 9. Servidores e Telemetria -->
       <section id="servidores-telemetria" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">8</span>
+          <span class="section-title-icon">9</span>
           Ausência de Servidores Proprietários, Rastreadores e Telemetria
         </h3>
-        <p>
-          Para assegurar integridade técnica e respeito absoluto ao usuário:
-        </p>
         <ul>
-          <li><strong>Sem Servidor Proprietário Central:</strong> O desenvolvedor não opera backend próprio para coleta ou espelhamento de contatos, nem hospeda banco de dados remoto proprietário. O tráfego de dados de nuvem, quando acionado para glossários, é restrito entre o aparelho e a API oficial do Google Drive do próprio usuário.</li>
-          <li><strong>Sem Venda ou Monetização de Dados:</strong> O Agenda Libras não comercializa, não aluga e não repassa informações a corretores de dados (<em>data brokers</em>), bureaus de crédito ou plataformas de publicidade.</li>
-          <li><strong>Sem Rastreamento Comportamental Invasivo:</strong> O app não inclui SDKs de publicidade comportamental, nem monitora as atividades do usuário entre diferentes aplicativos.</li>
+          <li><strong>Sem Backend Proprietário Central:</strong> O desenvolvedor não mantém servidor próprio de coleta, banco remoto ou espelhamento de contatos/glossários. Toda comunicação de rede ocorre estritamente entre o aparelho e a API oficial do Google Drive (<code>drive.appdata</code>, se o usuário conectar a conta Google) e a Google Play Store (Google Play Billing para assinaturas).</li>
+          <li><strong>Sem Venda ou Monetização de Dados:</strong> O Agenda Libras não comercializa, não aluga e não repassa informações a corretores de dados (<em>data brokers</em>) ou redes de publicidade.</li>
+          <li><strong>Sem Rastreamento Comportamental Invasivo:</strong> O aplicativo não integra SDKs de rastreamento publicitário entre apps nem perfis comportamentais ocultos.</li>
         </ul>
       </section>
 
-      <!-- 9. Retenção e Exclusão -->
+      <!-- 10. Retenção e Exclusão -->
       <section id="exclusao-retencao" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">9</span>
+          <span class="section-title-icon">10</span>
           Retenção, Controle e Exclusão Definitiva dos Dados (Data Deletion)
         </h3>
         <p>
-          Em conformidade com a <strong>Política de Exclusão de Dados da Google Play</strong>:
+          Em conformidade com a <strong>Política de Exclusão de Dados da Google Play Store</strong> e o art. 18 da LGPD:
         </p>
         <ul>
-          <li><strong>Exclusão de Dados Locais pelo Próprio App:</strong> Você pode editar ou excluir qualquer contato, foto, vídeo ou termo de glossário diretamente na interface do Agenda Libras a qualquer momento. Ao excluir um registro no aplicativo, ele é imediatamente purgado do banco de dados Room local.</li>
-          <li><strong>Exclusão de Dados no Google Drive:</strong> Quando conectado à conta Google, a exclusão de um termo ou glossário no app pode ser configurada para refletir e deletar o arquivo correspondente na pasta de dados do Google Drive. O usuário também pode revogar a permissão do app e gerenciar/excluir dados de aplicativo nas configurações do Google Drive.</li>
-          <li><strong>Exclusão Completa via Desinstalação:</strong> Por estarem confinados ao sandbox do aparelho, a desinstalação do aplicativo ou a ação <em>Configurações do Android &gt; Aplicativos &gt; Agenda Libras &gt; Armazenamento &gt; Limpar Dados</em> apaga irrevogavelmente todos os dados, senhas de tokens locais, fotos e vídeos residentes no dispositivo.</li>
+          <li><strong>Exclusão Direta no App (Banco Local e Drive):</strong> Você pode editar ou excluir qualquer contato, foto, vídeo, variação de sinal ou glossário a qualquer momento pelo aplicativo. Ao excluir registros locais, eles são imediatamente removidos do banco Room; quando conectado ao Google Drive, a exclusão pode ser sincronizada para remover o arquivo correspondente na pasta <code>appDataFolder</code>.</li>
+          <li><strong>Cancelamento de Assinatura Não Exclui Vídeos:</strong> Caso o usuário cancele a assinatura <em>Glossários Premium</em> na Google Play Store, <strong>não há exclusão automática</strong> dos vídeos ou glossários já salvos; após o término do ciclo pago, os sinais existentes permanecem disponíveis para visualização dentro do app.</li>
+          <li><strong>Exclusão Total pelo Sistema Android:</strong> Desinstalar o aplicativo ou acessar <em>Configurações do Android &gt; Aplicativos &gt; Agenda Libras &gt; Armazenamento &gt; Limpar Dados</em> apaga irreversivelmente o banco local, mídias locais, tokens OAuth locais e o cofre de assinatura do aparelho. Arquivos previamente enviados ao Google Drive permanecem sob controle do usuário na sua conta Google até que sejam excluídos pelo app ou gerenciados nas configurações de armazenamento do Google Drive.</li>
         </ul>
       </section>
 
-      <!-- 10. Proteção de Menores -->
+      <!-- 11. Menores -->
       <section id="menores" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">10</span>
-          Privacidade de Crianças e Adolescentes (ECA / Google Play Child Safety)
+          <span class="section-title-icon">11</span>
+          Privacidade de Crianças e Adolescentes (ECA / COPPA / Child Safety)
         </h3>
         <p>
-          O Agenda Libras é uma ferramenta inclusiva e de finalidade educacional e organizacional. Não coletamos intencionalmente dados pessoais de menores em servidores próprios.
-        </p>
-        <p>
-          Recomendamos que a utilização por menores de 18 anos ocorra sob orientação de seus pais ou responsáveis legais, especialmente no que tange à captura e compartilhamento de fotos e vídeos de sinais.
+          O Agenda Libras destina-se à inclusão e organização pessoal e educacional, não mantendo coleta intencional de dados de crianças ou adolescentes em servidores do desenvolvedor. Recomenda-se que o uso por menores de 18 anos ocorra sob supervisão de seus pais ou responsáveis legais, especialmente na gravação de vídeos, contratação de assinaturas e compartilhamento de arquivos <code>.lsb*</code> ou transferências Bluetooth.
         </p>
 
         <div class="callout callout-shield" style="margin-top: 1.25rem;">
@@ -1185,81 +1242,72 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           </div>
           <div class="callout-body">
-            <h4>Padrões de Segurança Infantil (CSAE / CSAM)</h4>
+            <h4>Padrões Oficiais de Segurança Infantil (CSAE / CSAM)</h4>
             <p>
-              Mantemos estrita conformidade com as políticas de segurança infantil da Google Play Store e o Estatuto da Criança e do Adolescente (ECA - Lei nº 8.069/1990), mantendo política formal de <strong>Tolerância Zero contra Abuso e Exploração Sexual Infantil (CSAE)</strong> e <strong>Material de Abuso Sexual Infantil (CSAM)</strong>, com canais de denúncia in-app e compromisso de reporte às autoridades competentes (Polícia Federal, SaferNet e NCMEC).
+              Mantemos estrita observância à Política de Padrões de Segurança Infantil da Google Play e ao Estatuto da Criança e do Adolescente (ECA — Lei nº 8.069/1990), com política categórica de <strong>Tolerância Zero contra CSAE e CSAM</strong> em qualquer recurso local, nuvem pessoal, transferência Bluetooth ou pacote <code>.lsb*</code>, com canal prioritário de denúncia (<code>thyagoneves.sa@gmail.com</code>) e cooperação com autoridades (Polícia Federal, SaferNet e NCMEC).
             </p>
             <p style="margin-top: 0.5rem;">
-              👉 <a href="seguranca-infantil.html" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Consulte a página oficial de Padrões de Segurança Infantil &rarr;</a>
+              👉 <a href="seguranca-infantil.html" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Consulte os Padrões de Segurança Infantil do Agenda Libras &rarr;</a>
             </p>
           </div>
         </div>
       </section>
 
-      <!-- 11. LGPD -->
+      <!-- 12. LGPD -->
       <section id="lgpd" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">11</span>
-          Conformidade com a LGPD (Lei Geral de Proteção de Dados - Lei nº 13.709/2018)
+          <span class="section-title-icon">12</span>
+          Conformidade com a LGPD (Lei Geral de Proteção de Dados — Lei nº 13.709/2018)
         </h3>
-        <p>
-          O Agenda Libras cumpre integralmente os preceitos da legislação brasileira de dados:
-        </p>
         <ul>
-          <li><strong>Autonomia e Controle do Titular (Art. 18):</strong> O titular exerce diretamente o controle, correção, exclusão e portabilidade dos seus dados pelo próprio app e pela sua conta Google Drive pessoal.</li>
-          <li><strong>Finalidade e Necessidade:</strong> O tratamento de dados se limita à finalidade de organização da agenda em Libras e backup seguro de vocabulários definido pelo próprio usuário.</li>
-          <li><strong>Transparência:</strong> Informação clara e acessível acerca do uso de permissões e do escopo <span class="code-badge">drive.appdata</span>.</li>
+          <li><strong>Autonomia e Controle do Titular (Art. 18):</strong> Os direitos de acesso, correção, eliminação e portabilidade (inclusive via pacotes criptografados <code>.lsbbackup</code>, <code>.lsbglossarybackup</code>, <code>.lsbglossary</code>, <code>.lsbsign</code> e <code>.lsbcontact</code>) são exercidos diretamente pelo titular dentro do próprio aplicativo e sobre sua conta Google Drive.</li>
+          <li><strong>Finalidade, Adequação e Minimização:</strong> Toda permissão solicitada (inclusive Bluetooth e localização técnica exigida pelo Android para proximidade Bluetooth) limita-se estritamente à funcionalidade solicitada pelo usuário, sem coleta excessiva ou oculta.</li>
         </ul>
       </section>
 
-      <!-- 12. Segurança da Informação -->
+      <!-- 13. Segurança da Informação -->
       <section id="seguranca" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">12</span>
-          Segurança da Informação e Recomendações
+          <span class="section-title-icon">13</span>
+          Segurança da Informação e Criptografia
         </h3>
-        <p>
-          As medidas de segurança aplicadas ao Agenda Libras incluem:
-        </p>
         <ul>
-          <li><strong>Isolamento de Processos (Application Sandboxing):</strong> O sistema Android impede nativamente que outros aplicativos instalados acessem os dados confidenciais do Agenda Libras sem autorização do usuário.</li>
-          <li><strong>Criptografia em Trânsito (TLS/HTTPS):</strong> Todas as comunicações com as APIs do Google Drive trafegam sob protocolos modernos de criptografia segura (HTTPS/TLS 1.3).</li>
-          <li><strong>Recomendações ao Usuário:</strong> Mantenha seu dispositivo protegido por senha, PIN ou biometria e proteja sua conta Google com verificação em duas etapas (2FA).</li>
+          <li><strong>Isolamento de Processos (Android Sandboxing):</strong> O sistema Android impede nativamente o acesso não autorizado de terceiros ao banco Room e aos diretórios privativos do app.</li>
+          <li><strong>Criptografia AES-256-GCM em Pacotes e Cofre Local:</strong> Os formatos <code>.lsbcontact</code>, <code>.lsbsign</code>, <code>.lsbglossary</code>, <code>.lsbglossarybackup</code> e <code>.lsbbackup</code> são protegidos com <code>AES-256-GCM</code>, assim como o cofre de validação local da assinatura via <code>AndroidKeyStore</code>.</li>
+          <li><strong>Criptografia em Trânsito (HTTPS/TLS):</strong> Toda comunicação com as APIs oficiais do Google Drive e da Google Play Store ocorre por canais criptografados seguros.</li>
+          <li><strong>Recomendações ao Usuário:</strong> Mantenha seu dispositivo protegido por senha, PIN ou biometria e habilite autenticação em duas etapas (2FA) na sua conta Google.</li>
         </ul>
       </section>
 
-      <!-- 13. Alterações nesta Política -->
+      <!-- 14. Alterações nesta Política -->
       <section id="alteracoes" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">13</span>
+          <span class="section-title-icon">14</span>
           Alterações nesta Política de Privacidade
         </h3>
         <p>
-          Esta Política de Privacidade poderá ser atualizada periodicamente para refletir o lançamento de novas funcionalidades, aprimoramentos técnicos ou novas exigências regulatórias da Google Play Store e das APIs do Google.
-        </p>
-        <p>
-          Recomendamos que você consulte periodicamente esta página para manter-se informado sobre eventuais alterações.
+          Esta Política de Privacidade poderá ser revisada periodicamente para acompanhar novas funcionalidades técnicas do Agenda Libras ou atualizações normativas da Google Play Store, da Google API User Data Policy e da legislação aplicável. A versão vigente e sua data de atualização estarão sempre indicadas no topo desta página.
         </p>
       </section>
 
-      <!-- 14. Contato do Desenvolvedor -->
+      <!-- 15. Contato do Desenvolvedor -->
       <section id="contato" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">14</span>
-          Informações de Contato e Encarregado de Dados
+          <span class="section-title-icon">15</span>
+          Informações de Contato e Encarregado de Dados (DPO)
         </h3>
         <p>
-          Para dúvidas, sugestões ou solicitações relacionadas a esta Política de Privacidade ou ao funcionamento do aplicativo, utilize o canal oficial:
+          Para dúvidas, sugestões, pedidos de esclarecimento sobre privacidade ou exercício de direitos previstos na LGPD, utilize nossos canais oficiais:
         </p>
 
         <div class="contact-card">
-          <h4>Canal de Atendimento ao Usuário</h4>
+          <h4>Canal de Atendimento Oficial — Agenda Libras</h4>
           <p><strong>Aplicativo:</strong> Agenda Libras</p>
-          <p><strong>Desenvolvedor / Encarregado:</strong> Thyago Silvestre</p>
-          <p><strong>E-mail de Contato:</strong> <a href="mailto:contato.agendalibras@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">contato.agendalibras@gmail.com</a></p>
+          <p><strong>Desenvolvedor / Encarregado (DPO):</strong> Thyago Neves da Silva Silvestre</p>
+          <p><strong>E-mail Oficial (Privacidade, LGPD, Suporte, OAuth, Assinaturas &amp; Segurança Infantil):</strong> <a href="mailto:thyagoneves.sa@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">thyagoneves.sa@gmail.com</a></p>
           <p><strong>Localidade:</strong> Brasil</p>
           <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
-            <em>* Este endereço de e-mail é monitorado para suporte a usuários e comunicações oficiais com equipes de verificação da Google.</em>
+            <em>* Este endereço de e-mail oficial é monitorado diretamente pelo desenvolvedor Thyago Neves da Silva Silvestre para atendimento a usuários, equipes de verificação da Google e autoridades competentes.</em>
           </p>
         </div>
       </section>
@@ -1280,7 +1328,7 @@
         <a href="terms.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Termos de Serviço</a> &nbsp;•&nbsp; 
         <a href="seguranca-infantil.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Padrões de Segurança Infantil (CSAE/CSAM)</a>
       </p>
-      <p style="margin-top: 0.5rem;">© 2026 Agenda Libras. Todos os direitos reservados. Em estrita conformidade com a LGPD e as Políticas de Dados de Usuários do Google.</p>
+      <p style="margin-top: 0.5rem;">© 2026 Agenda Libras. Todos os direitos reservados. Em estrita conformidade com a LGPD, CDC, Marco Civil e as Políticas de Dados de Usuários do Google.</p>
     </div>
   </footer>
 
@@ -1350,4 +1398,3 @@
   </script>
 </body>
 </html>
-

@@ -739,15 +739,15 @@
       <div class="meta-pills">
         <div class="meta-pill-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          <span>Data de Publicação: 23 de Outubro de 2026</span>
+          <span>Última atualização: 10 de Novembro de 2026</span>
         </div>
         <div class="meta-pill-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <span>Versão da Política: 1.0 (Google Play Compliant)</span>
+          <span>Versão da Política: 2.0 (Google Play Compliant)</span>
         </div>
         <div class="meta-pill-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <span>Contato Designado: thyagoneves.sa@gmail.com</span>
+          <span>Contato Designado (CSAE/CSAM): thyagoneves.sa@gmail.com</span>
         </div>
       </div>
     </div>
@@ -802,7 +802,7 @@
           Este documento estabelece publicamente os <strong>Padrões de Segurança Infantil</strong> adotados pelo desenvolvedor do aplicativo <strong>Agenda Libras</strong>, em estrita observância à <a href="https://support.google.com/googleplay/android-developer/answer/14747720" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">Política de Padrões de Segurança Infantil do Google Play</a>, ao <strong>Estatuto da Criança e do Adolescente (Lei Federal nº 8.069/1990 — ECA)</strong> e aos tratados internacionais de defesa da criança e do adolescente.
         </p>
         <p>
-          O aplicativo foi concebido com fins de <strong>acessibilidade, inclusão social e organização de contatos na Língua Brasileira de Sinais (Libras)</strong>. É terminantemente proibido o emprego de qualquer recurso do aplicativo para a criação, armazenamento, facilitação, promoção, solicitação ou disseminação de qualquer conteúdo que envolva exploração, pornografia ou abuso de crianças ou adolescentes.
+          O aplicativo foi concebido com fins de <strong>acessibilidade, inclusão social, organização de contatos e construção de glossários na Língua Brasileira de Sinais (Libras)</strong>. É terminantemente proibido o emprego de qualquer recurso local, backup em nuvem pessoal, transferência Bluetooth ou pacote exportado do aplicativo para a criação, armazenamento, facilitação, promoção, solicitação ou disseminação de qualquer conteúdo que envolva exploração, pornografia ou abuso de crianças ou adolescentes.
         </p>
       </section>
 
@@ -866,12 +866,12 @@
           Natureza Técnica do Aplicativo e Uso Seguro
         </h3>
         <p>
-          O <strong>Agenda Libras</strong> é um aplicativo com funcionamento <strong>100% offline</strong>:
+          O <strong>Agenda Libras</strong> opera sob arquitetura <strong>Offline-First com backup opcional na conta pessoal do Google Drive do usuário (<code>drive.appdata</code>)</strong>:
         </p>
         <ul>
-          <li><strong>Banco de Dados Local Isolado:</strong> Todas as informações de contatos, fotos e vídeos demonstrativos de sinais em Libras permanecem armazenadas no banco de dados local Room (SQLite) dentro do espaço de armazenamento privativo (sandbox) do dispositivo do usuário.</li>
-          <li><strong>Inexistência de Servidores Centrais de Mídia:</strong> O desenvolvedor do Agenda Libras <strong>não possui nem opera servidores em nuvem</strong> para hospedar, processar ou sincronizar o acervo de contatos dos usuários.</li>
-          <li><strong>Compartilhamento Voluntário de Arquivos <code>.lsbcontact</code>:</strong> O aplicativo disponibiliza uma funcionalidade utilitária de exportação de contatos através de arquivos com extensão <code>.lsbcontact</code>. A transmissão desses arquivos é feita exclusivamente por vontade e ação deliberada do próprio usuário através de canais externos de sua escolha (como aplicativos de mensagens ou e-mail de terceiros).</li>
+          <li><strong>Banco de Dados Local Isolado (Jetpack Room):</strong> As informações de contatos, perfil próprio, glossários, fotografias e vídeos demonstrativos de sinais em Libras residem primariamente no banco de dados local Room (SQLite) dentro do espaço privativo (<em>sandbox</em>) do dispositivo do usuário, com processamento de mídia e remoção de fundo (<em>ML Kit Selfie Segmentation</em>) executados 100% no aparelho.</li>
+          <li><strong>Backup Opcional na Nuvem Pessoal (<code>drive.appdata</code>) e Inexistência de Servidores Centrais:</strong> O desenvolvedor do Agenda Libras <strong>não possui, não hospeda e não opera servidores centrais proprietários</strong> para armazenar, sincronizar ou distribuir o acervo dos usuários. Caso o usuário habilite voluntariamente a conexão com sua Conta Google (escopo restrito <code>drive.appdata</code>), os vídeos e metadados dos <strong>Glossários</strong> (nos modos Nuvem ou Híbrido) e, conforme opção do usuário, o <strong>backup da agenda de contatos, perfil próprio, fotos e vídeos de contatos</strong> são salvos exclusivamente na pasta oculta <code>appDataFolder</code> da própria conta Google Drive do usuário.</li>
+          <li><strong>Pacotes Criptografados (<code>AES-256-GCM</code>), Proximidade Bluetooth e Android Sharesheet:</strong> O aplicativo gera e importa pacotes criptografados nos formatos <code>.lsbcontact</code>, <code>.lsbsign</code>, <code>.lsbglossary</code>, <code>.lsbglossarybackup</code> e <code>.lsbbackup</code>. A transmissão desses pacotes ocorre exclusivamente por iniciativa e ação deliberada do usuário via <strong>Transferência Direta por Proximidade (Bluetooth)</strong> entre aparelhos com o app instalado ou por canais externos escolhidos no Android Sharesheet (WhatsApp, Telegram, e-mail, etc.).</li>
         </ul>
 
         <div class="callout callout-warn">
@@ -879,9 +879,9 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           </div>
           <div class="callout-body">
-            <h4>Alerta sobre Arquivos Externos</h4>
+            <h4>Alerta Estendido sobre Pacotes Criptografados, Bluetooth e Nuvem Pessoal</h4>
             <p>
-              Qualquer tentativa de empacotar, transmitir ou compartilhar arquivos <code>.lsbcontact</code> contendo material ilícito de abuso infantil constitui crime inafiançável e violação frontal destes Padrões, sujeitando o infrator às medidas judiciais cabíveis nos termos do Estatuto da Criança e do Adolescente e do Código Penal Brasileiro.
+              Qualquer tentativa de gerar, empacotar, armazenar na nuvem pessoal (<code>drive.appdata</code>) ou transmitir via <strong>Transferência por Proximidade (Bluetooth)</strong> ou por quaisquer formatos <strong><code>.lsbcontact</code>, <code>.lsbsign</code>, <code>.lsbglossary</code>, <code>.lsbglossarybackup</code> e <code>.lsbbackup</code></strong> material ilícito de abuso ou exploração infantil constitui crime grave/inafiançável e violação frontal destes Padrões de Tolerância Zero, sujeitando o infrator às medidas penais e civis cabíveis nos termos do Estatuto da Criança e do Adolescente e do Código Penal Brasileiro.
             </p>
           </div>
         </div>
@@ -914,7 +914,7 @@
               <span>Canal Exclusivo de Segurança Infantil</span>
             </div>
             <p>
-              Envio direto de relato para o e-mail oficial designado: <a href="mailto:thyagoneves.sa@gmail.com?subject=Denúncia%20Segurança%20Infantil%20-%20Agenda%20Libras" style="color: var(--primary); font-weight: 700;">thyagoneves.sa@gmail.com</a>. As denúncias envolvendo menores recebem <strong>tratamento prioritário e resposta emergencial em até 24 horas</strong>.
+              Envio direto de relato para o e-mail oficial designado no Google Play Console: <a href="mailto:thyagoneves.sa@gmail.com?subject=Denúncia%20Segurança%20Infantil%20-%20Agenda%20Libras" style="color: var(--primary); font-weight: 700;">thyagoneves.sa@gmail.com</a>. As denúncias envolvendo menores recebem <strong>tratamento prioritário e resposta emergencial em até 24 horas</strong>.
             </p>
           </div>
         </div>
@@ -973,8 +973,8 @@
           <h4>Ponto de Contato Oficial (Google Play Developer Child Safety Representative)</h4>
           <p><strong>Nome do Responsável:</strong> Thyago Neves da Silva Silvestre</p>
           <p><strong>Aplicativo:</strong> Agenda Libras</p>
-          <p><strong>Endereço de E-mail Designado:</strong> <span class="badge-email">thyagoneves.sa@gmail.com</span></p>
-          <p><strong>Finalidade Específica:</strong> Canal dedicado ao esclarecimento de dúvidas sobre práticas de segurança infantil, prevenção a CSAM/CSAE e recepção prioritária de denúncias.</p>
+          <p><strong>E-mail Oficial Designado (Segurança Infantil, Suporte &amp; LGPD):</strong> <a href="mailto:thyagoneves.sa@gmail.com" style="text-decoration: none;"><span class="badge-email">thyagoneves.sa@gmail.com</span></a></p>
+          <p><strong>Finalidade Específica:</strong> Canal único oficial dedicado ao esclarecimento de dúvidas sobre práticas de segurança infantil, prevenção a CSAM/CSAE, recepção prioritária de denúncias, suporte ao usuário e LGPD, monitorado diretamente pelo desenvolvedor Thyago Neves da Silva Silvestre.</p>
           <p><strong>Tempo Estimado de Retorno:</strong> Até 24 horas para assuntos de segurança infantil.</p>
           <p><strong>País:</strong> Brasil</p>
         </div>
@@ -987,11 +987,11 @@
           Medidas de Moderação e Sanções Imediatas
         </h3>
         <p>
-          Caso qualquer usuário utilize indevidamente o nome, formato de arquivo ou marca do aplicativo Agenda Libras para fins associados a abuso infantil:
+          Caso qualquer usuário utilize indevidamente o nome, a nuvem pessoal (<code>drive.appdata</code>), a transferência Bluetooth, quaisquer formatos de pacote (<code>.lsbcontact</code>, <code>.lsbsign</code>, <code>.lsbglossary</code>, <code>.lsbglossarybackup</code>, <code>.lsbbackup</code>) ou a marca do aplicativo Agenda Libras para fins associados a abuso ou exploração infantil:
         </p>
         <ol>
-          <li><strong>Preservação de Evidências:</strong> Quaisquer evidências enviadas serão imediatamente registradas e preservadas estritamente para envio às autoridades investigativas competentes.</li>
-          <li><strong>Bloqueio e Revogação:</strong> Caso qualquer serviço complementar venha a ser disponibilizado no futuro com funcionalidades de conta ou sincronização, o usuário envolvido terá sua conta banida em caráter irrevogável e imediato.</li>
+          <li><strong>Preservação de Evidências:</strong> Quaisquer evidências recebidas em denúncia serão imediatamente registradas e preservadas estritamente para envio às autoridades investigativas competentes.</li>
+          <li><strong>Bloqueio, Cooperação com a Plataforma e Revogação:</strong> O desenvolvedor cooperará prontamente com a Google (Google Play e infraestrutura de contas Google) e com as autoridades competentes para bloqueio e providências legais cabíveis, bem como banirá em caráter irrevogável o infrator de qualquer canal ou funcionalidade vinculada sob seu controle.</li>
           <li><strong>Encaminhamento Penal:</strong> O autor será objeto de representação perante o Ministério Público e as forças policiais para instauração de inquérito criminal.</li>
         </ol>
       </section>
@@ -1031,10 +1031,10 @@
         <a href="privacy.html">Política de Privacidade</a> &nbsp;•&nbsp; 
         <a href="terms.html">Termos de Serviço</a> &nbsp;•&nbsp; 
         <a href="seguranca-infantil.html">Padrões de Segurança Infantil</a> &nbsp;•&nbsp; 
-        <a href="mailto:contato.agendalibras@gmail.com">Contato de Suporte</a>
+        <a href="mailto:thyagoneves.sa@gmail.com">Contato Oficial (E-mail)</a>
       </p>
       <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
-        © 2026 Agenda Libras. Todos os direitos reservados.
+        © 2026 Agenda Libras — Desenvolvedor: Thyago Neves da Silva Silvestre. Última atualização: 10 de Novembro de 2026.
       </p>
     </div>
   </footer>

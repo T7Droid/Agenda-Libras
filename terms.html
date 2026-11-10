@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Termos de Serviço — Agenda Libras</title>
-  <meta name="description" content="Termos de Serviço e Condições de Uso oficiais do aplicativo Agenda Libras. Condições de uso, integração com Google Drive e responsabilidade de dados.">
-  <meta name="keywords" content="Agenda Libras, Termos de Serviço, Termos de Uso, Google Drive, Libras, Acessibilidade, LGPD">
+  <meta name="description" content="Termos de Serviço e Condições de Uso oficiais do aplicativo Agenda Libras. Glossários em Libras, assinatura Glossários Premium, pacotes criptografados AES-256-GCM, Bluetooth por proximidade, Google Drive e responsabilidade de dados.">
+  <meta name="keywords" content="Agenda Libras, Termos de Serviço, Termos de Uso, Glossários Premium, Google Drive, drive.appdata, Libras, Acessibilidade, LGPD, CDC">
   <meta name="robots" content="index, follow">
   
   <!-- Favicon / Ícone Oficial -->
@@ -14,7 +14,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Termos de Serviço — Agenda Libras">
-  <meta property="og:description" content="Termos de Serviço e condições gerais de utilização do aplicativo Agenda Libras.">
+  <meta property="og:description" content="Termos de Serviço, regras da assinatura Glossários Premium e condições gerais de utilização do aplicativo Agenda Libras.">
   <meta property="og:image" content="https://t7droid.github.io/Agenda-Libras/assets/app-icon.jpg">
   <meta property="og:type" content="website">
 
@@ -273,7 +273,7 @@
     .hero-subtitle {
       font-size: 1.15rem;
       color: var(--text-secondary);
-      max-width: 740px;
+      max-width: 760px;
       margin: 0 auto 1.75rem;
       font-weight: 400;
     }
@@ -493,6 +493,41 @@
       color: var(--alert-shield-text);
     }
 
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: var(--bg-card-subtle);
+      color: var(--text-primary);
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
     .code-badge {
       font-family: var(--font-mono);
       font-size: 0.82rem;
@@ -645,23 +680,23 @@
       <div class="badge-group">
         <span class="badge badge-legal">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
-          Termos e Condições de Uso
+          Termos e Condições de Uso · CDC, LGPD & Google Play
         </span>
       </div>
 
       <h2 class="hero-title">Termos de Serviço</h2>
       <p class="hero-subtitle">
-        Por favor, leia atentamente as condições que regem a instalação, o acesso e o uso do aplicativo <strong>Agenda Libras</strong>, incluindo os recursos de catálogo local, glossários e integração opcional com o Google Drive.
+        Leia atentamente as condições jurídicas que regem a instalação, o acesso, o uso do módulo de <strong>Glossários em Libras</strong>, a assinatura opcional <strong>Glossários Premium</strong>, os pacotes criptografados <code>.lsb*</code>, a Transferência por Proximidade (Bluetooth) e a integração opcional com o <strong>Google Drive</strong> no aplicativo <strong>Agenda Libras</strong>.
       </p>
 
       <div class="meta-pills">
         <div class="meta-pill-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          <span>Última atualização: 02 de Novembro de 2026</span>
+          <span>Última atualização: 10 de Novembro de 2026</span>
         </div>
         <div class="meta-pill-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <span>Versão: 1.0</span>
+          <span>Versão: 2.0</span>
         </div>
       </div>
     </div>
@@ -679,17 +714,19 @@
       <nav>
         <ul class="toc-list" id="tocList">
           <li><a href="#aceitacao" class="toc-link">1. Aceitação dos Termos</a></li>
-          <li><a href="#descricao-servico" class="toc-link">2. Descrição do Aplicativo</a></li>
-          <li><a href="#elegibilidade" class="toc-link">3. Elegibilidade e Idade</a></li>
-          <li><a href="#google-drive" class="toc-link">4. Integração Google Drive</a></li>
-          <li><a href="#direitos-imagem" class="toc-link">5. Imagem e Conteúdos</a></li>
-          <li><a href="#conduta-proibida" class="toc-link">6. Usos Proibidos</a></li>
-          <li><a href="#propriedade-intelectual" class="toc-link">7. Propriedade Intelectual</a></li>
-          <li><a href="#isencao-garantias" class="toc-link">8. Isenção e Garantias</a></li>
-          <li><a href="#rescisao" class="toc-link">9. Rescisão e Desconexão</a></li>
-          <li><a href="#modificacoes" class="toc-link">10. Modificações</a></li>
-          <li><a href="#legislacao-foro" class="toc-link">11. Legislação e Foro</a></li>
-          <li><a href="#contato" class="toc-link">12. Contato</a></li>
+          <li><a href="#descricao-servico" class="toc-link">2. Descrição e Recursos</a></li>
+          <li><a href="#assinatura-premium" class="toc-link">3. Plano Gratuito e Premium</a></li>
+          <li><a href="#elegibilidade" class="toc-link">4. Elegibilidade e Idade</a></li>
+          <li><a href="#google-drive" class="toc-link">5. Integração Google Drive</a></li>
+          <li><a href="#isencao-linguistica" class="toc-link">6. Isenção Linguística</a></li>
+          <li><a href="#direitos-imagem" class="toc-link">7. Conteúdos, .lsb* e Bluetooth</a></li>
+          <li><a href="#conduta-proibida" class="toc-link">8. Usos Proibidos</a></li>
+          <li><a href="#propriedade-intelectual" class="toc-link">9. Propriedade Intelectual</a></li>
+          <li><a href="#isencao-garantias" class="toc-link">10. Isenção e Garantias</a></li>
+          <li><a href="#rescisao" class="toc-link">11. Rescisão e Cancelamento</a></li>
+          <li><a href="#modificacoes" class="toc-link">12. Modificações</a></li>
+          <li><a href="#legislacao-foro" class="toc-link">13. Legislação e Foro</a></li>
+          <li><a href="#contato" class="toc-link">14. Contato</a></li>
         </ul>
       </nav>
     </aside>
@@ -704,7 +741,7 @@
           Aceitação dos Termos de Serviço
         </h3>
         <p>
-          Ao baixar, instalar, acessar ou utilizar o aplicativo <strong>Agenda Libras</strong>, você declara ter lido, compreendido e concordado integralmente com estes Termos de Serviço e com a nossa <a href="privacy.html" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Política de Privacidade</a>. Caso não concorde com qualquer disposição aqui estabelecida, solicitamos que não instale nem utilize o aplicativo.
+          Ao baixar, instalar, acessar, assinar ou utilizar o aplicativo <strong>Agenda Libras</strong>, você declara ter lido, compreendido e concordado integralmente com estes Termos de Serviço, com a nossa <a href="privacy.html" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Política de Privacidade</a> e com os nossos <a href="seguranca-infantil.html" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Padrões de Segurança Infantil (CSAE/CSAM)</a>. Caso não concorde com qualquer disposição aqui estabelecida, não instale, não contrate assinaturas e interrompa imediatamente a utilização do aplicativo.
         </p>
       </section>
 
@@ -712,172 +749,286 @@
       <section id="descricao-servico" class="section">
         <h3 class="section-title">
           <span class="section-title-icon">2</span>
-          Descrição do Aplicativo e Finalidades
+          Descrição do Aplicativo, Módulo de Glossários e Formatos
         </h3>
         <p>
-          O <strong>Agenda Libras</strong> é uma ferramenta de software mobile desenvolvida para enriquecer a comunicação inclusiva, o aprendizado e o intercâmbio na Língua Brasileira de Sinais (Libras). Suas funcionalidades compreendem:
+          O <strong>Agenda Libras</strong> é uma ferramenta de software mobile concebida para fortalecer a comunicação acessível, a organização pessoal e o intercâmbio na Língua Brasileira de Sinais (Libras). Suas funcionalidades atuais compreendem:
         </p>
         <ul>
-          <li><strong>Catálogo Visual de Contatos:</strong> Cadastro de contatos com vinculação do "sinal de batismo" em vídeo ou imagem estática, armazenados localmente no dispositivo (SQLite / Jetpack Room).</li>
-          <li><strong>Glossários Temáticos em Libras:</strong> Criação e consulta de listas temáticas de termos com vídeos demonstrativos de execução dos sinais em Libras.</li>
-          <li><strong>Backup Opcional no Google Drive:</strong> Sincronização segura de vídeos e dados dos glossários diretamente na conta Google Drive do próprio usuário, mediante autenticação explícita.</li>
-          <li><strong>Exportação .lsbcontact:</strong> Compartilhamento direto voluntário entre usuários de cartões de contato contendo o vídeo do sinal correspondente.</li>
+          <li><strong>Catálogo Visual de Contatos e Perfil Próprio:</strong> Cadastro e organização local (SQLite / Jetpack Room) de contatos e do perfil do usuário com dados de contato, fotografias e vídeos do "sinal de batismo" em Libras, incluindo remoção ou substituição de fundo de fotos processada <strong>100% localmente no dispositivo</strong> por meio do <em>ML Kit Selfie Segmentation</em>, sem envio de imagens a servidores externos.</li>
+          <li><strong>Módulo de Glossários em Libras:</strong> Ferramenta para criação, edição e organização de múltiplos glossários temáticos, com múltiplas categorias, termos em português, notas e descrições contextuais e filtros avançados. Cada sinal admite <strong>múltiplos vídeos</strong> (para registrar variações regionais ou de contexto) e etiquetagem pelos <strong>parâmetros da Libras</strong>: <em>Configuração de Mão</em> (79 configurações), <em>Ponto de Articulação/Locação</em>, <em>Tipo de Movimento</em> e <em>Orientação da Palma</em>.</li>
+          <li><strong>Processamento Local de Vídeo:</strong> Gravação pela câmera do aparelho ou importação da galeria com recorte de tempo (duração máxima de <strong>5 segundos</strong>), rotação, compressão e transcodificação executadas localmente para o formato MP4 (H.264), sendo os vídeos do módulo de Glossários gravados e processados <strong>sem faixa de áudio</strong>.</li>
+          <li><strong>Modos de Armazenamento de Mídia:</strong> O usuário pode escolher, por sinal ou configuração, entre armazenamento <strong>Local</strong> (exclusivo no dispositivo), <strong>Nuvem</strong> (pasta oculta <code>appDataFolder</code> do Google Drive pessoal do usuário, com download sob demanda ou marcação para disponibilidade offline) ou <strong>Híbrido</strong> (cópia local mantida no aparelho e cópia de segurança na nuvem pessoal), bem como optar pelo backup em nuvem da agenda de contatos, perfil próprio, fotos e vídeos.</li>
+          <li><strong>Exportação e Importação em Pacotes Criptografados (AES-256-GCM):</strong> O aplicativo gera e importa pacotes protegidos por criptografia <code>AES-256-GCM</code> nos formatos:
+            <ul>
+              <li><span class="code-badge">.lsbcontact</span> — compartilhamento de contato individual (dados, foto e vídeo do sinal);</li>
+              <li><span class="code-badge">.lsbsign</span> — compartilhamento de um sinal individual do glossário com suas variações de vídeo, categorias e glossário de origem;</li>
+              <li><span class="code-badge">.lsbglossary</span> — exportação e compartilhamento de um glossário completo com categorias, sinais e vídeos;</li>
+              <li><span class="code-badge">.lsbglossarybackup</span> — backup local completo de todos os glossários;</li>
+              <li><span class="code-badge">.lsbbackup</span> — backup local completo da agenda de contatos, fotos e vídeos.</li>
+            </ul>
+          </li>
+          <li><strong>Transferência Direta por Proximidade (Bluetooth) e Android Sharesheet:</strong> Envio direto ponto a ponto entre dois aparelhos próximos que possuam o Agenda Libras instalado (via Bluetooth), além da possibilidade de compartilhamento pelo seletor nativo do sistema (Android Sharesheet — WhatsApp, Telegram, e-mail, etc.).</li>
         </ul>
       </section>
 
-      <!-- 3. Elegibilidade -->
-      <section id="elegibilidade" class="section">
+      <!-- 3. Plano Gratuito e Assinatura Glossários Premium -->
+      <section id="assinatura-premium" class="section">
         <h3 class="section-title">
           <span class="section-title-icon">3</span>
+          Plano Gratuito e Assinatura "Glossários Premium"
+        </h3>
+        <p>
+          O Agenda Libras adota um modelo <strong>Freemium</strong> claro e transparente, observando integralmente o Código de Defesa do Consumidor (Lei nº 8.078/1990 — CDC) e as Políticas de Pagamentos da Google Play Store:
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Modalidade</th>
+                <th>Recursos Incluídos</th>
+                <th>Limites Aplicáveis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Plano Gratuito</strong></td>
+                <td>
+                  Agenda de contatos em Libras completa; criação ilimitada de glossários, categorias e sinais sem vídeo; compartilhamento e importação em todos os formatos <code>.lsb*</code> e Transferência por Proximidade Bluetooth; backup opcional via <code>drive.appdata</code>.
+                </td>
+                <td>
+                  Gravação/armazenamento de até <strong>30 vídeos de sinais</strong> no módulo de Glossários (somando vídeos locais e na nuvem) nas resoluções <strong>SD (480p)</strong> e <strong>HD (720p)</strong>.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Glossários Premium</strong><br><span class="code-badge">glossarios_premium</span></td>
+                <td>
+                  Todos os recursos do Plano Gratuito, acrescidos de: (1) gravação de vídeos em resolução <strong>Full HD (1080p)</strong> e (2) salvamento, gravação e importação de <strong>mais de 30 vídeos de sinais</strong> no módulo de Glossários, sem limite imposto pelo aplicativo.
+                </td>
+                <td>
+                  Sujeito apenas ao espaço físico disponível no dispositivo do usuário, à cota de armazenamento da sua própria conta Google Drive e aos limites operacionais da API do Google Drive descritos abaixo.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ol>
+          <li>
+            <strong>Planos Disponíveis e Valores de Referência:</strong> A assinatura <span class="code-badge">glossarios_premium</span> é ofertada nas modalidades <strong>Plano Mensal</strong> (valor de referência: <strong>R$ 9,90/mês</strong>) e <strong>Plano Anual</strong> (valor de referência: <strong>R$ 99,90/ano</strong>, com desconto em relação ao mensal). O preço final exibido na tela de contratação da Google Play Store poderá variar conforme moeda local, tributos incidentes, campanhas promocionais e políticas da Google Play no momento da assinatura. Ambos os ciclos (Mensal e Anual) liberam exatamente os mesmos benefícios funcionais.
+          </li>
+          <li>
+            <strong>Processamento Exclusivo pela Google Play Store (Google Play Billing):</strong> Toda contratação, faturamento, renovação, alteração de plano e estorno é processada exclusivamente pela infraestrutura oficial da <strong>Google Play Store</strong>. O desenvolvedor não coleta, não tem acesso, não processa e não armazena números de cartão de crédito, chaves PIX, dados de boleto ou informações bancárias do usuário.
+          </li>
+          <li>
+            <strong>Pagamentos Pendentes (Boleto, PIX e Meios Assíncronos):</strong> Caso o usuário selecione forma de pagamento assíncrona na Google Play (como boleto bancário ou PIX aguardando compensação), o pedido permanecerá em estado pendente e os recursos Premium somente serão liberados após a confirmação oficial de liquidação enviada pela Google Play ao aplicativo.
+          </li>
+          <li>
+            <strong>Renovação Automática, Cancelamento e Efeitos Pós-Vencimento:</strong>
+            <ul>
+              <li>A assinatura renova-se automaticamente ao término de cada período contratado (mensal ou anual), salvo se cancelada pelo usuário com antecedência diretamente em <em>Google Play Store &gt; Pagamentos e assinaturas &gt; Assinaturas</em> (ou através do atalho de gerenciamento disponibilizado no aplicativo).</li>
+              <li><strong>Sem Exclusão de Conteúdo ao Cancelar:</strong> O cancelamento não provoca qualquer exclusão automática dos vídeos ou glossários já salvos. Os benefícios Premium permanecem ativos até o término do ciclo já pago.</li>
+              <li><strong>Retorno ao Plano Gratuito:</strong> Após o vencimento do ciclo sem renovação, o aplicativo retorna automaticamente ao Plano Gratuito: o usuário continua podendo visualizar, reproduzir e exportar normalmente todos os sinais e vídeos existentes, porém ficam bloqueadas novas gravações em 1080p e a gravação ou importação de novos vídeos no módulo de Glossários enquanto o acervo total for igual ou superior a 30 vídeos.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Alteração / Substituição de Plano Sem Duplicidade:</strong> A migração entre o Plano Mensal e o Plano Anual dentro da mesma assinatura <span class="code-badge">glossarios_premium</span> utiliza o mecanismo oficial de substituição imediata da Google Play (<em>SubscriptionUpdateParams</em>), evitando cobrança em duplicidade.
+          </li>
+          <li>
+            <strong>Reembolso e Direito de Arrependimento (Art. 49 do CDC):</strong> Solicitações de reembolso e exercício do direito de arrependimento (inclusive dentro do prazo legal de 7 dias previsto no art. 49 do Código de Defesa do Consumidor, quando aplicável) seguem integralmente o fluxo oficial, os prazos e as políticas de reembolso da Google Play Store.
+          </li>
+          <li>
+            <strong>Reajuste de Preços, Disponibilidade e Restauração de Compras:</strong> O desenvolvedor reserva-se o direito de reajustar valores ou modificar condições futuras de planos mediante aviso prévio e em conformidade com as regras de alteração de preço da Google Play Store. O usuário pode sincronizar assinaturas ativas vinculadas à mesma conta Google Play a qualquer tempo utilizando o botão <strong>"Restaurar Compras"</strong> no aplicativo.
+          </li>
+          <li>
+            <strong>Validação Local e Cache Offline de até 72 Horas:</strong> Para permitir o uso contínuo em deslocamentos ou ambientes sem sinal, o status da assinatura é protegido em cofre criptografado local (<code>AndroidKeyStore</code> com <code>AES-256-GCM</code>) com <strong>cache offline de até 72 horas</strong>. Após 72 horas consecutivas sem conectividade com os servidores da Google Play — ou caso seja detectada adulteração do relógio do dispositivo ou da integridade do aplicativo — os recursos Premium poderão exigir reconexão à internet para revalidação da assinatura ativa.
+          </li>
+          <li>
+            <strong>O que o Premium NÃO Inclui (Limites Técnicos e Google Drive):</strong> A assinatura <span class="code-badge">glossarios_premium</span> <strong>não comercializa espaço de armazenamento proprietário em servidores do desenvolvedor</strong>. O backup e a sincronização em nuvem continuam utilizando exclusivamente a conta pessoal do usuário no Google Drive (<code>drive.appdata</code>) e permanecem sujeitos aos limites técnicos operacionais e de cota da API do Google Cloud Drive aplicados igualmente a usuários gratuitos e Premium (duração máxima de 5 segundos por vídeo, tamanho máximo de 15 MB por arquivo, formato MP4/H.264, limites horários/diários de uploads, downloads, banda diária de backup e número de sincronizações completas diárias para prevenção de abuso e estabilidade do serviço).
+          </li>
+        </ol>
+      </section>
+
+      <!-- 4. Elegibilidade -->
+      <section id="elegibilidade" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">4</span>
           Elegibilidade e Uso por Menores de Idade
         </h3>
         <p>
           O aplicativo destina-se ao público geral com propósitos educacionais, comunicativos e organizacionais.
         </p>
         <p>
-          Se você for menor de 18 anos, deve utilizar o aplicativo sob a supervisão e com a expressa autorização de seus pais ou responsáveis legais, que serão integralmente responsáveis pela sua conduta, gravação de imagens e compartilhamento de mídias, nos termos do Estatuto da Criança e do Adolescente (Lei nº 8.069/1990).
+          Se você for menor de 18 anos, deve utilizar o aplicativo — e sobretudo contratar assinaturas ou realizar gravações e compartilhamentos — sob a supervisão e com a expressa autorização de seus pais ou responsáveis legais, que responderão integralmente pela conduta do menor, nos termos do Estatuto da Criança e do Adolescente (Lei nº 8.069/1990 — ECA) e do Código Civil Brasileiro.
         </p>
       </section>
 
-      <!-- 4. Google Drive -->
+      <!-- 5. Google Drive -->
       <section id="google-drive" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">4</span>
+          <span class="section-title-icon">5</span>
           Integração com a Conta Google e Google Drive
         </h3>
         <p>
-          O aplicativo oferece aos usuários a possibilidade voluntária de conectar sua Conta Google para armazenar cópias de segurança dos vídeos e termos de seus glossários:
+          O aplicativo oferece aos usuários a possibilidade voluntária de conectar sua Conta Google para armazenar cópias de segurança e sincronizar seus dados diretamente na sua própria nuvem:
         </p>
         <ul>
           <li><strong>Autorização Específica (OAuth 2.0):</strong> Ao conectar, o usuário concede autorização estritamente limitada ao escopo <span class="code-badge">https://www.googleapis.com/auth/drive.appdata</span>.</li>
-          <li><strong>Confinamento à Pasta do Aplicativo:</strong> O Agenda Libras não tem permissão para ler, ver, alterar ou excluir nenhum outro documento, foto ou arquivo presente no Google Drive do usuário. Apenas a pasta oculta de dados vinculada ao app é manipulada.</li>
-          <li><strong>Guarda e Segurança de Credenciais:</strong> O usuário é o único responsável pela integridade, sigilo e segurança de sua conta Google, de suas senhas e dos dispositivos nos quais mantém sessão ativa.</li>
-          <li><strong>Revogação e Desconexão:</strong> O usuário tem o direito de desconectar sua conta a qualquer momento pelo app ou revogar permanentemente as credenciais em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">https://myaccount.google.com/permissions</a>.</li>
-          <li><strong>Conformidade Google:</strong> O tratamento de dados oriundos do Google Drive obedece à Política de Dados do Usuário dos Serviços de API do Google e suas exigências de Uso Limitado.</li>
+          <li><strong>Confinamento à Pasta do Aplicativo (<code>appDataFolder</code>):</strong> O Agenda Libras não tem permissão para ler, ver, alterar ou excluir nenhum outro documento, foto, pasta ou arquivo presente no Google Drive pessoal do usuário. Apenas a pasta oculta e isolada reservada ao aplicativo é manipulada.</li>
+          <li><strong>Dados Abrangidos pelo Backup em Nuvem:</strong> Conforme as escolhas e modos selecionados pelo usuário (Local, Nuvem, Híbrido ou Backup em Nuvem), podem ser armazenados na pasta <code>appDataFolder</code> tanto os <strong>Glossários e seus vídeos</strong> quanto o <strong>backup da agenda de contatos, perfil próprio, fotos e vídeos de sinais de contatos</strong>, sempre sem servidores intermediários do desenvolvedor.</li>
+          <li><strong>Guarda e Segurança de Credenciais:</strong> O usuário é o único responsável pela integridade, sigilo e segurança de sua conta Google, de sua cota de espaço no Google Drive e dos dispositivos nos quais mantém sessão ativa.</li>
+          <li><strong>Revogação e Desconexão:</strong> O usuário pode desconectar sua conta a qualquer momento no aplicativo ou revogar permanentemente a permissão em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">https://myaccount.google.com/permissions</a>.</li>
+          <li><strong>Conformidade Google:</strong> O uso de dados provenientes das APIs do Google obedece à <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Política de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de Uso Limitado.</li>
         </ul>
       </section>
 
-      <!-- 5. Direitos de Imagem -->
+      <!-- 6. Isenção Linguística, Pedagógica e Acadêmica -->
+      <section id="isencao-linguistica" class="section">
+        <h3 class="section-title">
+          <span class="section-title-icon">6</span>
+          Isenção de Responsabilidade Linguística, Pedagógica e Acadêmica
+        </h3>
+        <p>
+          O Agenda Libras é uma plataforma tecnológica de organização pessoal e armazenamento criado para autonomia do usuário. Portanto:
+        </p>
+        <ul>
+          <li><strong>Conteúdo Criado pelos Usuários:</strong> Todos os termos em português, notas contextuais, categorias, definições, escolhas de parâmetros da Libras (Configuração de Mão, Ponto de Articulação/Locação, Tipo de Movimento e Orientação da Palma) e vídeos de sinais presentes nos glossários ou contatos são inteiramente criados, gravados ou importados pelos próprios usuários.</li>
+          <li><strong>Ausência de Validação ou Garantia Acadêmica:</strong> O desenvolvedor não revisa, não homologa, não certifica e não garante a correção linguística, gramatical, pedagógica, lexicográfica ou a adequação regional dos sinais cadastrados ou recebidos por terceiros.</li>
+          <li><strong>Caráter Auxiliar:</strong> O aplicativo não substitui cursos formais de Libras, tradutores e intérpretes profissionais (TILS), dicionários acadêmicos oficiais nem consultorias especializadas em acessibilidade.</li>
+        </ul>
+      </section>
+
+      <!-- 7. Direitos de Imagem, Pacotes .lsb*, Bluetooth e Proteção de Tela -->
       <section id="direitos-imagem" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">5</span>
-          Direitos de Imagem, Voz e Responsabilidade sobre Conteúdos
+          <span class="section-title-icon">7</span>
+          Direitos de Imagem, Autorais, Pacotes <code>.lsb*</code>, Bluetooth e Limites de Bloqueio de Tela
         </h3>
         <div class="callout callout-warn">
           <div class="callout-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
           </div>
           <div class="callout-body">
-            <h4>Responsabilidade Exclusiva do Criador do Conteúdo</h4>
+            <h4>Responsabilidade Exclusiva do Criador e Remetente do Conteúdo</h4>
             <p>
-              O usuário é legal e exclusivamente responsável por todo e qualquer conteúdo que gravar, armazenar, sincronizar ou compartilhar através do Agenda Libras.
+              O usuário é legal, civil e penalmente responsável por todo e qualquer conteúdo que gravar, editar, processar, armazenar, sincronizar na nuvem pessoal ou compartilhar através do Agenda Libras.
             </p>
           </div>
         </div>
-        <p>Você declara e garante expressamente que:</p>
+        <p>Você declara e concorda expressamente que:</p>
         <ol>
-          <li>Possui todas as permissões, consentimentos válidos e autorizações de direito de imagem e voz das pessoas cujos vídeos ou fotos foram gravados e inseridos no aplicativo.</li>
-          <li>Não inserirá materiais que violem direitos de terceiros, direitos autorais, marcas registradas ou sigilos protegidos por lei.</li>
-          <li>O desenvolvedor do Agenda Libras não fiscaliza e não assume qualquer obrigação prévia de moderação sobre os arquivos cadastrados localmente ou transmitidos via arquivos <code>.lsbcontact</code>.</li>
+          <li>
+            <strong>Autorizações de Imagem, Voz e Direitos Autorais:</strong> Possui todas as autorizações prévias, consentimentos válidos (inclusive de pais ou responsáveis legais, quando envolver menores) e direitos autorais referentes às pessoas, sinais, fotografias e vídeos que cadastrar, importar ou editar (inclusive com remoção/substituição de fundo local) no aplicativo.
+          </li>
+          <li>
+            <strong>Ausência de Moderação Prévia e Extensão a Todos os Formatos e Canais:</strong> O desenvolvedor do Agenda Libras atua estritamente como fornecedor do software, <strong>não tendo acesso, custódia nem obrigação de moderação prévia</strong> sobre arquivos armazenados localmente, salvos na nuvem pessoal (<code>drive.appdata</code>) ou transferidos sob demanda nos formatos <span class="code-badge">.lsbcontact</span>, <span class="code-badge">.lsbsign</span>, <span class="code-badge">.lsbglossary</span>, <span class="code-badge">.lsbglossarybackup</span> e <span class="code-badge">.lsbbackup</span>, seja via <strong>Transferência Direta por Proximidade (Bluetooth)</strong>, seja via <strong>Android Sharesheet</strong> (WhatsApp, Telegram, e-mail, etc.).
+          </li>
+          <li>
+            <strong>Limitações Técnicas de Bloqueio de Tela, Expiração e Restrição de Recompartilhamento:</strong> Quando o aplicativo disponibiliza opções de bloqueio de captura de tela (<em>screenshot/screen recording</em>), restrição de recompartilhamento ou prazo de expiração de visualização para conteúdos compartilhados, <strong>tais travas técnicas atuam exclusivamente dentro do ambiente do aplicativo Agenda Libras</strong>. Por limitações físicas e arquiteturais inerentes a qualquer software, o desenvolvedor <strong>não pode garantir nem impedir</strong> fotografias ou gravações de tela efetuadas com câmeras externas (outros celulares ou filmadoras), tampouco repasses ou cópias dos arquivos feitos pelo destinatário em aplicativos de terceiros antes da expiração ou importação.
+          </li>
         </ol>
       </section>
 
-      <!-- 6. Usos Proibidos -->
+      <!-- 8. Usos Proibidos -->
       <section id="conduta-proibida" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">6</span>
+          <span class="section-title-icon">8</span>
           Conduta do Usuário e Usos Proibidos
         </h3>
         <p>É terminantemente proibido utilizar o Agenda Libras para:</p>
         <ul>
-          <li><strong>Abuso e Exploração Sexual Infantil (CSAE / CSAM):</strong> É expressamente proibida a criação, armazenamento ou disseminação de qualquer material que envolva abuso ou exploração sexual de crianças ou adolescentes. Mantemos política de <strong>Tolerância Zero</strong> com encaminhamento imediato às autoridades policiais (veja nossa página de <a href="seguranca-infantil.html" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Segurança Infantil</a>).</li>
-          <li><strong>Discurso de Ódio, Assédio e Discriminação:</strong> Gravar ou propagar ofensas, intimidações, ameaças ou discriminações baseadas em deficiência, gênero, etnia, religião ou orientação sexual.</li>
-          <li><strong>Práticas Ilícitas:</strong> Cometer qualquer conduta tipificada como crime ou contravenção pela legislação brasileira.</li>
-          <li><strong>Ataques Técnicos e Engenharia Reversa Ilícita:</strong> Tentar burlar mecanismos de autenticação, descompilar, injetar código malicioso ou comprometer a integridade de APIs associadas ao app.</li>
+          <li><strong>Abuso e Exploração Sexual Infantil (CSAE / CSAM):</strong> É expressamente proibida a criação, importação, armazenamento local ou em nuvem pessoal, ou transmissão por Bluetooth, Sharesheet ou por quaisquer pacotes <code>.lsbcontact</code>, <code>.lsbsign</code>, <code>.lsbglossary</code>, <code>.lsbglossarybackup</code> e <code>.lsbbackup</code> de material que envolva abuso ou exploração sexual de crianças ou adolescentes. Mantemos política de <strong>Tolerância Zero</strong> com encaminhamento imediato às autoridades competentes (consulte nossos <a href="seguranca-infantil.html" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Padrões de Segurança Infantil</a>).</li>
+          <li><strong>Discurso de Ódio, Assédio e Discriminação:</strong> Gravar ou disseminar ofensas, intimidações, calúnia, difamação, injúria ou discriminações de qualquer natureza.</li>
+          <li><strong>Fraude Comercial e Adulteração Técnica:</strong> Fraudar o sistema de assinaturas da Google Play Store, manipular o relógio do sistema ou tentar contornar as verificações de integridade e cofre criptografado local (<code>AndroidKeyStore</code>), bem como executar engenharia reversa ilícita ou sobrecarga abusiva das APIs integradas.</li>
+          <li><strong>Práticas Ilícitas em Geral:</strong> Cometer qualquer conduta tipificada como crime, contravenção penal ou violação de direitos autorais e de privacidade pela legislação brasileira.</li>
         </ul>
       </section>
 
-      <!-- 7. Propriedade Intelectual -->
+      <!-- 9. Propriedade Intelectual -->
       <section id="propriedade-intelectual" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">7</span>
+          <span class="section-title-icon">9</span>
           Propriedade Intelectual
         </h3>
         <p>
-          Todos os direitos sobre o software <strong>Agenda Libras</strong>, incluindo seu código-fonte, design, logotipos, ícones, elementos visuais e documentação técnica, são de propriedade exclusiva de seu desenvolvedor, estando protegidos pela legislação de direitos autorais e propriedade intelectual (Lei nº 9.609/1998 e Lei nº 9.610/1998).
+          Todos os direitos sobre o software <strong>Agenda Libras</strong>, incluindo seu código-fonte, arquitetura de pacotes <code>.lsb*</code>, design, logotipos, ícones, elementos visuais e documentação técnica, são de propriedade exclusiva de seu desenvolvedor, protegidos pela Lei de Software (Lei nº 9.609/1998) e pela Lei de Direitos Autorais (Lei nº 9.610/1998).
         </p>
         <p>
-          O usuário retém integralmente a propriedade e titularidade de todos os dados pessoais, vídeos e fotografias criados ou importados por ele no aplicativo.
+          O usuário retém integralmente a titularidade sobre todos os dados pessoais, glossários, vídeos e fotografias por ele criados ou legitimamente importados no aplicativo.
         </p>
       </section>
 
-      <!-- 8. Isenção de Garantias -->
+      <!-- 10. Isenção de Garantias -->
       <section id="isencao-garantias" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">8</span>
+          <span class="section-title-icon">10</span>
           Isenção e Limitação de Responsabilidade
         </h3>
         <p>
-          O aplicativo é disponibilizado "no estado em que se encontra" (<em>as is</em>) e "conforme disponível" (<em>as available</em>), sem garantias de qualquer natureza, expressas ou implícitas.
+          O aplicativo é disponibilizado "no estado em que se encontra" (<em>as is</em>) e "conforme disponível" (<em>as available</em>), sem garantias implícitas de adequação a finalidade acadêmica ou comercial específica.
         </p>
-        <p>Na máxima extensão permitida pela legislação aplicável, o desenvolvedor não se responsabiliza por:</p>
+        <p>Na máxima extensão permitida pela legislação brasileira, o desenvolvedor não se responsabiliza por:</p>
         <ul>
-          <li>Perdas de dados decorrentes de mau funcionamento físico do dispositivo do usuário, exclusões acidentais, desinstalação sem backup prévio ou incidentes nos serviços do Google Drive;</li>
-          <li>Interrupções transitórias de conectividade causadas por operadoras de telecomunicações ou indisponibilidade de serviços da Google;</li>
-          <li>Compartilhamento indevido de arquivos efetuado pelo próprio usuário ou por destinatários de arquivos <code>.lsbcontact</code>.</li>
+          <li>Perdas de dados decorrentes de defeito físico, roubo, perda ou formatação do aparelho do usuário, exclusões acidentais, desinstalação sem realização prévia de backup (<code>.lsbbackup</code>, <code>.lsbglossarybackup</code> ou Google Drive) ou limitações/indisponibilidade da conta Google do usuário;</li>
+          <li>Interrupções transitórias ou limitações de cota impostas pelas APIs do Google Cloud Drive ou pela infraestrutura da Google Play Store e operadoras de telecomunicações;</li>
+          <li>Uso indevido, divulgação não autorizada ou falhas de confidencialidade praticadas por destinatários de arquivos <code>.lsbcontact</code>, <code>.lsbsign</code>, <code>.lsbglossary</code>, <code>.lsbglossarybackup</code> ou <code>.lsbbackup</code> enviados por Bluetooth ou aplicativos terceiros.</li>
         </ul>
       </section>
 
-      <!-- 9. Rescisão -->
+      <!-- 11. Rescisão -->
       <section id="rescisao" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">9</span>
-          Rescisão e Encerramento
+          <span class="section-title-icon">11</span>
+          Rescisão, Cancelamento e Encerramento
         </h3>
         <p>
-          Você poderá cessar a utilização do Agenda Libras a qualquer momento, bastando desinstalar o aplicativo de seus dispositivos móveis e, se desejar, revogar as permissões concedidas em sua conta Google.
+          Você pode encerrar a utilização do Agenda Libras a qualquer momento, bastando cancelar eventual assinatura ativa diretamente na Google Play Store (caso possua o plano <em>Glossários Premium</em>), desconectar sua conta Google ou revogar o acesso em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">myaccount.google.com/permissions</a> e desinstalar o aplicativo de seus aparelhos.
         </p>
       </section>
 
-      <!-- 10. Modificações -->
+      <!-- 12. Modificações -->
       <section id="modificacoes" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">10</span>
+          <span class="section-title-icon">12</span>
           Modificações nestes Termos
         </h3>
         <p>
-          Reservamo-nos o direito de modificar estes Termos de Serviço periodicamente para refletir alterações legislativas, novidades tecnológicas ou novas funcionalidades do software. A data da versão mais recente estará sempre discriminada no topo desta página.
+          Estes Termos de Serviço poderão ser atualizados periodicamente para refletir novos recursos do aplicativo, ajustes regulatórios da Google Play Store, modificações na API do Google Drive ou atualizações legais. A data da última revisão e o número da versão estarão sempre visíveis no topo desta página.
         </p>
       </section>
 
-      <!-- 11. Legislação e Foro -->
+      <!-- 13. Legislação e Foro -->
       <section id="legislacao-foro" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">11</span>
+          <span class="section-title-icon">13</span>
           Legislação Aplicável e Foro Competente
         </h3>
         <p>
-          Estes Termos de Serviço são regidos e interpretados em conformidade com as leis da <strong>República Federativa do Brasil</strong>, em particular pelo Marco Civil da Internet (Lei nº 12.965/2014), Lei Geral de Proteção de Dados (Lei nº 13.709/2018) e Código Civil Brasileiro.
+          Estes Termos de Serviço são regidos pelas leis da <strong>República Federativa do Brasil</strong>, especialmente pelo Marco Civil da Internet (Lei nº 12.965/2014), Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD), Código de Defesa do Consumidor (Lei nº 8.078/1990 — CDC), Estatuto da Criança e do Adolescente (Lei nº 8.069/1990 — ECA), Lei do Software (Lei nº 9.609/1998), Lei de Direitos Autorais (Lei nº 9.610/1998) e Código Civil Brasileiro.
         </p>
         <p>
-          Fica eleito o foro da comarca de domicílio do desenvolvedor no Brasil para dirimir eventuais litígios oriundos deste instrumento, com renúncia expressa a qualquer outro, por mais privilegiado que seja.
+          Fica eleito o foro da comarca de domicílio do usuário consumidor no Brasil, quando aplicável nos termos do art. 101, I do CDC, ou do domicílio do desenvolvedor nos demais casos, para dirimir quaisquer controvérsias oriundas deste instrumento.
         </p>
       </section>
 
-      <!-- 12. Contato -->
+      <!-- 14. Contato -->
       <section id="contato" class="section">
         <h3 class="section-title">
-          <span class="section-title-icon">12</span>
+          <span class="section-title-icon">14</span>
           Canal de Atendimento e Informações de Contato
         </h3>
         <p>
-          Caso tenha dúvidas sobre estes Termos de Serviço ou necessite de esclarecimentos operacionais:
+          Para dúvidas sobre estes Termos de Serviço, solicitações relacionadas à assinatura ou esclarecimentos operacionais:
         </p>
         <div class="contact-card">
           <h4>Suporte Oficial — Agenda Libras</h4>
-          <p><strong>Desenvolvedor:</strong> Thyago Silvestre</p>
-          <p><strong>E-mail de Contato:</strong> <a href="mailto:contato.agendalibras@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">contato.agendalibras@gmail.com</a></p>
+          <p><strong>Desenvolvedor Responsável:</strong> Thyago Neves da Silva Silvestre</p>
+          <p><strong>E-mail Oficial (Suporte, Termos, Assinaturas, LGPD &amp; Segurança Infantil):</strong> <a href="mailto:thyagoneves.sa@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">thyagoneves.sa@gmail.com</a></p>
           <p><strong>País:</strong> Brasil</p>
+          <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+            <em>* Este é o endereço eletrônico oficial monitorado diretamente pelo desenvolvedor Thyago Neves da Silva Silvestre.</em>
+          </p>
         </div>
       </section>
 
@@ -966,4 +1117,3 @@
   </script>
 </body>
 </html>
-

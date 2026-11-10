@@ -1,74 +1,40 @@
-# Agenda Libras — Documentação Oficial & Conformidade Google
+# Agenda Libras — Site Institucional & Documentação Legal
 
-Repositório oficial das páginas web institucionais e de conformidade legal do aplicativo **Agenda Libras**, hospedado no **GitHub Pages**:
+Repositório oficial das páginas web institucionais e documentos de conformidade legal do aplicativo **Agenda Libras**, publicado via **GitHub Pages**:
 
 🌐 **Endereço Oficial:** [https://t7droid.github.io/Agenda-Libras/](https://t7droid.github.io/Agenda-Libras/)
 
-Projetado em rigorosa consonância com os requisitos de:
-- **Verificação de Marca e Verificação OAuth do Google (Google Cloud Platform / OAuth 2.0)**;
-- **Política de Dados do Usuário dos Serviços de API do Google (Google API Services User Data Policy / Limited Use Requirements)**;
-- **Diretrizes de Conteúdo e Segurança de Dados da Google Play Store (Data Safety Section)**;
-- **Política de Padrões de Segurança Infantil da Google Play (CSAE/CSAM)**;
-- **LGPD — Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018)** e **ECA (Lei nº 8.069/1990)**.
+Documentação estruturada em conformidade com:
+- **LGPD** — Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018);
+- **Marco Civil da Internet** (Lei nº 12.965/2014) e **Código de Defesa do Consumidor — CDC** (Lei nº 8.078/1990);
+- **ECA** — Estatuto da Criança e do Adolescente (Lei nº 8.069/1990) e **Política de Padrões de Segurança Infantil da Google Play (CSAE/CSAM)**;
+- **Lei do Software e Direitos Autorais** (Lei nº 9.609/1998 e Lei nº 9.610/1998);
+- **Política de Dados do Usuário dos Serviços de API do Google** (*Google API Services User Data Policy* — *Limited Use Requirements*) e **Políticas da Google Play Store**.
 
 ---
 
-## 📄 Estrutura das Páginas Web
+## 📄 Páginas Publicadas
 
-| Página | Arquivo | URL no GitHub Pages | Descrição |
+| Página | Arquivo(s) | URL no GitHub Pages | Finalidade |
 | :--- | :--- | :--- | :--- |
-| **Página Inicial** | [`index.html`](./index.html) | `https://t7droid.github.io/Agenda-Libras/` | Landing page institucional do aplicativo. Apresenta funcionalidades, identidade visual, acessibilidade em Libras, princípios de privacidade e links visíveis para todos os documentos legais. |
-| **Política de Privacidade** | [`privacy.html`](./privacy.html)<br>[`privacy/index.html`](./privacy/index.html) | `https://t7droid.github.io/Agenda-Libras/privacy` | Documento jurídico exaustivo com detalhamento de permissões, armazenamento local (Room SQLite), integração segura com Google Drive (`drive.appdata`), conformidade com LGPD e exclusão de dados. |
-| **Termos de Serviço** | [`terms.html`](./terms.html)<br>[`terms/index.html`](./terms/index.html) | `https://t7droid.github.io/Agenda-Libras/terms` | Condições gerais de uso do aplicativo, regras de direito de imagem e consentimento para vídeos em Libras, isenção de responsabilidade e propriedade intelectual. |
-| **Segurança Infantil** | [`seguranca-infantil.html`](./seguranca-infantil.html) | `https://t7droid.github.io/Agenda-Libras/seguranca-infantil.html` | Declaração oficial de Tolerância Zero contra abuso e exploração sexual infantil (CSAE/CSAM), mecanismos de denúncia in-app e compromisso de reporte às autoridades competentes. |
+| **Página Inicial** | [`index.html`](./index.html) | `https://t7droid.github.io/Agenda-Libras/` | Apresentação institucional do aplicativo, catálogo visual de contatos, módulo de Glossários em Libras, resumo Plano Gratuito vs. Glossários Premium, transparência da integração Google Drive e links legais. |
+| **Política de Privacidade** | [`privacy.html`](./privacy.html)<br>[`privacy/index.html`](./privacy/index.html) | `https://t7droid.github.io/Agenda-Libras/privacy` | Detalhamento de dados manipulados, permissões Android (Câmera, Contatos, Mídia, Bluetooth e Localização técnica para scan de proximidade, Internet), processamento local (Room SQLite, MP4 H.264 sem áudio nos glossários, ML Kit Selfie Segmentation on-device), escopo `drive.appdata`, faturamento via Google Play Billing (cofre `AndroidKeyStore` AES-256-GCM e cache offline de 72h), pacotes `.lsb*` e direitos LGPD. |
+| **Termos de Serviço** | [`terms.html`](./terms.html)<br>[`terms/index.html`](./terms/index.html) | `https://t7droid.github.io/Agenda-Libras/terms` | Condições gerais de uso, regras do modelo Freemium e da assinatura `glossarios_premium`, isenção linguística/pedagógica, direitos de imagem e autorais, limites técnicos de bloqueio de tela/expiração, responsabilidade sobre pacotes `.lsb*` e Transferência por Proximidade (Bluetooth). |
+| **Segurança Infantil** | [`seguranca-infantil.html`](./seguranca-infantil.html) | `https://t7droid.github.io/Agenda-Libras/seguranca-infantil.html` | Padrões públicos de Tolerância Zero contra CSAE/CSAM abrangendo armazenamento local, nuvem pessoal (`drive.appdata`), Transferência por Proximidade (Bluetooth) e formatos `.lsbcontact`, `.lsbsign`, `.lsbglossary`, `.lsbglossarybackup` e `.lsbbackup`, além de canais prioritários de denúncia e cooperação legal. |
 
 ---
 
-## 🔑 Informações para a Verificação OAuth do Google (Google Cloud Console)
+## 🔒 Princípios Técnicos de Privacidade & Segurança
 
-Ao submeter a tela de consentimento OAuth do aplicativo para aprovação na Google Cloud Platform:
-
-### 1. Campos da Tela de Consentimento (OAuth Consent Screen)
-
-- **Nome do aplicativo:** `Agenda Libras`
-- **E-mail de suporte ao usuário:** `contato.agendalibras@gmail.com`
-- **Logotipo do aplicativo:** Ícone oficial do Agenda Libras (mão em Libras).
-- **Página inicial do aplicativo (Application Home Page):**  
-  `https://t7droid.github.io/Agenda-Libras/`
-- **Link da Política de Privacidade (Application Privacy Policy Link):**  
-  `https://t7droid.github.io/Agenda-Libras/privacy.html` (ou `https://t7droid.github.io/Agenda-Libras/privacy`)
-- **Link dos Termos de Serviço (Application Terms of Service Link):**  
-  `https://t7droid.github.io/Agenda-Libras/terms.html` (ou `https://t7droid.github.io/Agenda-Libras/terms`)
-- **Domínio autorizado:** `t7droid.github.io`
-
-### 2. Escopo Solicitado e Justificativa
-
-- **Escopo OAuth:** `https://www.googleapis.com/auth/drive.appdata` (*See, create, and delete its own configuration data in your Google Drive*)
-- **Por que este escopo é necessário?**  
-  O Agenda Libras permite que usuários criem glossários temáticos de sinais em Libras com gravações em vídeo. O aplicativo utiliza a pasta exclusiva de dados de aplicativo no Google Drive (`drive.appdata` / `AppDataFolder`) do próprio usuário para realizar o backup, restauração e sincronização desses vídeos e termos entre dispositivos.
-- **Por que o escopo restrito `drive.appdata` é o mais seguro?**  
-  Diferente de escopos amplos como `drive` ou `drive.file`, o escopo `drive.appdata` restringe estritamente o acesso do app a uma pasta oculta privativa criada para ele. O aplicativo **não possui permissão** para visualizar, ler, listar, modificar ou apagar nenhum outro arquivo pessoal, fotos ou pastas do usuário no Google Drive.
-- **Conformidade com Uso Limitado:**  
-  A Política de Privacidade contém a declaração formal de conformidade com a *Google API Services User Data Policy*, garantindo que os dados não são comercializados, não são repassados a terceiros e não são usados para treinar modelos de inteligência artificial.
+- **Arquitetura Offline-First & Sem Servidores Proprietários:** Os dados de contatos, perfil próprio e glossários residem localmente no banco de dados Android Jetpack Room (SQLite), com segmentação de fundo de fotos via **ML Kit Selfie Segmentation** e transcodificação de vídeo (MP4/H.264 até 5s, sem áudio nos glossários) executados **100% no dispositivo**.
+- **Integração Opcional com Google Drive (`drive.appdata`):** Mediante conexão voluntária pelo usuário via OAuth 2.0, o aplicativo acessa exclusivamente sua pasta oculta `appDataFolder` (`https://www.googleapis.com/auth/drive.appdata`) na conta Google Drive do próprio usuário — utilizada para vídeos/metadados de Glossários (modos Nuvem e Híbrido) e, conforme opção do usuário, para backup da agenda de contatos, perfil próprio, fotos e vídeos — sem acesso a outros arquivos pessoais do Drive e em cumprimento integral aos requisitos de *Uso Limitado* da Google.
+- **Pacotes Criptografados (`AES-256-GCM`):** Exportação e importação protegidas nos formatos `.lsbcontact`, `.lsbsign`, `.lsbglossary`, `.lsbglossarybackup` e `.lsbbackup`, com suporte a **Transferência Direta por Proximidade (Bluetooth)** e Android Sharesheet.
+- **Assinatura via Google Play Billing (`glossarios_premium`):** Processamento exclusivo pela Google Play Store, sem coleta de dados bancários pelo desenvolvedor, validação protegida localmente via `AndroidKeyStore` (`AES-256-GCM`) com cache offline de até 72 horas.
 
 ---
 
-## 🛡️ Preenchimento na Google Play Console (Padrões de Segurança Infantil)
+## 📬 Contato Oficial
 
-| Campo no Play Console | O que preencher / selecionar |
-| :--- | :--- |
-| **URL dos padrões de segurança** | `https://t7droid.github.io/Agenda-Libras/seguranca-infantil.html` |
-| **Contato designado** | `contato.agendalibras@gmail.com` |
-| **Checkbox 1:** *"O app Agenda Libras permite que os usuários denunciem dentro dele os problemas de segurança infantil"* | **Marcar Sim.** (Implemente uma opção em Configurações/Ajuda que abra um e-mail direto para `contato.agendalibras@gmail.com`). |
-| **Checkbox 2:** *"Meu app obedece a todas as leis relevantes de segurança infantil e encaminha denúncias para as autoridades regionais e nacionais"* | **Marcar Sim.** (Formalizado na página `seguranca-infantil.html` com a Polícia Federal, SaferNet e NCMEC). |
-
----
-
-## 🔒 Declarações de Segurança de Dados na Google Play (Data Safety)
-
-| Pergunta no Play Console | Resposta |
-| :--- | :--- |
-| **O app coleta dados de contatos em servidores do desenvolvedor?** | **Não.** Os contatos permanecem armazenados unicamente no banco local SQLite (Jetpack Room) no aparelho do usuário. |
-| **O app utiliza armazenamento em nuvem?** | **Sim, sob demanda e controlado pelo usuário.** Quando o usuário conecta sua Conta Google, os vídeos de glossários são salvos diretamente em sua própria conta Google Drive (pasta `drive.appdata`). O desenvolvedor não retém dados em servidores próprios. |
-| **Os dados são transferidos por conexão segura?** | **Sim.** Todo o tráfego com a API oficial do Google Drive é feito via HTTPS/TLS 1.3 criptografado. |
-| **O usuário pode solicitar a exclusão dos dados?** | **Sim.** O usuário pode apagar contatos e glossários diretamente no app, apagar os arquivos na pasta do Google Drive, revogar o acesso via `myaccount.google.com/permissions` ou desinstalar o app. |
+- **Desenvolvedor Responsável / Encarregado (DPO):** Thyago Neves da Silva Silvestre
+- **E-mail Oficial (Suporte, Privacidade, LGPD, Termos, OAuth & Segurança Infantil):** `thyagoneves.sa@gmail.com`
+- **Localidade:** Brasil
